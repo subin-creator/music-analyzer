@@ -1173,25 +1173,19 @@
 
     function showScaleNotes(keyName) {
 
-      const notes =
-        SCALE_MAP[keyName];
+  const notes = SCALE_MAP[keyName];
 
+  if (!notes) {
+    scaleNotes.textContent =
+      "— · — · — · — · — · — · — · —";
+    return;
+  }
 
-      if (!notes) {
+  const octaveScale = [...notes, notes[0]];
 
-        scaleNotes.textContent =
-          "— · — · — · — · — · — · —";
-
-        return;
-
-      }
-
-
-      scaleNotes.textContent =
-        notes.join(" · ");
-
-    }
-
+  scaleNotes.textContent =
+    octaveScale.join(" · ");
+}
 
     /* =========================
        ANALYZE
