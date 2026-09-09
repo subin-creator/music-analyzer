@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Music Analyzer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -31,7 +33,7 @@ body {
   overflow-x: hidden;
 }
 
-/* TOP BAR */
+/* ───────────── TOP BAR ───────────── */
 
 .topbar {
   height: 46px;
@@ -55,20 +57,24 @@ body {
   margin-right: 8px;
 }
 
-/* HERO */
+/* ───────────── HERO ───────────── */
 
 .hero {
   min-height: 730px;
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+
+  /* 왼쪽을 조금 넓혀서 제목 잘림 방지 */
+  grid-template-columns: minmax(430px, 0.8fr) 2.2fr;
+
   border-bottom: 1px solid var(--black);
 }
 
 .hero-left {
   border-right: 1px solid var(--black);
-  padding: 48px;
+  padding: 48px 32px;
   position: relative;
   overflow: hidden;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -77,18 +83,27 @@ body {
   font-weight: 700;
 }
 
+/* 제목 수정 */
+
 .hero-title {
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(80px, 10vw, 155px);
-  line-height: .77;
-  letter-spacing: -8px;
+
+  /* 화면 크기에 맞춰 자동 조절 */
+  font-size: clamp(60px, 5.3vw, 104px);
+
+  line-height: .80;
+  letter-spacing: -5px;
+
   margin: 36px 0 0;
+
   position: relative;
   z-index: 3;
+
+  white-space: nowrap;
 }
 
 .hero-copy {
-  max-width: 390px;
+  max-width: 340px;
   font-size: 18px;
   line-height: 1.45;
   margin-top: 42px;
@@ -96,81 +111,118 @@ body {
   z-index: 3;
 }
 
-/* PSYCHEDELIC SHAPES */
+/* ───────────── PSYCHEDELIC SHAPE ───────────── */
 
 .warp-circle {
   position: absolute;
-  width: 310px;
-  height: 310px;
-  right: -70px;
-  top: 60px;
-  border-radius: 46% 54% 62% 38% / 52% 40% 60% 48%;
+
+  width: 280px;
+  height: 280px;
+
+  right: -80px;
+  top: 50px;
+
+  border-radius:
+    46% 54% 62% 38% /
+    52% 40% 60% 48%;
+
   background: var(--lime);
   border: 1px solid var(--black);
+
   transform: rotate(18deg);
+
   animation: wobble 8s ease-in-out infinite alternate;
 }
 
 .warp-circle::before {
   content: "";
+
   position: absolute;
-  width: 210px;
-  height: 210px;
-  left: 42px;
-  top: 45px;
-  border-radius: 42% 58% 48% 52% / 56% 44% 56% 44%;
+
+  width: 190px;
+  height: 190px;
+
+  left: 40px;
+  top: 42px;
+
+  border-radius:
+    42% 58% 48% 52% /
+    56% 44% 56% 44%;
+
   background: var(--purple);
   border: 1px solid var(--black);
 }
 
 .warp-circle::after {
   content: "";
+
   position: absolute;
-  width: 110px;
-  height: 110px;
-  left: 94px;
-  top: 94px;
+
+  width: 95px;
+  height: 95px;
+
+  left: 90px;
+  top: 90px;
+
   border-radius: 50%;
+
   background: var(--orange);
   border: 1px solid var(--black);
 }
 
 @keyframes wobble {
+
   from {
     transform: rotate(8deg) scale(1);
   }
+
   to {
     transform: rotate(28deg) scale(1.06);
   }
+
 }
+
+/* ───────────── STICKER ───────────── */
 
 .sticker {
   position: absolute;
+
   bottom: 55px;
-  right: 54px;
+  left: 60px;
+
   width: 220px;
+
   background: var(--pink);
+
   border: 1px solid var(--black);
+
   transform: rotate(-5deg);
+
   padding: 18px;
+
   font-weight: 700;
   font-size: 12px;
+
   z-index: 4;
 }
 
 .sticker strong {
   font-family: "Archivo Black", sans-serif;
+
   display: block;
+
   font-size: 27px;
   line-height: 1;
+
   margin-top: 14px;
 }
 
-/* RIGHT SIDE */
+/* ───────────── RIGHT SIDE ───────────── */
 
 .hero-right {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .upload-wrap {
@@ -181,15 +233,20 @@ body {
 .upload-area {
   height: 100%;
   min-height: 500px;
+
   border: 1.5px dashed var(--black);
+
   position: relative;
+
   cursor: pointer;
+
   overflow: hidden;
+
   transition: .2s ease;
 }
 
 .upload-area:hover {
-  background: rgba(200,255,0,.22);
+  background: rgba(200, 255, 0, .22);
 }
 
 .upload-area.dragging {
@@ -198,11 +255,16 @@ body {
 
 .upload-content {
   position: absolute;
+
   left: 50%;
   top: 50%;
+
   transform: translate(-50%, -50%);
+
   width: 80%;
+
   text-align: center;
+
   z-index: 3;
 }
 
@@ -214,106 +276,139 @@ body {
 
 .upload-title {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 31px;
   line-height: 1;
+
   margin-top: 8px;
 }
 
 .upload-sub {
   margin-top: 12px;
+
   font-size: 11px;
+
   letter-spacing: 1.5px;
 }
 
 .filename {
   margin-top: 24px;
+
   font-weight: 700;
+
   font-size: 13px;
 }
 
-/* Decorative rings */
+/* ───────────── DECORATIVE RINGS ───────────── */
 
 .ring {
   position: absolute;
+
   border: 1px solid var(--black);
+
   border-radius: 50%;
 }
 
 .ring.one {
   width: 170px;
   height: 170px;
+
   right: -35px;
   top: -35px;
+
   background: var(--purple);
 }
 
 .ring.two {
   width: 110px;
   height: 110px;
+
   left: -25px;
   bottom: 35px;
+
   background: var(--orange);
 }
 
 .ring.three {
   width: 54px;
   height: 54px;
+
   right: 34px;
   bottom: 35px;
+
   background: var(--lime);
 }
 
-/* TICKER */
+/* ───────────── MOVING TEXT ───────────── */
 
 .ticker {
   height: 52px;
+
   border-top: 1px solid var(--black);
+
   overflow: hidden;
+
   display: flex;
   align-items: center;
 }
 
 .ticker-track {
   white-space: nowrap;
+
   font-family: "Archivo Black", sans-serif;
+
   font-size: 18px;
+
   animation: ticker 18s linear infinite;
 }
 
 @keyframes ticker {
+
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
+
 }
 
-/* RESULTS */
+/* ───────────── RESULTS ───────────── */
 
 .results-head {
   padding: 22px 30px;
+
   display: flex;
+
   justify-content: space-between;
+
   border-bottom: 1px solid var(--black);
 }
 
 .results-head strong {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 24px;
 }
 
 .results {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   border-bottom: 1px solid var(--black);
 }
 
 .result {
   min-height: 210px;
+
   padding: 26px;
+
   border-right: 1px solid var(--black);
+
   position: relative;
+
   overflow: hidden;
 }
 
@@ -331,19 +426,25 @@ body {
 
 .result-label {
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
 }
 
 .result-value {
   font-family: "Archivo Black", sans-serif;
+
   font-size: clamp(36px, 4vw, 65px);
+
   position: absolute;
+
   left: 25px;
+
   bottom: 22px;
 }
 
-/* SCALE */
+/* ───────────── SCALE ───────────── */
 
 .scale-section {
   padding: 42px 30px 55px;
@@ -351,30 +452,43 @@ body {
 
 .scale-header {
   display: flex;
+
   align-items: flex-end;
+
   justify-content: space-between;
+
   border-bottom: 1px solid var(--black);
+
   padding-bottom: 15px;
 }
 
 .scale-header h2 {
   margin: 0;
+
   font-family: "Archivo Black", sans-serif;
+
   font-size: 28px;
 }
 
 .notes {
   display: grid;
+
   grid-template-columns: repeat(7, 1fr);
+
   margin-top: 28px;
+
   border: 1px solid var(--black);
 }
 
 .note {
   padding: 34px 10px;
+
   text-align: center;
+
   font-family: "Archivo Black", sans-serif;
+
   font-size: clamp(30px, 4vw, 58px);
+
   border-right: 1px solid var(--black);
 }
 
@@ -387,12 +501,15 @@ body {
   background: var(--orange);
 }
 
-/* FOOTER */
+/* ───────────── FOOTER ───────────── */
 
 .footer {
   min-height: 200px;
+
   border-top: 1px solid var(--black);
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 }
 
@@ -403,37 +520,46 @@ body {
 
 .footer-left {
   border-right: 1px solid var(--black);
+
   background: var(--pink);
 }
 
 .footer-big {
   font-family: "Archivo Black", sans-serif;
+
   font-size: clamp(40px, 6vw, 80px);
+
   line-height: .9;
 }
 
 .footer-right {
   display: flex;
+
   align-items: flex-end;
+
   justify-content: space-between;
 }
 
-/* MOBILE */
+/* ───────────── MOBILE ───────────── */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
+
   .hero {
     grid-template-columns: 1fr;
   }
 
   .hero-left {
     border-right: 0;
+
     border-bottom: 1px solid var(--black);
+
     min-height: 650px;
   }
 
   .hero-title {
-    font-size: 78px;
-    letter-spacing: -5px;
+    font-size: clamp(55px, 13vw, 90px);
+
+    letter-spacing: -4px;
   }
 
   .results {
@@ -458,20 +584,34 @@ body {
 
   .footer-left {
     border-right: 0;
+
     border-bottom: 1px solid var(--black);
   }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <header class="topbar">
-  <div><span class="status-dot"></span> MUSIC ANALYZER</div>
-  <div>KEY · SCALE · BPM · 001</div>
+
+  <div>
+    <span class="status-dot"></span>
+    MUSIC ANALYZER
+  </div>
+
+  <div>
+    KEY · SCALE · BPM · 001
+  </div>
+
 </header>
 
+
 <section class="hero">
+
 
   <div class="hero-left">
 
@@ -493,28 +633,44 @@ body {
     <div class="warp-circle"></div>
 
     <div class="sticker">
+
       YOUR TRACK HAS
-      <strong>A SECRET<br>LANGUAGE.</strong>
+
+      <strong>
+        A SECRET<br>
+        LANGUAGE.
+      </strong>
+
     </div>
 
   </div>
+
 
   <div class="hero-right">
 
     <div class="upload-wrap">
 
-      <div class="upload-area" id="dropZone">
+      <div
+        class="upload-area"
+        id="dropZone"
+      >
 
         <div class="ring one"></div>
+
         <div class="ring two"></div>
+
         <div class="ring three"></div>
+
 
         <div class="upload-content">
 
-          <div class="plus">+</div>
+          <div class="plus">
+            +
+          </div>
 
           <div class="upload-title">
-            DROP YOUR<br>AUDIO HERE
+            DROP YOUR<br>
+            AUDIO HERE
           </div>
 
           <div class="upload-sub">
@@ -525,13 +681,17 @@ body {
             WAV · MP3 · M4A
           </div>
 
-          <div class="filename" id="filename">
+          <div
+            class="filename"
+            id="filename"
+          >
             NO FILE SELECTED
           </div>
 
         </div>
 
       </div>
+
 
       <input
         type="file"
@@ -542,54 +702,111 @@ body {
 
     </div>
 
+
     <div class="ticker">
+
       <div class="ticker-track">
-        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦ FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
-        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦ FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
+
+        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
+        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
+        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
+        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
+
       </div>
+
     </div>
 
   </div>
 
 </section>
 
+
 <section class="results-head">
-  <strong>ANALYSIS RESULT</strong>
-  <span>WAITING FOR AUDIO</span>
+
+  <strong>
+    ANALYSIS RESULT
+  </strong>
+
+  <span>
+    WAITING FOR AUDIO
+  </span>
+
 </section>
+
 
 <section class="results">
 
   <div class="result">
-    <div class="result-label">KEY</div>
-    <div class="result-value">—</div>
+
+    <div class="result-label">
+      KEY
+    </div>
+
+    <div class="result-value">
+      —
+    </div>
+
   </div>
 
-  <div class="result">
-    <div class="result-label">BPM</div>
-    <div class="result-value">—</div>
-  </div>
 
   <div class="result">
-    <div class="result-label">SCALE</div>
-    <div class="result-value">—</div>
+
+    <div class="result-label">
+      BPM
+    </div>
+
+    <div class="result-value">
+      —
+    </div>
+
   </div>
 
+
   <div class="result">
-    <div class="result-label">CONFIDENCE</div>
-    <div class="result-value">—</div>
+
+    <div class="result-label">
+      SCALE
+    </div>
+
+    <div class="result-value">
+      —
+    </div>
+
+  </div>
+
+
+  <div class="result">
+
+    <div class="result-label">
+      CONFIDENCE
+    </div>
+
+    <div class="result-value">
+      —
+    </div>
+
   </div>
 
 </section>
+
 
 <section class="scale-section">
 
   <div class="scale-header">
-    <h2>SCALE NOTES</h2>
-    <div class="eyebrow">YOUR TRACK / YOUR SOUND</div>
+
+    <h2>
+      SCALE NOTES
+    </h2>
+
+    <div class="eyebrow">
+      YOUR TRACK / YOUR SOUND
+    </div>
+
   </div>
 
+
   <div class="notes">
+
     <div class="note">—</div>
     <div class="note">—</div>
     <div class="note">—</div>
@@ -597,71 +814,127 @@ body {
     <div class="note">—</div>
     <div class="note">—</div>
     <div class="note">—</div>
+
   </div>
 
 </section>
 
+
 <footer class="footer">
 
   <div class="footer-left">
-    <div class="eyebrow">MUSIC IS MATH WITH FEELINGS.</div>
+
+    <div class="eyebrow">
+      MUSIC IS MATH WITH FEELINGS.
+    </div>
+
     <div class="footer-big">
+
       DROP IT.<br>
       READ IT.<br>
       PLAY IT.
+
     </div>
+
   </div>
 
+
   <div class="footer-right">
+
     <div>
+
       MUSIC ANALYZER<br>
       EXPERIMENT 001
+
     </div>
 
     <div>
+
       MADE FOR<br>
       CURIOUS EARS.
+
     </div>
+
   </div>
 
 </footer>
 
+
 <script>
-const input = document.getElementById("fileInput");
-const filename = document.getElementById("filename");
-const dropZone = document.getElementById("dropZone");
+
+const input =
+  document.getElementById("fileInput");
+
+const filename =
+  document.getElementById("filename");
+
+const dropZone =
+  document.getElementById("dropZone");
+
 
 dropZone.addEventListener("click", () => {
+
   input.click();
+
 });
 
+
 input.addEventListener("change", () => {
+
   const file = input.files[0];
 
   if (file) {
+
     filename.textContent = file.name;
+
   }
+
 });
 
-dropZone.addEventListener("dragover", (event) => {
-  event.preventDefault();
-  dropZone.classList.add("dragging");
-});
 
-dropZone.addEventListener("dragleave", () => {
-  dropZone.classList.remove("dragging");
-});
+dropZone.addEventListener(
+  "dragover",
+  (event) => {
 
-dropZone.addEventListener("drop", (event) => {
-  event.preventDefault();
-  dropZone.classList.remove("dragging");
+    event.preventDefault();
 
-  const file = event.dataTransfer.files[0];
+    dropZone.classList.add("dragging");
 
-  if (file) {
-    filename.textContent = file.name;
   }
-});
+);
+
+
+dropZone.addEventListener(
+  "dragleave",
+  () => {
+
+    dropZone.classList.remove("dragging");
+
+  }
+);
+
+
+dropZone.addEventListener(
+  "drop",
+  (event) => {
+
+    event.preventDefault();
+
+    dropZone.classList.remove("dragging");
+
+    const file =
+      event.dataTransfer.files[0];
+
+    if (file) {
+
+      filename.textContent =
+        file.name;
+
+    }
+
+  }
+);
+
 </script>
 
 </body>
