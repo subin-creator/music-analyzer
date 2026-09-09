@@ -1,51 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SOUND LAB</title>
 
-
-<!-- FONTS -->
-
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
-
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap"
-  rel="stylesheet"
->
-
-
-<!-- ESSENTIA -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.3/dist/essentia-wasm.web.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.3/dist/essentia.js-core.js"></script>
-
-
-<!-- MP3 ENCODER -->
-
 <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
 
-
 <style>
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -58,33 +26,25 @@
   --soft-lime: #eaff9d;
   --purple: #9165f5;
   --orange: #ff7548;
-  --pink: #ff94ad;
   --black: #0b0b0b;
 }
 
 body {
-  margin: 0;
   background: var(--cream);
   color: var(--black);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 
-
-/* =========================
-   TOP
-========================= */
+/* TOP */
 
 .topbar {
   height: 48px;
   border-bottom: 1px solid var(--black);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 24px;
-
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -99,126 +59,87 @@ body {
 .brand-dot {
   width: 10px;
   height: 10px;
-
   border-radius: 50%;
-
   background: var(--lime);
   border: 1px solid var(--black);
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .main {
   min-height: 770px;
-
   display: grid;
-  grid-template-columns:
-    480px minmax(0, 1fr);
+  grid-template-columns: 480px minmax(0, 1fr);
 }
 
 .left {
   position: relative;
-
   border-right: 1px solid var(--black);
-
   padding: 52px 32px 40px;
-
   overflow: hidden;
 }
 
 .eyebrow {
   position: relative;
   z-index: 5;
-
   font-size: 11px;
   font-weight: 800;
-
   letter-spacing: 3px;
 }
 
 .hero-title {
   position: relative;
   z-index: 5;
-
   margin-top: 36px;
-
   font-family: "Archivo Black", sans-serif;
-
-  text-transform: uppercase;
-
-  line-height: 0.88;
+  line-height: .88;
 }
 
 .hero-title .sound {
   display: block;
-
   font-size: 86px;
-
   letter-spacing: -2px;
-
   white-space: nowrap;
 }
 
 .hero-title .lab {
   display: block;
-
   font-size: 106px;
-
   letter-spacing: -1px;
-
   white-space: nowrap;
-
   margin-top: 10px;
 }
 
 .description {
   position: relative;
   z-index: 5;
-
   width: 390px;
-
   margin-top: 48px;
-
   font-size: 18px;
   line-height: 1.55;
 }
 
-
-/* =========================
-   ROTATING FLOWER
-========================= */
+/* FLOWER */
 
 .hero-flower {
   position: absolute;
   z-index: 1;
-
   width: 280px;
   height: 280px;
-
   top: 58px;
   left: 240px;
-
   animation: flowerSpin 14s linear infinite;
 }
 
 .hero-flower span {
   position: absolute;
-
   width: 118px;
   height: 118px;
-
   left: 81px;
   top: 81px;
-
   border-radius: 50%;
-
   background: var(--lime);
   border: 1px solid var(--black);
-
-  transform-origin: 59px 59px;
 }
 
 .hero-flower span:nth-child(1) {
@@ -241,37 +162,23 @@ body {
 
 .hero-flower::after {
   content: "";
-
   position: absolute;
-
   width: 94px;
   height: 94px;
-
   left: 93px;
   top: 93px;
-
   border-radius: 50%;
-
   background: var(--orange);
   border: 1px solid var(--black);
 }
 
 @keyframes flowerSpin {
-
-  from {
-    transform: rotate(0deg);
-  }
-
   to {
     transform: rotate(360deg);
   }
-
 }
 
-
-/* =========================
-   UPLOAD
-========================= */
+/* UPLOAD */
 
 .right {
   padding: 34px;
@@ -279,20 +186,14 @@ body {
 
 .upload-box {
   position: relative;
-
   width: 100%;
   height: 645px;
-
   background: var(--soft-lime);
-
   border: 1px dashed var(--black);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
-
   cursor: pointer;
 }
 
@@ -307,22 +208,18 @@ body {
 .upload-content {
   position: relative;
   z-index: 4;
-
   text-align: center;
 }
 
 .plus {
   font-size: 60px;
-  line-height: 1;
   margin-bottom: 22px;
 }
 
 .upload-title {
   font-family: "Archivo Black", sans-serif;
-
   font-size: 32px;
-  line-height: 0.95;
-
+  line-height: .95;
   margin-bottom: 18px;
 }
 
@@ -341,9 +238,7 @@ body {
 .filename {
   font-size: 12px;
   font-weight: 800;
-
   max-width: 600px;
-
   word-break: break-word;
 }
 
@@ -351,110 +246,76 @@ body {
   display: none;
 }
 
-.shape-purple {
+.shape-purple,
+.shape-orange,
+.shape-lime {
   position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--black);
+}
 
+.shape-purple {
   width: 145px;
   height: 145px;
-
   right: -35px;
   top: -30px;
-
-  border-radius: 50%;
-
   background: var(--purple);
-  border: 1px solid var(--black);
 }
 
 .shape-orange {
-  position: absolute;
-
   width: 115px;
   height: 115px;
-
   left: -55px;
   bottom: 37px;
-
-  border-radius: 50%;
-
   background: var(--orange);
-  border: 1px solid var(--black);
 }
 
 .shape-lime {
-  position: absolute;
-
   width: 56px;
   height: 56px;
-
   right: 35px;
   bottom: 36px;
-
-  border-radius: 50%;
-
   background: var(--lime);
-  border: 1px solid var(--black);
 }
 
-
-/* =========================
-   MARQUEE
-========================= */
+/* MARQUEE */
 
 .marquee {
   height: 56px;
-
   border-top: 1px solid var(--black);
   border-bottom: 1px solid var(--black);
-
   display: flex;
   align-items: center;
-
   overflow: hidden;
-
   white-space: nowrap;
 }
 
 .marquee-inner {
-  display: inline-block;
-
   font-family: "Archivo Black", sans-serif;
-
   font-size: 18px;
-
   animation: marquee 18s linear infinite;
 }
 
 @keyframes marquee {
-
-  from {
-    transform: translateX(0);
-  }
-
   to {
     transform: translateX(-50%);
   }
-
 }
 
-
-/* =========================
-   RESULTS
-========================= */
+/* ANALYSIS */
 
 .result-header {
   min-height: 74px;
-
   border-bottom: 1px solid var(--black);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 30px;
 }
 
-.result-header h2 {
+.result-header h2,
+.spectrum-head h2,
+.reduction-head h2 {
   font-family: "Archivo Black", sans-serif;
   font-size: 25px;
 }
@@ -467,18 +328,13 @@ body {
 
 .results {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   min-height: 190px;
-
   border-bottom: 1px solid var(--black);
 }
 
 .result-card {
   padding: 22px 26px;
-
   border-right: 1px solid var(--black);
 }
 
@@ -494,7 +350,9 @@ body {
   background: var(--purple);
 }
 
-.result-label {
+.result-label,
+.spectrum-label,
+.reduction-band {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 3px;
@@ -502,22 +360,15 @@ body {
 
 .result-value {
   margin-top: 58px;
-
   font-family: "Archivo Black", sans-serif;
-
   font-size: clamp(30px, 4vw, 55px);
 }
 
-
-/* =========================
-   SCALE
-========================= */
+/* SCALE */
 
 .scale-notes {
   padding: 30px;
-
   min-height: 170px;
-
   border-bottom: 1px solid var(--black);
 }
 
@@ -525,7 +376,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin-bottom: 34px;
 }
 
@@ -542,33 +392,22 @@ body {
 
 .notes {
   font-family: "Archivo Black", sans-serif;
-
   font-size: clamp(24px, 3vw, 42px);
-
   word-spacing: 12px;
 }
 
-
-/* =========================
-   DENOISE
-========================= */
+/* DENOISE */
 
 .denoise-section {
   border-bottom: 1px solid var(--black);
-
   display: grid;
-
-  grid-template-columns:
-    0.75fr 1.25fr;
-
+  grid-template-columns: .75fr 1.25fr;
   min-height: 500px;
 }
 
 .denoise-left {
   background: var(--orange);
-
   border-right: 1px solid var(--black);
-
   padding: 40px;
 }
 
@@ -580,19 +419,14 @@ body {
 
 .denoise-title {
   margin-top: 30px;
-
   font-family: "Archivo Black", sans-serif;
-
   font-size: clamp(48px, 5vw, 80px);
-
-  line-height: 0.87;
+  line-height: .87;
 }
 
 .denoise-copy {
   margin-top: 30px;
-
   max-width: 390px;
-
   font-size: 16px;
   line-height: 1.5;
 }
@@ -603,15 +437,12 @@ body {
 
 .control-title {
   font-family: "Archivo Black", sans-serif;
-
   font-size: 23px;
-
   margin-bottom: 18px;
 }
 
 .control-group {
   border-top: 1px solid var(--black);
-
   padding: 24px 0;
 }
 
@@ -619,31 +450,21 @@ body {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 2px;
-
   margin-bottom: 15px;
 }
 
 .option-row {
   display: flex;
-
   gap: 10px;
-
-  flex-wrap: wrap;
 }
 
 .option {
   border: 1px solid var(--black);
-
   background: var(--cream);
-
   padding: 11px 18px;
-
-  font-family: "Inter", sans-serif;
-
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1px;
-
   cursor: pointer;
 }
 
@@ -657,81 +478,85 @@ body {
 
 .process-status {
   border-top: 1px solid var(--black);
-
   padding: 20px 0;
-
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
 }
 
-.denoise-button {
+.denoise-button,
+.download-button {
   width: 100%;
-
   border: 1px solid var(--black);
-
   padding: 20px;
-
-  background: var(--lime);
-
   font-family: "Archivo Black", sans-serif;
-
   font-size: 20px;
-
   cursor: pointer;
 }
 
-.denoise-button:hover {
-  background: var(--black);
-  color: var(--lime);
+.denoise-button {
+  background: var(--lime);
 }
 
 .denoise-button:disabled {
-  opacity: 0.35;
+  opacity: .35;
   cursor: not-allowed;
 }
 
+.download-button {
+  background: var(--purple);
+  display: none;
+  margin-top: 14px;
+}
 
-/* =========================
-   SPECTRUM
-========================= */
+.audio-preview {
+  margin-top: 22px;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.preview-box {
+  border: 1px solid var(--black);
+  padding: 15px;
+}
+
+.preview-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+audio {
+  width: 100%;
+}
+
+/* SPECTRUM */
 
 .spectrum-section {
   display: none;
-
   border-bottom: 1px solid var(--black);
 }
 
-.spectrum-head {
+.spectrum-head,
+.reduction-head {
   min-height: 76px;
-
+  border-bottom: 1px solid var(--black);
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 30px;
-
-  border-bottom: 1px solid var(--black);
-}
-
-.spectrum-head h2 {
-  font-family: "Archivo Black", sans-serif;
-  font-size: 25px;
 }
 
 .spectrum-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .spectrum-card {
-  min-width: 0;
-
-  border-right: 1px solid var(--black);
-
   padding: 24px;
+  border-right: 1px solid var(--black);
 }
 
 .spectrum-card:last-child {
@@ -747,80 +572,44 @@ body {
 }
 
 .spectrum-label {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
-
   margin-bottom: 18px;
 }
 
 .spectrum-canvas-wrap {
-  width: 100%;
-  height: 220px;
-
+  height: 240px;
   border: 1px solid var(--black);
-
   background: var(--cream);
-
-  position: relative;
 }
 
-.spectrum-canvas-wrap canvas {
+canvas {
+  display: block;
   width: 100%;
   height: 100%;
-
-  display: block;
 }
 
 .freq-labels {
   margin-top: 8px;
-
   display: flex;
   justify-content: space-between;
-
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
-
-/* =========================
-   REDUCTION SUMMARY
-========================= */
+/* SUMMARY */
 
 .reduction-summary {
   display: none;
-
   border-bottom: 1px solid var(--black);
-}
-
-.reduction-head {
-  padding: 26px 30px;
-
-  border-bottom: 1px solid var(--black);
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.reduction-head h2 {
-  font-family: "Archivo Black", sans-serif;
-  font-size: 25px;
 }
 
 .reduction-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .reduction-card {
   min-height: 170px;
-
   padding: 24px;
-
   border-right: 1px solid var(--black);
 }
 
@@ -836,229 +625,89 @@ body {
   background: var(--lime);
 }
 
-.reduction-band {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 3px;
-}
-
 .reduction-value {
   margin-top: 48px;
-
   font-family: "Archivo Black", sans-serif;
-
   font-size: clamp(36px, 4vw, 60px);
 }
 
 .reduction-range {
   margin-top: 8px;
-
   font-size: 10px;
   font-weight: 700;
 }
 
-
-/* =========================
-   PREVIEW / DOWNLOAD
-========================= */
-
-.audio-preview {
-  margin-top: 22px;
-
-  display: none;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap: 12px;
-}
-
-.preview-box {
-  border: 1px solid var(--black);
-
-  padding: 15px;
-}
-
-.preview-label {
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 2px;
-
-  margin-bottom: 10px;
-}
-
-audio {
-  width: 100%;
-}
-
-.download-button {
-  margin-top: 14px;
-
-  width: 100%;
-
-  border: 1px solid var(--black);
-
-  padding: 20px;
-
-  background: var(--purple);
-
-  font-family: "Archivo Black", sans-serif;
-
-  font-size: 18px;
-
-  cursor: pointer;
-
-  display: none;
-}
-
-.download-button:hover {
-  background: var(--black);
-  color: var(--purple);
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 1000px) {
-
-  .main {
-    grid-template-columns: 1fr;
-  }
-
-  .left {
-    min-height: 560px;
-
-    border-right: none;
-    border-bottom: 1px solid var(--black);
-  }
-
-  .results {
-    grid-template-columns: 1fr;
-  }
-
-  .result-card {
-    border-right: none;
-    border-bottom: 1px solid var(--black);
-  }
-
+  .main,
   .denoise-section {
     grid-template-columns: 1fr;
   }
 
+  .left,
   .denoise-left {
     border-right: none;
     border-bottom: 1px solid var(--black);
   }
 
-  .spectrum-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .spectrum-card {
-    border-right: none;
-    border-bottom: 1px solid var(--black);
-  }
-
-  .reduction-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .reduction-card {
-    border-right: none;
-    border-bottom: 1px solid var(--black);
-  }
-
+  .results,
+  .spectrum-grid,
+  .reduction-grid,
   .audio-preview {
     grid-template-columns: 1fr;
   }
 
+  .result-card,
+  .spectrum-card,
+  .reduction-card {
+    border-right: none;
+    border-bottom: 1px solid var(--black);
+  }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <header class="topbar">
-
   <div class="brand">
-
     <span class="brand-dot"></span>
-
     SOUND LAB
-
   </div>
 
-  <div>
-
-    KEY · SCALE · BPM · DENOISE · 001
-
-  </div>
-
+  <div>KEY · SCALE · BPM · DENOISE · 001</div>
 </header>
 
-
-
 <main class="main">
-
 
 <section class="left">
 
   <div class="eyebrow">
-
     LISTEN / ANALYZE / CLEAN
-
   </div>
-
 
   <div class="hero-flower">
-
     <span></span>
     <span></span>
     <span></span>
     <span></span>
-
   </div>
 
-
   <h1 class="hero-title">
-
-    <span class="sound">
-      SOUND
-    </span>
-
-    <span class="lab">
-      LAB
-    </span>
-
+    <span class="sound">SOUND</span>
+    <span class="lab">LAB</span>
   </h1>
 
-
   <p class="description">
-
-    Drop a track.
-    Find its key.
-    Catch the tempo.
-    Clean the noise.
-    One strange little lab for your sound.
-
+    Drop a track. Find its key. Catch the tempo.
+    Clean the noise. One strange little lab for your sound.
   </p>
 
 </section>
 
 
-
 <section class="right">
 
-<label
-  class="upload-box"
-  id="dropZone"
->
+<label class="upload-box" id="dropZone">
 
 <input
   id="audioInput"
@@ -1066,46 +715,29 @@ audio {
   accept="audio/*,.wav,.mp3,.m4a"
 >
 
-
 <div class="shape-purple"></div>
-
 <div class="shape-orange"></div>
-
 <div class="shape-lime"></div>
-
 
 <div class="upload-content">
 
-  <div class="plus">
-    +
-  </div>
+  <div class="plus">+</div>
 
   <div class="upload-title">
-
     DROP YOUR<br>
     AUDIO HERE
-
   </div>
 
   <div class="browse">
-
     OR CLICK TO BROWSE
-
   </div>
 
   <div class="formats">
-
     WAV · MP3 · M4A
-
   </div>
 
-  <div
-    class="filename"
-    id="fileName"
-  >
-
+  <div class="filename" id="fileName">
     NO FILE SELECTED
-
   </div>
 
 </div>
@@ -1117,539 +749,418 @@ audio {
 </main>
 
 
-
 <div class="marquee">
-
-<div class="marquee-inner">
-
-  FIND THE KEY ✦
-  READ THE SCALE ✦
-  FEEL THE TEMPO ✦
-  CLEAN THE NOISE ✦
-  KNOW YOUR SOUND ✦
-
-  FIND THE KEY ✦
-  READ THE SCALE ✦
-  FEEL THE TEMPO ✦
-  CLEAN THE NOISE ✦
-  KNOW YOUR SOUND ✦
-
-  FIND THE KEY ✦
-  READ THE SCALE ✦
-  FEEL THE TEMPO ✦
-  CLEAN THE NOISE ✦
-  KNOW YOUR SOUND ✦
-
+  <div class="marquee-inner">
+    FIND THE KEY ✦ READ THE SCALE ✦ FEEL THE TEMPO ✦ CLEAN THE NOISE ✦ KNOW YOUR SOUND ✦
+    FIND THE KEY ✦ READ THE SCALE ✦ FEEL THE TEMPO ✦ CLEAN THE NOISE ✦ KNOW YOUR SOUND ✦
+    FIND THE KEY ✦ READ THE SCALE ✦ FEEL THE TEMPO ✦ CLEAN THE NOISE ✦ KNOW YOUR SOUND ✦
+  </div>
 </div>
-
-</div>
-
 
 
 <section>
 
-
 <div class="result-header">
 
-<h2>
-  ANALYSIS RESULT
-</h2>
+  <h2>ANALYSIS RESULT</h2>
 
-<div
-  class="status"
-  id="status"
->
-  LOADING ANALYZER...
-</div>
+  <div class="status" id="status">
+    LOADING ANALYZER...
+  </div>
 
 </div>
 
 
 <div class="results">
 
+  <div class="result-card key">
 
-<div class="result-card key">
+    <div class="result-label">KEY</div>
 
-  <div class="result-label">
-    KEY
+    <div
+      class="result-value"
+      id="keyResult"
+    >
+      —
+    </div>
+
   </div>
 
-  <div
-    class="result-value"
-    id="keyResult"
-  >
-    —
+
+  <div class="result-card">
+
+    <div class="result-label">BPM</div>
+
+    <div
+      class="result-value"
+      id="bpmResult"
+    >
+      —
+    </div>
+
   </div>
 
-</div>
 
+  <div class="result-card confidence">
 
-<div class="result-card">
+    <div class="result-label">
+      CONFIDENCE
+    </div>
 
-  <div class="result-label">
-    BPM
+    <div
+      class="result-value"
+      id="confidenceResult"
+    >
+      —
+    </div>
+
   </div>
-
-  <div
-    class="result-value"
-    id="bpmResult"
-  >
-    —
-  </div>
-
-</div>
-
-
-<div class="result-card confidence">
-
-  <div class="result-label">
-    CONFIDENCE
-  </div>
-
-  <div
-    class="result-value"
-    id="confidenceResult"
-  >
-    —
-  </div>
-
-</div>
-
 
 </div>
 
 </section>
-
 
 
 <section class="scale-notes">
 
-
 <div class="scale-notes-header">
 
-<h2>
-  SCALE NOTES
-</h2>
+  <h2>SCALE NOTES</h2>
 
-<div class="tiny">
-  YOUR TRACK / YOUR SOUND
-</div>
+  <div class="tiny">
+    YOUR TRACK / YOUR SOUND
+  </div>
 
 </div>
 
-
-<div
-  class="notes"
-  id="scaleNotes"
->
-
+<div class="notes" id="scaleNotes">
   — · — · — · — · — · — · — · —
-
 </div>
 
 </section>
 
 
-
 <section class="denoise-section">
-
 
 <div class="denoise-left">
 
-<div class="denoise-number">
-  DENOISE / 002
-</div>
+  <div class="denoise-number">
+    DENOISE / 002
+  </div>
 
-<div class="denoise-title">
+  <div class="denoise-title">
+    CLEAN<br>
+    THE<br>
+    NOISE.
+  </div>
 
-  CLEAN<br>
-  THE<br>
-  NOISE.
-
-</div>
-
-<div class="denoise-copy">
-
-  Reduce unwanted low-frequency rumble
-  and high-frequency hiss.
-
-  After cleaning, Sound Lab compares
-  the original and cleaned frequency spectrum.
-
-</div>
+  <div class="denoise-copy">
+    Reduce unwanted low-frequency rumble and
+    high-frequency hiss. Compare the original
+    and cleaned spectrum after processing.
+  </div>
 
 </div>
 
 
 <div class="denoise-right">
 
-
-<div class="control-title">
-
-  DENOISE CONTROL
-
-</div>
+  <div class="control-title">
+    DENOISE CONTROL
+  </div>
 
 
-<div class="control-group">
+  <div class="control-group">
 
-<div class="control-label">
+    <div class="control-label">
+      DENOISE STRENGTH
+    </div>
 
-  DENOISE STRENGTH
+    <div class="option-row">
 
-</div>
+      <button
+        class="option strength"
+        data-strength="low"
+      >
+        LOW
+      </button>
 
-<div class="option-row">
+      <button
+        class="option strength active"
+        data-strength="medium"
+      >
+        MEDIUM
+      </button>
 
-<button
-  class="option strength"
-  data-strength="low"
->
-  LOW
-</button>
+      <button
+        class="option strength"
+        data-strength="high"
+      >
+        HIGH
+      </button>
 
-<button
-  class="option strength active"
-  data-strength="medium"
->
-  MEDIUM
-</button>
+    </div>
 
-<button
-  class="option strength"
-  data-strength="high"
->
-  HIGH
-</button>
-
-</div>
-
-</div>
+  </div>
 
 
-<div class="control-group">
+  <div class="control-group">
 
-<div class="control-label">
+    <div class="control-label">
+      OUTPUT FORMAT
+    </div>
 
-  OUTPUT FORMAT
+    <div class="option-row">
 
-</div>
+      <button
+        class="option format active"
+        data-format="wav"
+      >
+        WAV
+      </button>
 
-<div class="option-row">
+      <button
+        class="option format"
+        data-format="mp3"
+      >
+        MP3
+      </button>
 
-<button
-  class="option format active"
-  data-format="wav"
->
-  WAV
-</button>
+    </div>
 
-<button
-  class="option format"
-  data-format="mp3"
->
-  MP3
-</button>
-
-</div>
-
-</div>
+  </div>
 
 
-<div
-  class="process-status"
-  id="denoiseStatus"
->
-  WAITING FOR AUDIO
-</div>
+  <div
+    class="process-status"
+    id="denoiseStatus"
+  >
+    WAITING FOR AUDIO
+  </div>
 
 
-<button
-  class="denoise-button"
-  id="denoiseButton"
-  disabled
->
-
-  DENOISE AUDIO ✦
-
-</button>
+  <button
+    class="denoise-button"
+    id="denoiseButton"
+    disabled
+  >
+    DENOISE AUDIO ✦
+  </button>
 
 
-<div
-  class="audio-preview"
-  id="audioPreview"
->
+  <div
+    class="audio-preview"
+    id="audioPreview"
+  >
+
+    <div class="preview-box">
+
+      <div class="preview-label">
+        ORIGINAL
+      </div>
+
+      <audio
+        id="originalAudio"
+        controls
+      ></audio>
+
+    </div>
 
 
-<div class="preview-box">
+    <div class="preview-box">
 
-<div class="preview-label">
-  ORIGINAL
-</div>
+      <div class="preview-label">
+        CLEANED
+      </div>
 
-<audio
-  id="originalAudio"
-  controls
-></audio>
+      <audio
+        id="cleanAudio"
+        controls
+      ></audio>
 
-</div>
+    </div>
 
-
-<div class="preview-box">
-
-<div class="preview-label">
-  CLEANED
-</div>
-
-<audio
-  id="cleanAudio"
-  controls
-></audio>
-
-</div>
+  </div>
 
 
-</div>
-
-
-<button
-  class="download-button"
-  id="downloadButton"
->
-
-  DOWNLOAD CLEAN AUDIO ↓
-
-</button>
-
+  <button
+    class="download-button"
+    id="downloadButton"
+  >
+    DOWNLOAD CLEAN AUDIO ↓
+  </button>
 
 </div>
 
 </section>
 
-
-
-<!-- SPECTRUM -->
 
 <section
   class="spectrum-section"
   id="spectrumSection"
 >
 
-
 <div class="spectrum-head">
 
-<h2>
-  SPECTRUM COMPARISON
-</h2>
+  <h2>SPECTRUM COMPARISON</h2>
 
-<div class="tiny">
-
-  20 Hz → 20 kHz
-
-</div>
+  <div class="tiny">
+    20 Hz → 20 kHz
+  </div>
 
 </div>
 
 
 <div class="spectrum-grid">
 
+  <div class="spectrum-card">
 
-<div class="spectrum-card">
+    <div class="spectrum-label">
+      ORIGINAL SPECTRUM
+    </div>
 
-<div class="spectrum-label">
+    <div class="spectrum-canvas-wrap">
+      <canvas id="originalSpectrum"></canvas>
+    </div>
 
-  ORIGINAL SPECTRUM
+    <div class="freq-labels">
+      <span>20 Hz</span>
+      <span>1 kHz</span>
+      <span>20 kHz</span>
+    </div>
 
-</div>
-
-<div class="spectrum-canvas-wrap">
-
-<canvas
-  id="originalSpectrum"
-></canvas>
-
-</div>
-
-<div class="freq-labels">
-
-<span>20 Hz</span>
-
-<span>1 kHz</span>
-
-<span>20 kHz</span>
-
-</div>
-
-</div>
+  </div>
 
 
-<div class="spectrum-card">
+  <div class="spectrum-card">
 
-<div class="spectrum-label">
+    <div class="spectrum-label">
+      CLEANED SPECTRUM
+    </div>
 
-  CLEANED SPECTRUM
+    <div class="spectrum-canvas-wrap">
+      <canvas id="cleanSpectrum"></canvas>
+    </div>
 
-</div>
+    <div class="freq-labels">
+      <span>20 Hz</span>
+      <span>1 kHz</span>
+      <span>20 kHz</span>
+    </div>
 
-<div class="spectrum-canvas-wrap">
-
-<canvas
-  id="cleanSpectrum"
-></canvas>
-
-</div>
-
-<div class="freq-labels">
-
-<span>20 Hz</span>
-
-<span>1 kHz</span>
-
-<span>20 kHz</span>
-
-</div>
-
-</div>
+  </div>
 
 
-<div class="spectrum-card">
+  <div class="spectrum-card">
 
-<div class="spectrum-label">
+    <div class="spectrum-label">
+      FREQUENCY REDUCTION
+    </div>
 
-  FREQUENCY REDUCTION
+    <div class="spectrum-canvas-wrap">
+      <canvas id="reductionSpectrum"></canvas>
+    </div>
 
-</div>
+    <div class="freq-labels">
+      <span>20 Hz</span>
+      <span>1 kHz</span>
+      <span>20 kHz</span>
+    </div>
 
-<div class="spectrum-canvas-wrap">
-
-<canvas
-  id="reductionSpectrum"
-></canvas>
-
-</div>
-
-<div class="freq-labels">
-
-<span>20 Hz</span>
-
-<span>1 kHz</span>
-
-<span>20 kHz</span>
-
-</div>
-
-</div>
-
+  </div>
 
 </div>
 
 </section>
 
-
-
-<!-- REDUCTION SUMMARY -->
 
 <section
   class="reduction-summary"
   id="reductionSummary"
 >
 
-
 <div class="reduction-head">
 
-<h2>
-  REDUCTION SUMMARY
-</h2>
+  <h2>REDUCTION SUMMARY</h2>
 
-<div class="tiny">
-
-  ACTUAL ENERGY CHANGE
-
-</div>
+  <div class="tiny">
+    ACTUAL ENERGY CHANGE
+  </div>
 
 </div>
 
 
 <div class="reduction-grid">
 
+  <div class="reduction-card">
 
-<div class="reduction-card">
+    <div class="reduction-band">
+      LOW
+    </div>
 
-<div class="reduction-band">
-  LOW
-</div>
+    <div
+      class="reduction-value"
+      id="lowReduction"
+    >
+      —
+    </div>
 
-<div
-  class="reduction-value"
-  id="lowReduction"
->
-  —
-</div>
+    <div class="reduction-range">
+      20 Hz – 250 Hz
+    </div>
 
-<div class="reduction-range">
-
-  20 Hz – 250 Hz
-
-</div>
-
-</div>
+  </div>
 
 
-<div class="reduction-card">
+  <div class="reduction-card">
 
-<div class="reduction-band">
-  MID
-</div>
+    <div class="reduction-band">
+      MID
+    </div>
 
-<div
-  class="reduction-value"
-  id="midReduction"
->
-  —
-</div>
+    <div
+      class="reduction-value"
+      id="midReduction"
+    >
+      —
+    </div>
 
-<div class="reduction-range">
+    <div class="reduction-range">
+      250 Hz – 4 kHz
+    </div>
 
-  250 Hz – 4 kHz
-
-</div>
-
-</div>
+  </div>
 
 
-<div class="reduction-card">
+  <div class="reduction-card">
 
-<div class="reduction-band">
-  HIGH
-</div>
+    <div class="reduction-band">
+      HIGH
+    </div>
 
-<div
-  class="reduction-value"
-  id="highReduction"
->
-  —
-</div>
+    <div
+      class="reduction-value"
+      id="highReduction"
+    >
+      —
+    </div>
 
-<div class="reduction-range">
+    <div class="reduction-range">
+      4 kHz – 20 kHz
+    </div>
 
-  4 kHz – 20 kHz
-
-</div>
-
-</div>
-
+  </div>
 
 </div>
 
 </section>
 
 
-
 <script>
 
-/* =========================
+/* =============================
    ELEMENTS
-========================= */
+============================= */
 
 const input =
   document.getElementById("audioInput");
@@ -1718,10 +1229,6 @@ const highReduction =
   document.getElementById("highReduction");
 
 
-/* =========================
-   VARIABLES
-========================= */
-
 let essentia = null;
 
 let currentFile = null;
@@ -1747,16 +1254,46 @@ let lastCleanSpectrum =
   null;
 
 
-/* =========================
+/* =============================
+   ORIGINAL / CLEANED
+   ONLY ONE MAY PLAY
+============================= */
+
+originalAudio.addEventListener(
+  "play",
+  () => {
+
+    if (!cleanAudio.paused) {
+
+      cleanAudio.pause();
+
+    }
+
+  }
+);
+
+
+cleanAudio.addEventListener(
+  "play",
+  () => {
+
+    if (!originalAudio.paused) {
+
+      originalAudio.pause();
+
+    }
+
+  }
+);
+
+
+/* =============================
    ESSENTIA
-========================= */
+============================= */
 
 async function initializeEssentia() {
 
   try {
-
-    statusEl.textContent =
-      "LOADING ANALYZER...";
 
     const wasmModule =
       await EssentiaWASM();
@@ -1785,117 +1322,59 @@ async function initializeEssentia() {
 initializeEssentia();
 
 
-/* =========================
+/* =============================
    SCALE
-========================= */
+============================= */
 
 const SCALE_MAP = {
 
-  "C Major":
-    ["C","D","E","F","G","A","B"],
+  "C Major":["C","D","E","F","G","A","B"],
+  "C# Major":["C#","D#","E#","F#","G#","A#","B#"],
+  "D Major":["D","E","F#","G","A","B","C#"],
+  "D# Major":["D#","E#","F##","G#","A#","B#","C##"],
+  "E Major":["E","F#","G#","A","B","C#","D#"],
+  "F Major":["F","G","A","Bb","C","D","E"],
+  "F# Major":["F#","G#","A#","B","C#","D#","E#"],
+  "G Major":["G","A","B","C","D","E","F#"],
+  "G# Major":["G#","A#","B#","C#","D#","E#","F##"],
+  "A Major":["A","B","C#","D","E","F#","G#"],
+  "A# Major":["A#","B#","C##","D#","E#","F##","G##"],
+  "B Major":["B","C#","D#","E","F#","G#","A#"],
 
-  "C# Major":
-    ["C#","D#","E#","F#","G#","A#","B#"],
-
-  "D Major":
-    ["D","E","F#","G","A","B","C#"],
-
-  "D# Major":
-    ["D#","E#","F##","G#","A#","B#","C##"],
-
-  "E Major":
-    ["E","F#","G#","A","B","C#","D#"],
-
-  "F Major":
-    ["F","G","A","Bb","C","D","E"],
-
-  "F# Major":
-    ["F#","G#","A#","B","C#","D#","E#"],
-
-  "G Major":
-    ["G","A","B","C","D","E","F#"],
-
-  "G# Major":
-    ["G#","A#","B#","C#","D#","E#","F##"],
-
-  "A Major":
-    ["A","B","C#","D","E","F#","G#"],
-
-  "A# Major":
-    ["A#","B#","C##","D#","E#","F##","G##"],
-
-  "B Major":
-    ["B","C#","D#","E","F#","G#","A#"],
-
-
-  "C Minor":
-    ["C","D","Eb","F","G","Ab","Bb"],
-
-  "C# Minor":
-    ["C#","D#","E","F#","G#","A","B"],
-
-  "D Minor":
-    ["D","E","F","G","A","Bb","C"],
-
-  "D# Minor":
-    ["D#","E#","F#","G#","A#","B","C#"],
-
-  "E Minor":
-    ["E","F#","G","A","B","C","D"],
-
-  "F Minor":
-    ["F","G","Ab","Bb","C","Db","Eb"],
-
-  "F# Minor":
-    ["F#","G#","A","B","C#","D","E"],
-
-  "G Minor":
-    ["G","A","Bb","C","D","Eb","F"],
-
-  "G# Minor":
-    ["G#","A#","B","C#","D#","E","F#"],
-
-  "A Minor":
-    ["A","B","C","D","E","F","G"],
-
-  "A# Minor":
-    ["A#","B#","C#","D#","E#","F#","G#"],
-
-  "B Minor":
-    ["B","C#","D","E","F#","G","A"]
-
+  "C Minor":["C","D","Eb","F","G","Ab","Bb"],
+  "C# Minor":["C#","D#","E","F#","G#","A","B"],
+  "D Minor":["D","E","F","G","A","Bb","C"],
+  "D# Minor":["D#","E#","F#","G#","A#","B","C#"],
+  "E Minor":["E","F#","G","A","B","C","D"],
+  "F Minor":["F","G","Ab","Bb","C","Db","Eb"],
+  "F# Minor":["F#","G#","A","B","C#","D","E"],
+  "G Minor":["G","A","Bb","C","D","Eb","F"],
+  "G# Minor":["G#","A#","B","C#","D#","E","F#"],
+  "A Minor":["A","B","C","D","E","F","G"],
+  "A# Minor":["A#","B#","C#","D#","E#","F#","G#"],
+  "B Minor":["B","C#","D","E","F#","G","A"]
 };
 
 
-function normalizeScaleName(
-  scale
-) {
+function normalizeScaleName(scale) {
 
   if (!scale) {
     return "";
   }
 
   return (
-    scale
-      .charAt(0)
-      .toUpperCase()
+    scale.charAt(0).toUpperCase()
     +
-    scale
-      .slice(1)
-      .toLowerCase()
+    scale.slice(1).toLowerCase()
   );
 
 }
 
 
-function showScaleNotes(
-  keyName
-) {
+function showScaleNotes(keyName) {
 
   const notes =
-    SCALE_MAP[
-      keyName
-    ];
+    SCALE_MAP[keyName];
 
   if (!notes) {
 
@@ -1906,29 +1385,20 @@ function showScaleNotes(
 
   }
 
-  const octaveScale =
-    [
-      ...notes,
-      notes[0]
-    ];
-
   scaleNotes.textContent =
-    octaveScale.join(" · ");
+    [...notes, notes[0]]
+      .join(" · ");
 
 }
 
 
-/* =========================
-   AUDIO ANALYSIS
-========================= */
+/* =============================
+   LOAD / ANALYZE
+============================= */
 
-async function analyzeFile(
-  file
-) {
+async function analyzeFile(file) {
 
-  if (!file) {
-    return;
-  }
+  if (!file) return;
 
   currentFile =
     file;
@@ -1942,31 +1412,27 @@ async function analyzeFile(
   denoiseStatus.textContent =
     "READY TO DENOISE";
 
-  downloadButton.style.display =
-    "none";
-
-  audioPreview.style.display =
-    "none";
-
   spectrumSection.style.display =
     "none";
 
   reductionSummary.style.display =
     "none";
 
+  downloadButton.style.display =
+    "none";
+
+  audioPreview.style.display =
+    "none";
+
 
   if (originalURL) {
-
     URL.revokeObjectURL(
       originalURL
     );
-
   }
 
   originalURL =
-    URL.createObjectURL(
-      file
-    );
+    URL.createObjectURL(file);
 
   originalAudio.src =
     originalURL;
@@ -1974,16 +1440,23 @@ async function analyzeFile(
 
   try {
 
+    statusEl.textContent =
+      "DECODING AUDIO";
+
+
     const arrayBuffer =
       await file.arrayBuffer();
+
 
     const AudioContextClass =
       window.AudioContext
       ||
       window.webkitAudioContext;
 
+
     const audioContext =
       new AudioContextClass();
+
 
     decodedAudio =
       await audioContext
@@ -2007,21 +1480,10 @@ async function analyzeFile(
     statusEl.textContent =
       "ANALYZING...";
 
-    keyResult.textContent =
-      "…";
-
-    bpmResult.textContent =
-      "…";
-
-    confidenceResult.textContent =
-      "…";
-
-    scaleNotes.textContent =
-      "ANALYZING...";
-
 
     const length =
       decodedAudio.length;
+
 
     const mono =
       new Float32Array(
@@ -2030,17 +1492,14 @@ async function analyzeFile(
 
 
     for (
-      let channel = 0;
-      channel <
-      decodedAudio.numberOfChannels;
-      channel++
+      let ch = 0;
+      ch < decodedAudio.numberOfChannels;
+      ch++
     ) {
 
       const data =
         decodedAudio
-          .getChannelData(
-            channel
-          );
+          .getChannelData(ch);
 
       for (
         let i = 0;
@@ -2051,8 +1510,7 @@ async function analyzeFile(
         mono[i] +=
           data[i]
           /
-          decodedAudio
-            .numberOfChannels;
+          decodedAudio.numberOfChannels;
 
       }
 
@@ -2060,21 +1518,15 @@ async function analyzeFile(
 
 
     const signal =
-      essentia
-        .arrayToVector(
-          mono
-        );
+      essentia.arrayToVector(
+        mono
+      );
 
 
     const keyAnalysis =
-      essentia
-        .KeyExtractor(
-          signal
-        );
-
-
-    const detectedKey =
-      keyAnalysis.key;
+      essentia.KeyExtractor(
+        signal
+      );
 
 
     const detectedScale =
@@ -2084,7 +1536,7 @@ async function analyzeFile(
 
 
     const fullKey =
-      detectedKey
+      keyAnalysis.key
       +
       " "
       +
@@ -2129,22 +1581,18 @@ async function analyzeFile(
       );
 
 
-    const confidence =
-      Math.max(
-        0,
-        Math.min(
-          100,
-          Math.round(
+    confidenceResult.textContent =
+      Math.round(
+        Math.max(
+          0,
+          Math.min(
+            1,
             strength
-            *
-            100
           )
         )
-      );
-
-
-    confidenceResult.textContent =
-      confidence
+        *
+        100
+      )
       +
       "%";
 
@@ -2158,9 +1606,7 @@ async function analyzeFile(
       &&
       signal.delete
     ) {
-
       signal.delete();
-
     }
 
 
@@ -2175,125 +1621,94 @@ async function analyzeFile(
     statusEl.textContent =
       "ANALYSIS ERROR";
 
-    keyResult.textContent =
-      "ERROR";
-
-    bpmResult.textContent =
-      "ERROR";
-
-    confidenceResult.textContent =
-      "—";
-
-    scaleNotes.textContent =
-      "COULD NOT ANALYZE THIS FILE";
-
   }
 
 }
 
 
-/* =========================
+/* =============================
    OPTIONS
-========================= */
+============================= */
 
 document
-.querySelectorAll(
-  ".strength"
-)
-.forEach(
-  button => {
+.querySelectorAll(".strength")
+.forEach(button => {
 
-    button
-    .addEventListener(
-      "click",
-      () => {
+  button.addEventListener(
+    "click",
+    () => {
 
-        document
-        .querySelectorAll(
-          ".strength"
-        )
-        .forEach(
-          item =>
-            item.classList.remove(
-              "active"
-            )
-        );
+      document
+      .querySelectorAll(".strength")
+      .forEach(
+        item =>
+          item.classList.remove(
+            "active"
+          )
+      );
 
-        button.classList.add(
-          "active"
-        );
+      button.classList.add(
+        "active"
+      );
 
-        selectedStrength =
-          button.dataset.strength;
+      selectedStrength =
+        button.dataset.strength;
 
-      }
-    );
+    }
+  );
 
-  }
-);
+});
 
 
 document
-.querySelectorAll(
-  ".format"
-)
-.forEach(
-  button => {
+.querySelectorAll(".format")
+.forEach(button => {
 
-    button
-    .addEventListener(
-      "click",
-      () => {
+  button.addEventListener(
+    "click",
+    () => {
 
-        document
-        .querySelectorAll(
-          ".format"
-        )
-        .forEach(
-          item =>
-            item.classList.remove(
-              "active"
-            )
-        );
+      document
+      .querySelectorAll(".format")
+      .forEach(
+        item =>
+          item.classList.remove(
+            "active"
+          )
+      );
 
-        button.classList.add(
-          "active"
-        );
+      button.classList.add(
+        "active"
+      );
 
-        selectedFormat =
-          button.dataset.format;
+      selectedFormat =
+        button.dataset.format;
 
-        if (cleanedAudio) {
+      if (cleanedAudio) {
 
-          downloadButton.textContent =
-            selectedFormat === "wav"
-            ?
-            "DOWNLOAD WAV ↓"
-            :
-            "DOWNLOAD MP3 ↓";
-
-        }
+        downloadButton.textContent =
+          selectedFormat === "wav"
+          ?
+          "DOWNLOAD WAV ↓"
+          :
+          "DOWNLOAD MP3 ↓";
 
       }
-    );
 
-  }
-);
+    }
+  );
+
+});
 
 
-/* =========================
-   BASIC DENOISE
-========================= */
+/* =============================
+   DENOISE
+============================= */
 
 async function processDenoise() {
 
   if (!decodedAudio) {
-
-    denoiseStatus.textContent =
-      "UPLOAD AUDIO FIRST";
-
     return;
-
   }
 
   denoiseStatus.textContent =
@@ -2301,9 +1716,6 @@ async function processDenoise() {
 
   denoiseButton.disabled =
     true;
-
-  downloadButton.style.display =
-    "none";
 
 
   let highPassFrequency =
@@ -2314,9 +1726,7 @@ async function processDenoise() {
 
 
   if (
-    selectedStrength
-    ===
-    "medium"
+    selectedStrength === "medium"
   ) {
 
     highPassFrequency =
@@ -2329,9 +1739,7 @@ async function processDenoise() {
 
 
   if (
-    selectedStrength
-    ===
-    "high"
+    selectedStrength === "high"
   ) {
 
     highPassFrequency =
@@ -2345,22 +1753,14 @@ async function processDenoise() {
 
   const offline =
     new OfflineAudioContext(
-
-      decodedAudio
-        .numberOfChannels,
-
-      decodedAudio
-        .length,
-
-      decodedAudio
-        .sampleRate
-
+      decodedAudio.numberOfChannels,
+      decodedAudio.length,
+      decodedAudio.sampleRate
     );
 
 
   const source =
-    offline
-      .createBufferSource();
+    offline.createBufferSource();
 
 
   source.buffer =
@@ -2368,8 +1768,7 @@ async function processDenoise() {
 
 
   const highPass =
-    offline
-      .createBiquadFilter();
+    offline.createBiquadFilter();
 
 
   highPass.type =
@@ -2379,12 +1778,11 @@ async function processDenoise() {
     highPassFrequency;
 
   highPass.Q.value =
-    0.7;
+    .7;
 
 
   const lowPass =
-    offline
-      .createBiquadFilter();
+    offline.createBiquadFilter();
 
 
   lowPass.type =
@@ -2394,7 +1792,7 @@ async function processDenoise() {
     lowPassFrequency;
 
   lowPass.Q.value =
-    0.6;
+    .6;
 
 
   source.connect(
@@ -2410,15 +1808,13 @@ async function processDenoise() {
   );
 
 
-  source.start(0);
+  source.start();
 
 
   cleanedAudio =
     await offline
       .startRendering();
 
-
-  /* spectrum */
 
   denoiseStatus.textContent =
     "ANALYZING SPECTRUM...";
@@ -2436,11 +1832,12 @@ async function processDenoise() {
     );
 
 
-  drawAllSpectrums();
+  /*
+    IMPORTANT FIX:
 
-
-  showReductionSummary();
-
+    SHOW THE ELEMENTS FIRST.
+    OTHERWISE CANVAS WIDTH = 0.
+  */
 
   spectrumSection.style.display =
     "block";
@@ -2449,7 +1846,28 @@ async function processDenoise() {
     "block";
 
 
-  /* preview */
+  /*
+    WAIT UNTIL THE BROWSER
+    HAS ACTUALLY LAID THEM OUT.
+  */
+
+  await new Promise(resolve => {
+
+    requestAnimationFrame(() => {
+
+      requestAnimationFrame(
+        resolve
+      );
+
+    });
+
+  });
+
+
+  drawAllSpectrums();
+
+  showReductionSummary();
+
 
   const wavBlob =
     audioBufferToWavBlob(
@@ -2480,26 +1898,20 @@ async function processDenoise() {
     "grid";
 
 
-  denoiseStatus.textContent =
-    "DENOISE COMPLETE";
-
-
   downloadButton.style.display =
     "block";
 
 
   downloadButton.textContent =
-    selectedFormat
-    ===
-    "wav"
-
+    selectedFormat === "wav"
     ?
-
     "DOWNLOAD WAV ↓"
-
     :
-
     "DOWNLOAD MP3 ↓";
+
+
+  denoiseStatus.textContent =
+    "DENOISE COMPLETE";
 
 
   denoiseButton.disabled =
@@ -2508,21 +1920,17 @@ async function processDenoise() {
 }
 
 
-/* =========================
+/* =============================
    FFT
-========================= */
+============================= */
 
-function fft(
-  real,
-  imag
-) {
+function fft(real, imag) {
 
   const n =
     real.length;
 
 
-  let j =
-    0;
+  let j = 0;
 
 
   for (
@@ -2535,9 +1943,7 @@ function fft(
       n >> 1;
 
 
-    while (
-      j & bit
-    ) {
+    while (j & bit) {
 
       j ^=
         bit;
@@ -2552,9 +1958,7 @@ function fft(
       bit;
 
 
-    if (
-      i < j
-    ) {
+    if (i < j) {
 
       [
         real[i],
@@ -2597,15 +2001,11 @@ function fft(
 
 
     const wLenCos =
-      Math.cos(
-        angle
-      );
+      Math.cos(angle);
 
 
     const wLenSin =
-      Math.sin(
-        angle
-      );
+      Math.sin(angle);
 
 
     for (
@@ -2614,11 +2014,9 @@ function fft(
       i += len
     ) {
 
-      let wCos =
-        1;
+      let wCos = 1;
 
-      let wSin =
-        0;
+      let wSin = 0;
 
 
       for (
@@ -2630,83 +2028,57 @@ function fft(
         const even =
           i + k;
 
+
         const odd =
-          i
-          +
-          k
-          +
-          len / 2;
+          i + k + len / 2;
 
 
         const oddReal =
-          real[odd]
-          *
-          wCos
+          real[odd] * wCos
           -
-          imag[odd]
-          *
-          wSin;
+          imag[odd] * wSin;
 
 
         const oddImag =
-          real[odd]
-          *
-          wSin
+          real[odd] * wSin
           +
-          imag[odd]
-          *
-          wCos;
+          imag[odd] * wCos;
 
 
         const evenReal =
           real[even];
+
 
         const evenImag =
           imag[even];
 
 
         real[even] =
-          evenReal
-          +
-          oddReal;
+          evenReal + oddReal;
 
 
         imag[even] =
-          evenImag
-          +
-          oddImag;
+          evenImag + oddImag;
 
 
         real[odd] =
-          evenReal
-          -
-          oddReal;
+          evenReal - oddReal;
 
 
         imag[odd] =
-          evenImag
-          -
-          oddImag;
+          evenImag - oddImag;
 
 
         const nextCos =
-          wCos
-          *
-          wLenCos
+          wCos * wLenCos
           -
-          wSin
-          *
-          wLenSin;
+          wSin * wLenSin;
 
 
         const nextSin =
-          wCos
-          *
-          wLenSin
+          wCos * wLenSin
           +
-          wSin
-          *
-          wLenCos;
+          wSin * wLenCos;
 
 
         wCos =
@@ -2724,31 +2096,30 @@ function fft(
 }
 
 
-/* =========================
-   AVERAGE SPECTRUM
-========================= */
+/* =============================
+   SPECTRUM ANALYSIS
+============================= */
 
 function computeAverageSpectrum(
   buffer
 ) {
 
   const fftSize =
-    2048;
+    4096;
+
 
   const bins =
     fftSize / 2;
 
+
   const frames =
-    24;
+    32;
+
 
   const power =
     new Float64Array(
       bins
     );
-
-
-  const monoLength =
-    buffer.length;
 
 
   for (
@@ -2757,7 +2128,7 @@ function computeAverageSpectrum(
     frame++
   ) {
 
-    const progress =
+    const position =
       (frame + 1)
       /
       (frames + 1);
@@ -2765,9 +2136,7 @@ function computeAverageSpectrum(
 
     let start =
       Math.floor(
-        progress
-        *
-        monoLength
+        position * buffer.length
         -
         fftSize / 2
       );
@@ -2777,7 +2146,7 @@ function computeAverageSpectrum(
       Math.max(
         0,
         Math.min(
-          monoLength
+          buffer.length
           -
           fftSize,
           start
@@ -2803,8 +2172,7 @@ function computeAverageSpectrum(
       i++
     ) {
 
-      let sample =
-        0;
+      let sample = 0;
 
 
       for (
@@ -2815,9 +2183,9 @@ function computeAverageSpectrum(
 
         sample +=
           buffer
-            .getChannelData(ch)[
-              start + i
-            ]
+          .getChannelData(ch)[
+            start + i
+          ]
           /
           buffer.numberOfChannels;
 
@@ -2825,9 +2193,9 @@ function computeAverageSpectrum(
 
 
       const window =
-        0.5
+        .5
         -
-        0.5
+        .5
         *
         Math.cos(
           2
@@ -2841,9 +2209,7 @@ function computeAverageSpectrum(
 
 
       real[i] =
-        sample
-        *
-        window;
+        sample * window;
 
     }
 
@@ -2860,17 +2226,10 @@ function computeAverageSpectrum(
       bin++
     ) {
 
-      const re =
-        real[bin];
-
-      const im =
-        imag[bin];
-
-
       power[bin] +=
-        re * re
+        real[bin] * real[bin]
         +
-        im * im;
+        imag[bin] * imag[bin];
 
     }
 
@@ -2898,7 +2257,7 @@ function computeAverageSpectrum(
         Math.log10(
           value
           +
-          1e-12
+          1e-15
         )
     );
 
@@ -2906,9 +2265,7 @@ function computeAverageSpectrum(
   return {
 
     power:
-      Array.from(
-        power
-      ),
+      Array.from(power),
 
     db,
 
@@ -2922,17 +2279,14 @@ function computeAverageSpectrum(
 }
 
 
-/* =========================
-   DRAW SPECTRUM
-========================= */
+/* =============================
+   CANVAS
+============================= */
 
-function resizeCanvas(
-  canvas
-) {
+function prepareCanvas(canvas) {
 
   const rect =
-    canvas
-      .getBoundingClientRect();
+    canvas.getBoundingClientRect();
 
 
   const dpr =
@@ -2942,32 +2296,19 @@ function resizeCanvas(
 
 
   canvas.width =
-    Math.max(
-      1,
-      Math.floor(
-        rect.width
-        *
-        dpr
-      )
+    Math.round(
+      rect.width * dpr
     );
 
 
   canvas.height =
-    Math.max(
-      1,
-      Math.floor(
-        rect.height
-        *
-        dpr
-      )
+    Math.round(
+      rect.height * dpr
     );
 
 
   const ctx =
-    canvas
-      .getContext(
-        "2d"
-      );
+    canvas.getContext("2d");
 
 
   ctx.setTransform(
@@ -2981,16 +2322,38 @@ function resizeCanvas(
 
 
   return {
-
     ctx,
-
-    width:
-      rect.width,
-
-    height:
-      rect.height
-
+    width: rect.width,
+    height: rect.height
   };
+
+}
+
+
+function getSpectrumValueAtFrequency(
+  spectrum,
+  frequency
+) {
+
+  const bin =
+    Math.round(
+      frequency
+      *
+      spectrum.fftSize
+      /
+      spectrum.sampleRate
+    );
+
+
+  return spectrum.db[
+    Math.min(
+      spectrum.db.length - 1,
+      Math.max(
+        0,
+        bin
+      )
+    )
+  ];
 
 }
 
@@ -2998,8 +2361,7 @@ function resizeCanvas(
 function drawSpectrum(
   canvas,
   spectrum,
-  strokeColor,
-  fillColor
+  fill
 ) {
 
   const {
@@ -3008,9 +2370,7 @@ function drawSpectrum(
     height
   }
   =
-  resizeCanvas(
-    canvas
-  );
+  prepareCanvas(canvas);
 
 
   ctx.clearRect(
@@ -3024,28 +2384,16 @@ function drawSpectrum(
   const minFreq =
     20;
 
+
   const maxFreq =
     Math.min(
       20000,
-      spectrum.sampleRate
-      /
-      2
+      spectrum.sampleRate / 2
     );
 
 
-  const maxDb =
-    Math.max(
-      ...spectrum.db
-    );
-
-
-  const floorDb =
-    maxDb
-    -
-    75;
-
-
-  ctx.beginPath();
+  const visibleValues =
+    [];
 
 
   for (
@@ -3055,112 +2403,90 @@ function drawSpectrum(
   ) {
 
     const ratio =
-      x
-      /
-      Math.max(
-        1,
-        width - 1
-      );
+      x / width;
 
 
-    const freq =
+    const frequency =
       minFreq
       *
       Math.pow(
-        maxFreq
-        /
-        minFreq,
+        maxFreq / minFreq,
         ratio
       );
 
 
-    const bin =
-      Math.min(
-
-        spectrum.db.length - 1,
-
-        Math.max(
-          0,
-
-          Math.round(
-            freq
-            /
-            spectrum.sampleRate
-            *
-            spectrum.fftSize
-          )
-
-        )
-
-      );
-
-
-    const db =
-      spectrum.db[
-        bin
-      ];
-
-
-    const normalized =
-      Math.max(
-        0,
-
-        Math.min(
-          1,
-
-          (
-            db
-            -
-            floorDb
-          )
-          /
-          (
-            maxDb
-            -
-            floorDb
-          )
-
-        )
-      );
-
-
-    const y =
-      height
-      -
-      normalized
-      *
-      height;
-
-
-    if (
-      x === 0
-    ) {
-
-      ctx.moveTo(
-        x,
-        y
-      );
-
-    }
-
-    else {
-
-      ctx.lineTo(
-        x,
-        y
-      );
-
-    }
+    visibleValues.push(
+      getSpectrumValueAtFrequency(
+        spectrum,
+        frequency
+      )
+    );
 
   }
 
 
+  const maxDb =
+    Math.max(
+      ...visibleValues
+    );
+
+
+  const floor =
+    maxDb - 70;
+
+
+  ctx.beginPath();
+
+
+  visibleValues.forEach(
+    (db, x) => {
+
+      const normalized =
+        Math.max(
+          0,
+          Math.min(
+            1,
+            (db - floor)
+            /
+            70
+          )
+        );
+
+
+      const y =
+        height
+        -
+        normalized * height;
+
+
+      if (x === 0) {
+
+        ctx.moveTo(
+          x,
+          y
+        );
+
+      }
+
+      else {
+
+        ctx.lineTo(
+          x,
+          y
+        );
+
+      }
+
+    }
+  );
+
+
   ctx.lineWidth =
-    2;
+    2.5;
 
 
   ctx.strokeStyle =
-    strokeColor;
+    "#0b0b0b";
 
 
   ctx.stroke();
@@ -3182,11 +2508,11 @@ function drawSpectrum(
 
 
   ctx.globalAlpha =
-    0.25;
+    .45;
 
 
   ctx.fillStyle =
-    fillColor;
+    fill;
 
 
   ctx.fill();
@@ -3198,14 +2524,8 @@ function drawSpectrum(
 }
 
 
-/* =========================
-   REDUCTION GRAPH
-========================= */
-
 function drawReductionSpectrum(
-  canvas,
-  original,
-  cleaned
+  canvas
 ) {
 
   const {
@@ -3214,9 +2534,7 @@ function drawReductionSpectrum(
     height
   }
   =
-  resizeCanvas(
-    canvas
-  );
+  prepareCanvas(canvas);
 
 
   ctx.clearRect(
@@ -3227,28 +2545,6 @@ function drawReductionSpectrum(
   );
 
 
-  const style =
-    getComputedStyle(
-      document.documentElement
-    );
-
-
-  const orange =
-    style
-      .getPropertyValue(
-        "--orange"
-      )
-      .trim();
-
-
-  const black =
-    style
-      .getPropertyValue(
-        "--black"
-      )
-      .trim();
-
-
   const minFreq =
     20;
 
@@ -3256,14 +2552,8 @@ function drawReductionSpectrum(
   const maxFreq =
     Math.min(
       20000,
-      original.sampleRate
-      /
-      2
+      lastOriginalSpectrum.sampleRate / 2
     );
-
-
-  const maxReductionDb =
-    24;
 
 
   ctx.beginPath();
@@ -3276,76 +2566,53 @@ function drawReductionSpectrum(
   ) {
 
     const ratio =
-      x
-      /
-      Math.max(
-        1,
-        width - 1
-      );
+      x / width;
 
 
-    const freq =
+    const frequency =
       minFreq
       *
       Math.pow(
-        maxFreq
-        /
-        minFreq,
+        maxFreq / minFreq,
         ratio
       );
 
 
-    const bin =
-      Math.min(
+    const original =
+      getSpectrumValueAtFrequency(
+        lastOriginalSpectrum,
+        frequency
+      );
 
-        original.db.length - 1,
 
-        Math.max(
-          0,
-
-          Math.round(
-            freq
-            /
-            original.sampleRate
-            *
-            original.fftSize
-          )
-
-        )
-
+    const clean =
+      getSpectrumValueAtFrequency(
+        lastCleanSpectrum,
+        frequency
       );
 
 
     const reduction =
       Math.max(
         0,
-
-        original.db[bin]
-        -
-        cleaned.db[bin]
+        original - clean
       );
 
 
     const normalized =
       Math.min(
-        1,
-        reduction
-        /
-        maxReductionDb
+        reduction / 30,
+        1
       );
 
 
     const y =
       height
       -
-      normalized
-      *
-      height;
+      normalized * height;
 
 
-    if (
-      x === 0
-    ) {
+    if (x === 0) {
 
       ctx.moveTo(
         x,
@@ -3367,11 +2634,11 @@ function drawReductionSpectrum(
 
 
   ctx.lineWidth =
-    2;
+    2.5;
 
 
   ctx.strokeStyle =
-    black;
+    "#0b0b0b";
 
 
   ctx.stroke();
@@ -3393,11 +2660,11 @@ function drawReductionSpectrum(
 
 
   ctx.globalAlpha =
-    0.6;
+    .72;
 
 
   ctx.fillStyle =
-    orange;
+    "#ff7548";
 
 
   ctx.fill();
@@ -3408,10 +2675,6 @@ function drawReductionSpectrum(
 
 }
 
-
-/* =========================
-   DRAW ALL
-========================= */
 
 function drawAllSpectrums() {
 
@@ -3420,130 +2683,71 @@ function drawAllSpectrums() {
     ||
     !lastCleanSpectrum
   ) {
-
     return;
-
   }
 
 
-  const style =
-    getComputedStyle(
-      document.documentElement
-    );
-
-
-  const black =
-    style
-      .getPropertyValue(
-        "--black"
-      )
-      .trim();
-
-
-  const lime =
-    style
-      .getPropertyValue(
-        "--lime"
-      )
-      .trim();
-
-
-  const purple =
-    style
-      .getPropertyValue(
-        "--purple"
-      )
-      .trim();
-
-
   drawSpectrum(
-
     originalSpectrumCanvas,
-
     lastOriginalSpectrum,
-
-    black,
-
-    purple
-
+    "#9165f5"
   );
 
 
   drawSpectrum(
-
     cleanSpectrumCanvas,
-
     lastCleanSpectrum,
-
-    black,
-
-    lime
-
+    "#baff00"
   );
 
 
   drawReductionSpectrum(
-
-    reductionSpectrumCanvas,
-
-    lastOriginalSpectrum,
-
-    lastCleanSpectrum
-
+    reductionSpectrumCanvas
   );
 
 }
 
 
-/* =========================
-   BAND REDUCTION
-========================= */
+/* =============================
+   REDUCTION VALUES
+============================= */
 
 function calculateBandReduction(
-  original,
-  cleaned,
   minFreq,
   maxFreq
 ) {
 
-  let originalPower =
-    0;
+  let before = 0;
 
-
-  let cleanPower =
-    0;
+  let after = 0;
 
 
   for (
     let bin = 1;
-    bin < original.power.length;
+    bin < lastOriginalSpectrum.power.length;
     bin++
   ) {
 
-    const freq =
+    const frequency =
       bin
       *
-      original.sampleRate
+      lastOriginalSpectrum.sampleRate
       /
-      original.fftSize;
+      lastOriginalSpectrum.fftSize;
 
 
     if (
-      freq >= minFreq
+      frequency >= minFreq
       &&
-      freq < maxFreq
+      frequency < maxFreq
     ) {
 
-      originalPower +=
-        original.power[
-          bin
-        ];
+      before +=
+        lastOriginalSpectrum.power[bin];
 
 
-      cleanPower +=
-        cleaned.power[
-          bin
-        ];
+      after +=
+        lastCleanSpectrum.power[bin];
 
     }
 
@@ -3551,9 +2755,9 @@ function calculateBandReduction(
 
 
   if (
-    originalPower <= 0
+    before <= 0
     ||
-    cleanPower <= 0
+    after <= 0
   ) {
 
     return 0;
@@ -3561,19 +2765,35 @@ function calculateBandReduction(
   }
 
 
-  const reduction =
+  return Math.max(
+    0,
     10
     *
     Math.log10(
-      originalPower
-      /
-      cleanPower
-    );
+      before / after
+    )
+  );
+
+}
 
 
-  return Math.max(
-    0,
-    reduction
+function formatReduction(value) {
+
+  /*
+    FIX -0.0 dB
+  */
+
+  if (value < .05) {
+    return "0.0 dB";
+  }
+
+
+  return (
+    "-"
+    +
+    value.toFixed(1)
+    +
+    " dB"
   );
 
 }
@@ -3583,75 +2803,42 @@ function showReductionSummary() {
 
   const low =
     calculateBandReduction(
-
-      lastOriginalSpectrum,
-
-      lastCleanSpectrum,
-
       20,
-
       250
-
     );
 
 
   const mid =
     calculateBandReduction(
-
-      lastOriginalSpectrum,
-
-      lastCleanSpectrum,
-
       250,
-
       4000
-
     );
 
 
   const high =
     calculateBandReduction(
-
-      lastOriginalSpectrum,
-
-      lastCleanSpectrum,
-
       4000,
-
       20000
-
     );
 
 
   lowReduction.textContent =
-    "-"
-    +
-    low.toFixed(1)
-    +
-    " dB";
+    formatReduction(low);
 
 
   midReduction.textContent =
-    "-"
-    +
-    mid.toFixed(1)
-    +
-    " dB";
+    formatReduction(mid);
 
 
   highReduction.textContent =
-    "-"
-    +
-    high.toFixed(1)
-    +
-    " dB";
+    formatReduction(high);
 
 }
 
 
-/* =========================
+/* =============================
    WAV
-========================= */
+============================= */
 
 function audioBufferToWavBlob(
   buffer
@@ -3661,35 +2848,25 @@ function audioBufferToWavBlob(
     buffer.numberOfChannels;
 
 
-  const sampleRate =
-    buffer.sampleRate;
-
-
   const length =
     buffer.length;
 
 
-  const bytesPerSample =
-    2;
-
-
-  const blockAlign =
-    channels
-    *
-    bytesPerSample;
+  const sampleRate =
+    buffer.sampleRate;
 
 
   const dataLength =
     length
     *
-    blockAlign;
+    channels
+    *
+    2;
 
 
   const arrayBuffer =
     new ArrayBuffer(
-      44
-      +
-      dataLength
+      44 + dataLength
     );
 
 
@@ -3711,11 +2888,8 @@ function audioBufferToWavBlob(
     ) {
 
       view.setUint8(
-
         offset + i,
-
         string.charCodeAt(i)
-
       );
 
     }
@@ -3780,14 +2954,16 @@ function audioBufferToWavBlob(
     28,
     sampleRate
     *
-    blockAlign,
+    channels
+    *
+    2,
     true
   );
 
 
   view.setUint16(
     32,
-    blockAlign,
+    channels * 2,
     true
   );
 
@@ -3823,16 +2999,14 @@ function audioBufferToWavBlob(
   ) {
 
     for (
-      let channel = 0;
-      channel < channels;
-      channel++
+      let ch = 0;
+      ch < channels;
+      ch++
     ) {
 
       let sample =
         buffer
-          .getChannelData(
-            channel
-          )[i];
+        .getChannelData(ch)[i];
 
 
       sample =
@@ -3846,22 +3020,17 @@ function audioBufferToWavBlob(
 
 
       view.setInt16(
-
         offset,
-
         sample < 0
         ?
-        sample * 0x8000
+        sample * 32768
         :
-        sample * 0x7fff,
-
+        sample * 32767,
         true
-
       );
 
 
-      offset +=
-        2;
+      offset += 2;
 
     }
 
@@ -3869,22 +3038,18 @@ function audioBufferToWavBlob(
 
 
   return new Blob(
-
-    [view],
-
+    [arrayBuffer],
     {
-      type:
-        "audio/wav"
+      type: "audio/wav"
     }
-
   );
 
 }
 
 
-/* =========================
+/* =============================
    MP3
-========================= */
+============================= */
 
 function audioBufferToMp3Blob(
   buffer
@@ -3897,148 +3062,107 @@ function audioBufferToMp3Blob(
     );
 
 
-  const sampleRate =
-    buffer.sampleRate;
-
-
   const encoder =
     new lamejs.Mp3Encoder(
-
       channels,
-
-      sampleRate,
-
+      buffer.sampleRate,
       192
-
     );
 
 
-  const blockSize =
-    1152;
+  function convert(data) {
 
-
-  const mp3Data =
-    [];
-
-
-  function floatTo16BitPCM(
-    float32
-  ) {
-
-    const output =
+    const out =
       new Int16Array(
-        float32.length
+        data.length
       );
 
 
     for (
       let i = 0;
-      i < float32.length;
+      i < data.length;
       i++
     ) {
 
-      const s =
+      const sample =
         Math.max(
           -1,
           Math.min(
             1,
-            float32[i]
+            data[i]
           )
         );
 
 
-      output[i] =
-        s < 0
+      out[i] =
+        sample < 0
         ?
-        s * 32768
+        sample * 32768
         :
-        s * 32767;
+        sample * 32767;
 
     }
 
 
-    return output;
+    return out;
 
   }
 
 
   const left =
-    floatTo16BitPCM(
-      buffer
-        .getChannelData(0)
+    convert(
+      buffer.getChannelData(0)
     );
 
 
-  let right =
+  const right =
+    channels === 2
+    ?
+    convert(
+      buffer.getChannelData(1)
+    )
+    :
     null;
 
 
-  if (
-    channels === 2
-  ) {
+  const result =
+    [];
 
-    right =
-      floatTo16BitPCM(
-        buffer
-          .getChannelData(1)
-      );
 
-  }
+  const block =
+    1152;
 
 
   for (
     let i = 0;
     i < left.length;
-    i += blockSize
+    i += block
   ) {
 
-    const leftChunk =
+    const l =
       left.subarray(
         i,
-        i + blockSize
+        i + block
       );
 
 
-    let encoded;
-
-
-    if (
+    const encoded =
       channels === 2
-    ) {
-
-      const rightChunk =
+      ?
+      encoder.encodeBuffer(
+        l,
         right.subarray(
           i,
-          i + blockSize
-        );
+          i + block
+        )
+      )
+      :
+      encoder.encodeBuffer(l);
 
 
-      encoded =
-        encoder.encodeBuffer(
+    if (encoded.length) {
 
-          leftChunk,
-
-          rightChunk
-
-        );
-
-    }
-
-    else {
-
-      encoded =
-        encoder.encodeBuffer(
-          leftChunk
-        );
-
-    }
-
-
-    if (
-      encoded.length > 0
-    ) {
-
-      mp3Data.push(
+      result.push(
         encoded
       );
 
@@ -4047,54 +3171,44 @@ function audioBufferToMp3Blob(
   }
 
 
-  const finalData =
+  const flushed =
     encoder.flush();
 
 
-  if (
-    finalData.length > 0
-  ) {
+  if (flushed.length) {
 
-    mp3Data.push(
-      finalData
+    result.push(
+      flushed
     );
 
   }
 
 
   return new Blob(
-
-    mp3Data,
-
+    result,
     {
-      type:
-        "audio/mp3"
+      type: "audio/mpeg"
     }
-
   );
 
 }
 
 
-/* =========================
+/* =============================
    DOWNLOAD
-========================= */
+============================= */
 
 function downloadBlob(
   blob,
-  filename
+  name
 ) {
 
   const url =
-    URL.createObjectURL(
-      blob
-    );
+    URL.createObjectURL(blob);
 
 
   const a =
-    document.createElement(
-      "a"
-    );
+    document.createElement("a");
 
 
   a.href =
@@ -4102,87 +3216,49 @@ function downloadBlob(
 
 
   a.download =
-    filename;
-
-
-  document.body.appendChild(
-    a
-  );
+    name;
 
 
   a.click();
 
 
-  a.remove();
-
-
   setTimeout(
-    () => {
-
+    () =>
       URL.revokeObjectURL(
         url
-      );
-
-    },
-
+      ),
     1000
   );
 
 }
 
 
-downloadButton
-.addEventListener(
+downloadButton.addEventListener(
   "click",
   () => {
 
-    if (
-      !cleanedAudio
-    ) {
-
+    if (!cleanedAudio) {
       return;
-
     }
 
 
-    const baseName =
-      currentFile
-        .name
-        .replace(
-          /\.[^/.]+$/,
-          ""
-        );
-
-
-    if (
-      selectedFormat
-      ===
-      "wav"
-    ) {
-
-      denoiseStatus.textContent =
-        "PREPARING WAV...";
-
-
-      const blob =
-        audioBufferToWavBlob(
-          cleanedAudio
-        );
-
-
-      downloadBlob(
-
-        blob,
-
-        baseName
-        +
-        "_clean.wav"
-
+    const base =
+      currentFile.name.replace(
+        /\.[^/.]+$/,
+        ""
       );
 
 
-      denoiseStatus.textContent =
-        "DOWNLOAD READY";
+    if (
+      selectedFormat === "wav"
+    ) {
+
+      downloadBlob(
+        audioBufferToWavBlob(
+          cleanedAudio
+        ),
+        base + "_clean.wav"
+      );
 
     }
 
@@ -4197,20 +3273,11 @@ downloadButton
 
           try {
 
-            const blob =
+            downloadBlob(
               audioBufferToMp3Blob(
                 cleanedAudio
-              );
-
-
-            downloadBlob(
-
-              blob,
-
-              baseName
-              +
-              "_clean.mp3"
-
+              ),
+              base + "_clean.mp3"
             );
 
 
@@ -4221,10 +3288,7 @@ downloadButton
 
           catch(error) {
 
-            console.error(
-              error
-            );
-
+            console.error(error);
 
             denoiseStatus.textContent =
               "MP3 ENCODE ERROR";
@@ -4232,7 +3296,6 @@ downloadButton
           }
 
         },
-
         50
       );
 
@@ -4242,19 +3305,17 @@ downloadButton
 );
 
 
-/* =========================
+/* =============================
    EVENTS
-========================= */
+============================= */
 
-denoiseButton
-.addEventListener(
+denoiseButton.addEventListener(
   "click",
   processDenoise
 );
 
 
-input
-.addEventListener(
+input.addEventListener(
   "change",
   function() {
 
@@ -4266,75 +3327,64 @@ input
 );
 
 
-dropZone
-.addEventListener(
+dropZone.addEventListener(
   "dragover",
-  function(event) {
+  event => {
 
     event.preventDefault();
 
-    dropZone
-      .classList
-      .add(
-        "dragging"
-      );
-
-  }
-);
-
-
-dropZone
-.addEventListener(
-  "dragleave",
-  function() {
-
-    dropZone
-      .classList
-      .remove(
-        "dragging"
-      );
-
-  }
-);
-
-
-dropZone
-.addEventListener(
-  "drop",
-  function(event) {
-
-    event.preventDefault();
-
-    dropZone
-      .classList
-      .remove(
-        "dragging"
-      );
-
-
-    const file =
-      event
-        .dataTransfer
-        .files[0];
-
-
-    analyzeFile(
-      file
+    dropZone.classList.add(
+      "dragging"
     );
 
   }
 );
 
 
-window
-.addEventListener(
+dropZone.addEventListener(
+  "dragleave",
+  () => {
+
+    dropZone.classList.remove(
+      "dragging"
+    );
+
+  }
+);
+
+
+dropZone.addEventListener(
+  "drop",
+  event => {
+
+    event.preventDefault();
+
+    dropZone.classList.remove(
+      "dragging"
+    );
+
+
+    analyzeFile(
+      event.dataTransfer.files[0]
+    );
+
+  }
+);
+
+
+/*
+  If browser size changes,
+  redraw canvas.
+*/
+
+window.addEventListener(
   "resize",
   () => {
 
     if (
-      lastOriginalSpectrum
-      &&
-      lastCleanSpectrum
+      spectrumSection.style.display
+      ===
+      "block"
     ) {
 
       drawAllSpectrums();
@@ -4345,7 +3395,6 @@ window
 );
 
 </script>
-
 
 </body>
 </html>
