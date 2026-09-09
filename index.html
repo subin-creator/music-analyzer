@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music Analyzer</title>
+
+<title>Sound Lab</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -17,10 +19,18 @@
 :root {
   --cream: #f3efe5;
   --black: #101010;
+
   --lime: #c8ff00;
   --purple: #9467ff;
   --orange: #ff754a;
   --pink: #ff9db0;
+
+  --soft-lime: #efffc3;
+  --soft-pink: #ffd4dd;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,15 +41,20 @@ body {
   overflow-x: hidden;
 }
 
-/* TOP BAR */
+/* ─────────────────────
+   TOP BAR
+───────────────────── */
 
 .topbar {
   height: 46px;
   border-bottom: 1px solid var(--black);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 0 20px;
+
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.8px;
@@ -48,25 +63,40 @@ body {
 .status-dot {
   width: 8px;
   height: 8px;
+
   display: inline-block;
+
   background: var(--lime);
+
   border: 1px solid var(--black);
   border-radius: 50%;
+
   margin-right: 7px;
 }
 
-/* HERO */
+/* ─────────────────────
+   HERO
+───────────────────── */
 
 .hero {
   display: grid;
-  grid-template-columns: 410px minmax(0, 1fr);
+
+  grid-template-columns:
+    410px
+    minmax(0, 1fr);
+
   min-height: 700px;
+
   border-bottom: 1px solid var(--black);
 }
 
+/* LEFT */
+
 .hero-left {
   border-right: 1px solid var(--black);
+
   padding: 46px 34px 40px;
+
   position: relative;
   overflow: hidden;
 }
@@ -75,38 +105,50 @@ body {
   font-size: 10px;
   letter-spacing: 2px;
   font-weight: 700;
+
   position: relative;
   z-index: 5;
 }
 
 .hero-title {
   margin: 30px 0 0;
+
   font-family: "Archivo Black", sans-serif;
+
   line-height: .78;
+
   position: relative;
   z-index: 4;
 }
 
-.hero-title .music {
+.hero-title .sound {
   display: block;
-  font-size: 94px;
+
+  font-size: 88px;
   letter-spacing: -7px;
+
   white-space: nowrap;
 }
 
-.hero-title .analyzer {
+.hero-title .lab {
   display: block;
-  font-size: 67px;
-  letter-spacing: -5px;
+
+  font-size: 118px;
+  letter-spacing: -8px;
+
   white-space: nowrap;
-  margin-top: 4px;
+
+  margin-top: 3px;
 }
 
 .hero-copy {
   max-width: 310px;
+
   font-size: 16px;
   line-height: 1.5;
-  margin-top: 36px;
+
+  margin-top: 38px;
+
   position: relative;
   z-index: 5;
 }
@@ -115,168 +157,237 @@ body {
 
 .warp-circle {
   position: absolute;
+
   width: 270px;
   height: 270px;
+
   right: -88px;
   top: 48px;
-  border-radius: 46% 54% 62% 38% / 52% 40% 60% 48%;
+
+  border-radius:
+    46% 54% 62% 38% /
+    52% 40% 60% 48%;
+
   background: var(--lime);
+
   border: 1px solid var(--black);
-  animation: wobble 8s ease-in-out infinite alternate;
+
+  animation:
+    wobble 8s ease-in-out infinite alternate;
 }
 
 .warp-circle::before {
   content: "";
+
   position: absolute;
+
   width: 184px;
   height: 184px;
+
   left: 39px;
   top: 40px;
-  border-radius: 42% 58% 48% 52% / 56% 44% 56% 44%;
+
+  border-radius:
+    42% 58% 48% 52% /
+    56% 44% 56% 44%;
+
   background: var(--purple);
+
   border: 1px solid var(--black);
 }
 
 .warp-circle::after {
   content: "";
+
   position: absolute;
+
   width: 88px;
   height: 88px;
+
   left: 88px;
   top: 89px;
+
   border-radius: 50%;
+
   background: var(--orange);
+
   border: 1px solid var(--black);
 }
 
 @keyframes wobble {
+
   from {
     transform: rotate(8deg) scale(1);
   }
+
   to {
     transform: rotate(26deg) scale(1.05);
   }
+
 }
 
 /* STICKER */
 
 .sticker {
   position: absolute;
+
   left: 58px;
   bottom: 48px;
+
   width: 210px;
+
   background: var(--pink);
+
   border: 1px solid var(--black);
+
   transform: rotate(-5deg);
+
   padding: 17px;
+
   font-size: 11px;
   font-weight: 700;
+
   z-index: 5;
 }
 
 .sticker strong {
   display: block;
+
   font-family: "Archivo Black", sans-serif;
+
   font-size: 25px;
   line-height: 1;
+
   margin-top: 12px;
 }
 
-/* RIGHT */
+/* ─────────────────────
+   RIGHT / UPLOAD
+───────────────────── */
 
 .hero-right {
   display: flex;
   flex-direction: column;
+
   min-width: 0;
 }
 
 .upload-wrap {
   flex: 1;
+
   padding: 34px;
 }
 
 .upload-area {
   height: 100%;
   min-height: 500px;
+
   border: 1.5px dashed var(--black);
+
   position: relative;
+
   overflow: hidden;
+
   cursor: pointer;
+
+  background: var(--soft-lime);
+
   transition: .2s ease;
 }
 
 .upload-area:hover {
-  background: rgba(200, 255, 0, .18);
+  background: #e5ff9a;
 }
 
 .upload-area.dragging {
-  background: rgba(200, 255, 0, .5);
+  background: var(--lime);
 }
 
 .upload-content {
   position: absolute;
+
   left: 50%;
   top: 50%;
+
   transform: translate(-50%, -50%);
+
   width: 80%;
+
   text-align: center;
+
   z-index: 5;
 }
 
 .plus {
   font-size: 72px;
+
   line-height: 1;
+
   font-weight: 300;
 }
 
 .upload-title {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 30px;
+
   line-height: .98;
+
   margin-top: 7px;
 }
 
 .upload-sub {
   margin-top: 11px;
+
   font-size: 10px;
+
   letter-spacing: 1.5px;
 }
 
 .filename {
   margin-top: 22px;
+
   font-size: 12px;
   font-weight: 700;
 }
 
-/* DECOR */
+/* DECORATIVE CIRCLES */
 
 .ring {
   position: absolute;
+
   border: 1px solid var(--black);
+
   border-radius: 50%;
 }
 
 .ring.one {
   width: 165px;
   height: 165px;
+
   right: -34px;
   top: -35px;
+
   background: var(--purple);
 }
 
 .ring.two {
   width: 105px;
   height: 105px;
+
   left: -24px;
   bottom: 36px;
+
   background: var(--orange);
 }
 
 .ring.three {
   width: 52px;
   height: 52px;
+
   right: 35px;
   bottom: 36px;
+
   background: var(--lime);
 }
 
@@ -284,58 +395,82 @@ body {
 
 .ticker {
   height: 52px;
+
   border-top: 1px solid var(--black);
+
   overflow: hidden;
+
   display: flex;
   align-items: center;
 }
 
 .ticker-track {
   white-space: nowrap;
+
   font-family: "Archivo Black", sans-serif;
+
   font-size: 17px;
+
   animation: ticker 18s linear infinite;
 }
 
 @keyframes ticker {
+
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
+
 }
 
-/* RESULTS */
+/* ─────────────────────
+   ANALYSIS
+───────────────────── */
 
-.results-head {
+.section-head {
   padding: 20px 28px;
+
   border-bottom: 1px solid var(--black);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.results-head strong {
+.section-head strong {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 22px;
 }
 
-.results-head span {
+.section-head span {
   font-size: 11px;
 }
 
+/* RESULTS */
+
 .results {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
   border-bottom: 1px solid var(--black);
 }
 
 .result {
   min-height: 200px;
+
   padding: 24px;
+
   border-right: 1px solid var(--black);
+
   position: relative;
+
+  overflow: hidden;
 }
 
 .result:last-child {
@@ -350,21 +485,30 @@ body {
   background: var(--purple);
 }
 
+.result:nth-child(4) {
+  background: var(--orange);
+}
+
 .result-label {
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
 }
 
 .result-value {
   position: absolute;
+
   left: 24px;
   bottom: 20px;
+
   font-family: "Archivo Black", sans-serif;
+
   font-size: clamp(34px, 4vw, 62px);
 }
 
-/* SCALE */
+/* SCALE NOTES */
 
 .scale-section {
   padding: 40px 28px 54px;
@@ -372,30 +516,43 @@ body {
 
 .scale-header {
   display: flex;
+
   align-items: flex-end;
   justify-content: space-between;
+
   border-bottom: 1px solid var(--black);
+
   padding-bottom: 14px;
 }
 
 .scale-header h2 {
   margin: 0;
+
   font-family: "Archivo Black", sans-serif;
+
   font-size: 26px;
 }
 
 .notes {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
   margin-top: 28px;
+
   border: 1px solid var(--black);
 }
 
 .note {
   padding: 30px 8px;
+
   text-align: center;
+
   font-family: "Archivo Black", sans-serif;
+
   font-size: clamp(28px, 3.5vw, 54px);
+
   border-right: 1px solid var(--black);
 }
 
@@ -408,13 +565,355 @@ body {
   background: var(--orange);
 }
 
-/* FOOTER */
+/* ─────────────────────
+   DENOISE SECTION
+───────────────────── */
+
+.denoise {
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+
+  display: grid;
+
+  grid-template-columns:
+    .9fr 1.1fr;
+
+  min-height: 540px;
+}
+
+/* DENOISE LEFT */
+
+.denoise-left {
+  background: var(--pink);
+
+  border-right: 1px solid var(--black);
+
+  padding: 42px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.denoise-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.denoise-title {
+  margin-top: 30px;
+
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: clamp(55px, 6vw, 100px);
+
+  line-height: .82;
+
+  letter-spacing: -5px;
+
+  position: relative;
+  z-index: 3;
+}
+
+.denoise-copy {
+  max-width: 360px;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  margin-top: 34px;
+
+  position: relative;
+  z-index: 3;
+}
+
+/* little psychedelic flower */
+
+.flower {
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -40px;
+  bottom: -40px;
+
+  animation: spin 13s linear infinite;
+}
+
+.flower span {
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  left: 70px;
+  top: 70px;
+
+  border-radius: 50%;
+
+  background: var(--lime);
+
+  border: 1px solid var(--black);
+
+  transform-origin: 55px 55px;
+}
+
+.flower span:nth-child(1) {
+  transform: translateY(-70px);
+}
+
+.flower span:nth-child(2) {
+  transform: translateX(70px);
+}
+
+.flower span:nth-child(3) {
+  transform: translateY(70px);
+}
+
+.flower span:nth-child(4) {
+  transform: translateX(-70px);
+}
+
+.flower::after {
+  content: "";
+
+  position: absolute;
+
+  width: 82px;
+  height: 82px;
+
+  left: 84px;
+  top: 84px;
+
+  border-radius: 50%;
+
+  background: var(--purple);
+
+  border: 1px solid var(--black);
+}
+
+@keyframes spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+/* DENOISE RIGHT */
+
+.denoise-right {
+  padding: 42px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.noise-topline {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--black);
+
+  padding-bottom: 16px;
+}
+
+.noise-topline strong {
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: 23px;
+}
+
+.noise-topline span {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.wave-box {
+  height: 150px;
+
+  border: 1px solid var(--black);
+
+  margin-top: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  position: relative;
+
+  background: var(--cream);
+}
+
+.wave {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  height: 100px;
+}
+
+.wave span {
+  width: 5px;
+
+  background: var(--black);
+
+  display: block;
+
+  border-radius: 10px;
+}
+
+.wave span:nth-child(1) {
+  height: 22px;
+}
+
+.wave span:nth-child(2) {
+  height: 50px;
+}
+
+.wave span:nth-child(3) {
+  height: 85px;
+}
+
+.wave span:nth-child(4) {
+  height: 40px;
+}
+
+.wave span:nth-child(5) {
+  height: 70px;
+}
+
+.wave span:nth-child(6) {
+  height: 95px;
+}
+
+.wave span:nth-child(7) {
+  height: 45px;
+}
+
+.wave span:nth-child(8) {
+  height: 72px;
+}
+
+.wave span:nth-child(9) {
+  height: 28px;
+}
+
+.wave span:nth-child(10) {
+  height: 60px;
+}
+
+.noise-controls {
+  margin-top: 30px;
+
+  border-top: 1px solid var(--black);
+}
+
+.control-row {
+  min-height: 68px;
+
+  border-bottom: 1px solid var(--black);
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 12px;
+}
+
+.control-name {
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.control-value {
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: 17px;
+}
+
+/* DENOISE BUTTON */
+
+.clean-button {
+  margin-top: 32px;
+
+  width: 100%;
+
+  border: 1px solid var(--black);
+
+  background: var(--lime);
+
+  color: var(--black);
+
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: 21px;
+
+  padding: 22px;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.clean-button:hover {
+  background: var(--black);
+
+  color: var(--lime);
+}
+
+/* DOWNLOAD */
+
+.download-button {
+  margin-top: 12px;
+
+  width: 100%;
+
+  border: 1px solid var(--black);
+
+  background: var(--purple);
+
+  color: var(--black);
+
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: 18px;
+
+  padding: 19px;
+
+  cursor: pointer;
+
+  display: none;
+}
+
+/* ─────────────────────
+   FOOTER
+───────────────────── */
 
 .footer {
   min-height: 210px;
-  border-top: 1px solid var(--black);
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
 }
 
 .footer-left,
@@ -423,65 +922,93 @@ body {
 }
 
 .footer-left {
-  background: var(--pink);
+  background: var(--lime);
+
   border-right: 1px solid var(--black);
 }
 
 .footer-big {
   font-family: "Archivo Black", sans-serif;
+
   font-size: clamp(38px, 5vw, 72px);
+
   line-height: .9;
+
   margin-top: 12px;
 }
 
 .footer-right {
   display: flex;
+
   justify-content: space-between;
+
   align-items: flex-end;
+
   font-size: 12px;
 }
 
-/* RESPONSIVE */
+/* ─────────────────────
+   RESPONSIVE
+───────────────────── */
 
 @media (max-width: 1000px) {
+
   .hero {
-    grid-template-columns: 360px minmax(0, 1fr);
+    grid-template-columns:
+      360px
+      minmax(0, 1fr);
   }
 
-  .hero-title .music {
-    font-size: 82px;
+  .hero-title .sound {
+    font-size: 76px;
   }
 
-  .hero-title .analyzer {
-    font-size: 58px;
+  .hero-title .lab {
+    font-size: 100px;
   }
+
 }
 
 @media (max-width: 820px) {
+
   .hero {
     grid-template-columns: 1fr;
   }
 
   .hero-left {
     border-right: none;
+
     border-bottom: 1px solid var(--black);
+
     min-height: 650px;
   }
 
-  .hero-title .music {
-    font-size: clamp(72px, 18vw, 100px);
+  .hero-title .sound {
+    font-size: clamp(68px, 18vw, 95px);
   }
 
-  .hero-title .analyzer {
-    font-size: clamp(50px, 12vw, 74px);
+  .hero-title .lab {
+    font-size: clamp(90px, 23vw, 125px);
   }
 
   .results {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .notes {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+  .denoise {
+    grid-template-columns: 1fr;
+  }
+
+  .denoise-left {
+    border-right: none;
+
+    border-bottom: 1px solid var(--black);
   }
 
   .footer {
@@ -490,90 +1017,157 @@ body {
 
   .footer-left {
     border-right: none;
+
     border-bottom: 1px solid var(--black);
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+<!-- TOP -->
+
 <header class="topbar">
-  <div>
-    <span class="status-dot"></span>
-    MUSIC ANALYZER
-  </div>
 
   <div>
-    KEY · SCALE · BPM · 001
+
+    <span class="status-dot"></span>
+
+    SOUND LAB
+
   </div>
+
+
+  <div>
+
+    KEY · BPM · SCALE · DENOISE · 001
+
+  </div>
+
 </header>
+
+
+<!-- HERO -->
 
 <section class="hero">
 
   <div class="hero-left">
 
     <div class="eyebrow">
-      LISTEN / ANALYZE / CREATE
+
+      LISTEN / ANALYZE / CLEAN
+
     </div>
+
 
     <h1 class="hero-title">
-      <span class="music">MUSIC</span>
-      <span class="analyzer">ANALYZER</span>
+
+      <span class="sound">
+        SOUND
+      </span>
+
+      <span class="lab">
+        LAB
+      </span>
+
     </h1>
 
+
     <div class="hero-copy">
-      Drop a track. Find its key.
-      Catch the tempo. See the scale.
-      Simple music analysis with a strange little twist.
+
+      Drop a track.
+      Find its key.
+      Catch the tempo.
+      Clean the noise.
+
+      One strange little lab
+      for your sound.
+
     </div>
+
 
     <div class="warp-circle"></div>
 
+
     <div class="sticker">
+
       YOUR TRACK HAS
+
       <strong>
+
         A SECRET<br>
         LANGUAGE.
+
       </strong>
+
     </div>
 
   </div>
+
+
+  <!-- UPLOAD -->
 
   <div class="hero-right">
 
     <div class="upload-wrap">
 
-      <div class="upload-area" id="dropZone">
+
+      <div
+        class="upload-area"
+        id="dropZone"
+      >
 
         <div class="ring one"></div>
         <div class="ring two"></div>
         <div class="ring three"></div>
 
+
         <div class="upload-content">
 
-          <div class="plus">+</div>
+          <div class="plus">
+            +
+          </div>
+
 
           <div class="upload-title">
+
             DROP YOUR<br>
             AUDIO HERE
+
           </div>
 
+
           <div class="upload-sub">
+
             OR CLICK TO BROWSE
+
           </div>
+
 
           <div class="upload-sub">
+
             WAV · MP3 · M4A
+
           </div>
 
-          <div class="filename" id="filename">
+
+          <div
+            class="filename"
+            id="filename"
+          >
+
             NO FILE SELECTED
+
           </div>
 
         </div>
 
       </div>
+
 
       <input
         type="file"
@@ -584,131 +1178,577 @@ body {
 
     </div>
 
+
     <div class="ticker">
+
       <div class="ticker-track">
-        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
-        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
-        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
-        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
+
+        FIND THE KEY ✦
+        FEEL THE TEMPO ✦
+        CLEAN THE NOISE ✦
+        KNOW YOUR SOUND ✦
+
+        FIND THE KEY ✦
+        FEEL THE TEMPO ✦
+        CLEAN THE NOISE ✦
+        KNOW YOUR SOUND ✦
+
+        FIND THE KEY ✦
+        FEEL THE TEMPO ✦
+        CLEAN THE NOISE ✦
+        KNOW YOUR SOUND ✦
+
       </div>
+
     </div>
 
   </div>
 
 </section>
 
-<section class="results-head">
-  <strong>ANALYSIS RESULT</strong>
-  <span>WAITING FOR AUDIO</span>
+
+<!-- ANALYSIS -->
+
+<section class="section-head">
+
+  <strong>
+
+    ANALYSIS RESULT
+
+  </strong>
+
+
+  <span id="analysisStatus">
+
+    WAITING FOR AUDIO
+
+  </span>
+
 </section>
+
 
 <section class="results">
 
-  <div class="result">
-    <div class="result-label">KEY</div>
-    <div class="result-value">—</div>
-  </div>
 
   <div class="result">
-    <div class="result-label">BPM</div>
-    <div class="result-value">—</div>
+
+    <div class="result-label">
+
+      KEY
+
+    </div>
+
+    <div
+      class="result-value"
+      id="keyValue"
+    >
+
+      —
+
+    </div>
+
   </div>
 
-  <div class="result">
-    <div class="result-label">SCALE</div>
-    <div class="result-value">—</div>
-  </div>
 
   <div class="result">
-    <div class="result-label">CONFIDENCE</div>
-    <div class="result-value">—</div>
+
+    <div class="result-label">
+
+      BPM
+
+    </div>
+
+    <div
+      class="result-value"
+      id="bpmValue"
+    >
+
+      —
+
+    </div>
+
   </div>
+
+
+  <div class="result">
+
+    <div class="result-label">
+
+      SCALE
+
+    </div>
+
+    <div
+      class="result-value"
+      id="scaleValue"
+    >
+
+      —
+
+    </div>
+
+  </div>
+
+
+  <div class="result">
+
+    <div class="result-label">
+
+      NOISE
+
+    </div>
+
+    <div
+      class="result-value"
+      id="noiseValue"
+    >
+
+      —
+
+    </div>
+
+  </div>
+
 
 </section>
+
+
+<!-- SCALE -->
 
 <section class="scale-section">
 
+
   <div class="scale-header">
-    <h2>SCALE NOTES</h2>
-    <div class="eyebrow">YOUR TRACK / YOUR SOUND</div>
+
+    <h2>
+
+      SCALE NOTES
+
+    </h2>
+
+
+    <div class="eyebrow">
+
+      YOUR TRACK / YOUR SOUND
+
+    </div>
+
   </div>
 
+
   <div class="notes">
+
     <div class="note">—</div>
+
     <div class="note">—</div>
+
     <div class="note">—</div>
+
     <div class="note">—</div>
+
     <div class="note">—</div>
+
     <div class="note">—</div>
+
     <div class="note">—</div>
+
   </div>
 
 </section>
 
-<footer class="footer">
 
-  <div class="footer-left">
-    <div class="eyebrow">
-      MUSIC IS MATH WITH FEELINGS.
+<!-- DENOISE -->
+
+<section class="denoise">
+
+
+  <div class="denoise-left">
+
+
+    <div class="denoise-number">
+
+      02 / CLEAN
+
     </div>
 
-    <div class="footer-big">
-      DROP IT.<br>
-      READ IT.<br>
-      PLAY IT.
+
+    <div class="denoise-title">
+
+      CLEAN<br>
+      YOUR<br>
+      SOUND.
+
     </div>
+
+
+    <div class="denoise-copy">
+
+      Reduce unwanted hiss,
+      background noise,
+      and audio artifacts.
+
+      Keep the music.
+      Lose the mess.
+
+    </div>
+
+
+    <div class="flower">
+
+      <span></span>
+
+      <span></span>
+
+      <span></span>
+
+      <span></span>
+
+    </div>
+
   </div>
 
-  <div class="footer-right">
-    <div>
-      MUSIC ANALYZER<br>
-      EXPERIMENT 001
-    </div>
+
+  <div class="denoise-right">
+
 
     <div>
+
+
+      <div class="noise-topline">
+
+        <strong>
+
+          NOISE CONTROL
+
+        </strong>
+
+
+        <span id="noiseStatus">
+
+          NO AUDIO LOADED
+
+        </span>
+
+      </div>
+
+
+      <div class="wave-box">
+
+        <div class="wave">
+
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+      </div>
+
+
+      <div class="noise-controls">
+
+
+        <div class="control-row">
+
+          <div class="control-name">
+
+            DETECTED NOISE
+
+          </div>
+
+          <div class="control-value">
+
+            —
+
+          </div>
+
+        </div>
+
+
+        <div class="control-row">
+
+          <div class="control-name">
+
+            CLEANING MODE
+
+          </div>
+
+          <div class="control-value">
+
+            AUTO
+
+          </div>
+
+        </div>
+
+
+        <div class="control-row">
+
+          <div class="control-name">
+
+            OUTPUT
+
+          </div>
+
+          <div class="control-value">
+
+            WAV
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <button
+        class="clean-button"
+        id="cleanButton"
+      >
+
+        REMOVE NOISE →
+
+      </button>
+
+
+      <button
+        class="download-button"
+        id="downloadButton"
+      >
+
+        DOWNLOAD CLEAN AUDIO ↓
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+
+  <div class="footer-left">
+
+
+    <div class="eyebrow">
+
+      MUSIC IS MATH WITH FEELINGS.
+
+    </div>
+
+
+    <div class="footer-big">
+
+      DROP IT.<br>
+      READ IT.<br>
+      CLEAN IT.
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-right">
+
+
+    <div>
+
+      SOUND LAB<br>
+      EXPERIMENT 001
+
+    </div>
+
+
+    <div>
+
       MADE FOR<br>
       CURIOUS EARS.
+
     </div>
+
+
   </div>
 
 </footer>
 
+
 <script>
-const input = document.getElementById("fileInput");
-const filename = document.getElementById("filename");
-const dropZone = document.getElementById("dropZone");
 
-dropZone.addEventListener("click", () => {
-  input.click();
-});
+const input =
+  document.getElementById("fileInput");
 
-input.addEventListener("change", () => {
-  const file = input.files[0];
+const filename =
+  document.getElementById("filename");
 
-  if (file) {
-    filename.textContent = file.name;
+const dropZone =
+  document.getElementById("dropZone");
+
+const analysisStatus =
+  document.getElementById("analysisStatus");
+
+const noiseStatus =
+  document.getElementById("noiseStatus");
+
+const cleanButton =
+  document.getElementById("cleanButton");
+
+const downloadButton =
+  document.getElementById("downloadButton");
+
+
+/* FILE CLICK */
+
+dropZone.addEventListener(
+  "click",
+  () => {
+
+    input.click();
+
   }
-});
+);
 
-dropZone.addEventListener("dragover", (event) => {
-  event.preventDefault();
-  dropZone.classList.add("dragging");
-});
 
-dropZone.addEventListener("dragleave", () => {
-  dropZone.classList.remove("dragging");
-});
+/* SELECT FILE */
 
-dropZone.addEventListener("drop", (event) => {
-  event.preventDefault();
-  dropZone.classList.remove("dragging");
+input.addEventListener(
+  "change",
+  () => {
 
-  const file = event.dataTransfer.files[0];
+    const file =
+      input.files[0];
 
-  if (file) {
-    filename.textContent = file.name;
+    if (file) {
+
+      loadFile(file);
+
+    }
+
   }
-});
+);
+
+
+/* DRAG */
+
+dropZone.addEventListener(
+  "dragover",
+  (event) => {
+
+    event.preventDefault();
+
+    dropZone.classList.add("dragging");
+
+  }
+);
+
+
+/* DRAG LEAVE */
+
+dropZone.addEventListener(
+  "dragleave",
+  () => {
+
+    dropZone.classList.remove("dragging");
+
+  }
+);
+
+
+/* DROP */
+
+dropZone.addEventListener(
+  "drop",
+  (event) => {
+
+    event.preventDefault();
+
+    dropZone.classList.remove("dragging");
+
+
+    const file =
+      event.dataTransfer.files[0];
+
+
+    if (file) {
+
+      loadFile(file);
+
+    }
+
+  }
+);
+
+
+/* FILE LOADED */
+
+function loadFile(file) {
+
+  filename.textContent =
+    file.name;
+
+  analysisStatus.textContent =
+    "AUDIO LOADED";
+
+  noiseStatus.textContent =
+    "READY TO CLEAN";
+
+}
+
+
+/* CLEAN BUTTON
+   UI DEMO ONLY FOR NOW */
+
+cleanButton.addEventListener(
+  "click",
+  () => {
+
+
+    if (!input.files[0]) {
+
+      noiseStatus.textContent =
+        "UPLOAD AUDIO FIRST";
+
+      return;
+
+    }
+
+
+    cleanButton.textContent =
+      "CLEANING...";
+
+
+    setTimeout(
+      () => {
+
+        cleanButton.textContent =
+          "NOISE REMOVED ✓";
+
+        noiseStatus.textContent =
+          "CLEANING COMPLETE";
+
+        downloadButton.style.display =
+          "block";
+
+      },
+      1200
+    );
+
+  }
+);
+
 </script>
 
 </body>
