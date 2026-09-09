@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>SOUND LAB</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ESSENTIA.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.3/dist/essentia-wasm.web.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.3/dist/essentia.js-core.js"></script>
 
   <style>
     * {
@@ -34,17 +39,16 @@
       overflow-x: hidden;
     }
 
-    /* =========================
-       TOP BAR
-    ========================== */
-
     .topbar {
       height: 48px;
       border-bottom: 1px solid var(--black);
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       padding: 0 24px;
+
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 2px;
@@ -64,73 +68,70 @@
       border: 1px solid var(--black);
     }
 
-    /* =========================
-       MAIN
-    ========================== */
-
     .main {
       min-height: 770px;
-      display: grid;
-      grid-template-columns: 455px minmax(0, 1fr);
-    }
 
-    /* =========================
-       LEFT
-    ========================== */
+      display: grid;
+
+      grid-template-columns:
+        455px
+        minmax(0, 1fr);
+    }
 
     .left {
       position: relative;
+
       border-right: 1px solid var(--black);
-      padding: 52px 32px 40px 32px;
+
+      padding: 52px 32px 40px;
+
       overflow: hidden;
     }
 
     .eyebrow {
       position: relative;
       z-index: 5;
+
       font-size: 11px;
       font-weight: 800;
+
       letter-spacing: 3px;
     }
-
-    /*
-      SOUND LAB TITLE
-
-      핵심 수정:
-      - 지나친 음수 자간 제거
-      - SOUND / LAB 각각 크기 조절
-      - LAB 글자 사이 공간 확보
-      - 두 줄 사이 간격 조절
-    */
 
     .hero-title {
       position: relative;
       z-index: 5;
+
       margin-top: 36px;
+
       font-family: "Archivo Black", sans-serif;
+
       text-transform: uppercase;
+
       line-height: 0.88;
     }
 
     .hero-title .sound {
       display: block;
+
       font-size: 86px;
+
       letter-spacing: -2px;
+
       white-space: nowrap;
     }
 
     .hero-title .lab {
       display: block;
+
       font-size: 106px;
+
       letter-spacing: 1px;
+
       white-space: nowrap;
+
       margin-top: 10px;
     }
-
-    /*
-      LAB의 L과 A가 시각적으로 너무 붙지 않도록
-      글자를 각각 분리
-    */
 
     .lab-letter {
       display: inline-block;
@@ -151,12 +152,15 @@
       left: 238px;
 
       background: var(--lime);
+
       border: 1px solid var(--black);
+
       border-radius: 50%;
     }
 
     .hero-circle::before {
       content: "";
+
       position: absolute;
 
       width: 205px;
@@ -166,12 +170,15 @@
       top: 48px;
 
       background: var(--purple);
+
       border: 1px solid var(--black);
+
       border-radius: 50%;
     }
 
     .hero-circle::after {
       content: "";
+
       position: absolute;
 
       width: 100px;
@@ -181,7 +188,9 @@
       top: 65px;
 
       background: var(--orange);
+
       border: 1px solid var(--black);
+
       border-radius: 50%;
     }
 
@@ -194,8 +203,8 @@
       margin-top: 48px;
 
       font-size: 18px;
+
       line-height: 1.55;
-      font-weight: 400;
     }
 
     .sticker {
@@ -206,9 +215,11 @@
       bottom: 50px;
 
       width: 235px;
+
       min-height: 130px;
 
       background: var(--pink);
+
       border: 1px solid var(--black);
 
       padding: 22px;
@@ -219,22 +230,20 @@
     .sticker-small {
       font-size: 10px;
       font-weight: 800;
+
       margin-bottom: 14px;
     }
 
     .sticker-big {
       font-family: "Archivo Black", sans-serif;
+
       font-size: 26px;
+
       line-height: 0.95;
     }
 
-    /* =========================
-       RIGHT / UPLOAD
-    ========================== */
-
     .right {
       padding: 34px;
-      position: relative;
     }
 
     .upload-box {
@@ -244,6 +253,7 @@
       height: 645px;
 
       background: var(--soft-lime);
+
       border: 1px dashed var(--black);
 
       display: flex;
@@ -253,10 +263,6 @@
       overflow: hidden;
 
       cursor: pointer;
-
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
     }
 
     .upload-box:hover {
@@ -270,45 +276,57 @@
     .upload-content {
       position: relative;
       z-index: 4;
+
       text-align: center;
     }
 
     .plus {
       font-size: 60px;
+
       line-height: 1;
-      font-weight: 500;
+
       margin-bottom: 22px;
     }
 
     .upload-title {
       font-family: "Archivo Black", sans-serif;
+
       font-size: 32px;
+
       line-height: 0.95;
+
       margin-bottom: 18px;
     }
 
     .browse {
       font-size: 11px;
+
       letter-spacing: 2px;
+
       margin-bottom: 16px;
     }
 
     .formats {
       font-size: 11px;
+
       letter-spacing: 1px;
+
       margin-bottom: 28px;
     }
 
     .filename {
       font-size: 12px;
+
       font-weight: 800;
+
+      max-width: 550px;
+
+      word-break: break-all;
     }
 
     #audioInput {
       display: none;
     }
-
-    /* Decorative circles */
 
     .shape-purple {
       position: absolute;
@@ -322,6 +340,7 @@
       border-radius: 50%;
 
       background: var(--purple);
+
       border: 1px solid var(--black);
     }
 
@@ -337,6 +356,7 @@
       border-radius: 50%;
 
       background: var(--orange);
+
       border: 1px solid var(--black);
     }
 
@@ -352,12 +372,9 @@
       border-radius: 50%;
 
       background: var(--lime);
+
       border: 1px solid var(--black);
     }
-
-    /* =========================
-       MARQUEE
-    ========================== */
 
     .marquee {
       height: 56px;
@@ -369,6 +386,7 @@
       align-items: center;
 
       overflow: hidden;
+
       white-space: nowrap;
     }
 
@@ -376,6 +394,7 @@
       display: inline-block;
 
       font-family: "Archivo Black", sans-serif;
+
       font-size: 18px;
 
       animation: marquee 18s linear infinite;
@@ -391,12 +410,8 @@
       }
     }
 
-    /* =========================
-       RESULT HEADER
-    ========================== */
-
     .result-header {
-      height: 74px;
+      min-height: 74px;
 
       border-bottom: 1px solid var(--black);
 
@@ -409,26 +424,31 @@
 
     .result-header h2 {
       font-family: "Archivo Black", sans-serif;
+
       font-size: 25px;
     }
 
     .status {
-      font-size: 16px;
-    }
+      font-size: 14px;
 
-    /* =========================
-       RESULTS
-    ========================== */
+      font-weight: 700;
+
+      letter-spacing: 1px;
+    }
 
     .results {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      min-height: 180px;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      min-height: 190px;
+
       border-bottom: 1px solid var(--black);
     }
 
     .result-card {
       padding: 22px 26px;
+
       border-right: 1px solid var(--black);
     }
 
@@ -440,55 +460,104 @@
       background: var(--lime);
     }
 
-    .result-card.scale {
+    .result-card.confidence {
       background: var(--purple);
     }
 
     .result-label {
       font-size: 10px;
       font-weight: 800;
+
       letter-spacing: 3px;
     }
 
     .result-value {
-      margin-top: 60px;
+      margin-top: 58px;
 
       font-family: "Archivo Black", sans-serif;
-      font-size: 35px;
+
+      font-size: clamp(30px, 4vw, 55px);
     }
 
-    /* =========================
-       NOISE SECTION
-    ========================== */
+    .scale-notes {
+      padding: 30px;
+
+      min-height: 170px;
+
+      border-bottom: 1px solid var(--black);
+    }
+
+    .scale-notes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 34px;
+    }
+
+    .scale-notes h2 {
+      font-family: "Archivo Black", sans-serif;
+
+      font-size: 25px;
+    }
+
+    .tiny {
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      font-weight: 800;
+    }
+
+    .notes {
+      font-family: "Archivo Black", sans-serif;
+
+      font-size: clamp(24px, 3vw, 42px);
+
+      word-spacing: 12px;
+    }
 
     .noise-section {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+
+      grid-template-columns:
+        1.3fr
+        0.7fr;
+
       border-bottom: 1px solid var(--black);
+
       min-height: 230px;
     }
 
     .noise-info {
       padding: 32px;
+
       border-right: 1px solid var(--black);
     }
 
     .noise-eyebrow {
       font-size: 10px;
+
       letter-spacing: 3px;
+
       font-weight: 800;
+
       margin-bottom: 20px;
     }
 
     .noise-title {
       font-family: "Archivo Black", sans-serif;
+
       font-size: 44px;
+
       line-height: 0.95;
+
       margin-bottom: 20px;
     }
 
     .noise-description {
       max-width: 580px;
+
       line-height: 1.5;
     }
 
@@ -504,127 +573,35 @@
 
     .clean-button {
       border: 1px solid var(--black);
+
       background: var(--cream);
 
       padding: 20px 35px;
 
       font-family: "Archivo Black", sans-serif;
+
       font-size: 18px;
 
       cursor: pointer;
-
-      transition: 0.15s;
-    }
-
-    .clean-button:hover {
-      background: var(--black);
-      color: var(--cream);
-      transform: rotate(-2deg);
     }
 
     .clean-button:disabled {
       opacity: 0.4;
+
       cursor: not-allowed;
-      transform: none;
     }
-
-    /* =========================
-       SCALE NOTES
-    ========================== */
-
-    .scale-notes {
-      padding: 30px;
-
-      min-height: 160px;
-    }
-
-    .scale-notes-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      margin-bottom: 30px;
-    }
-
-    .scale-notes h2 {
-      font-family: "Archivo Black", sans-serif;
-      font-size: 25px;
-    }
-
-    .tiny {
-      font-size: 9px;
-      letter-spacing: 3px;
-      font-weight: 800;
-    }
-
-    .notes {
-      font-family: "Archivo Black", sans-serif;
-      font-size: 32px;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
 
     @media (max-width: 1000px) {
-
       .main {
         grid-template-columns: 1fr;
       }
 
       .left {
         min-height: 650px;
+
         border-right: none;
+
         border-bottom: 1px solid var(--black);
-      }
-
-      .hero-title .sound {
-        font-size: clamp(60px, 13vw, 86px);
-      }
-
-      .hero-title .lab {
-        font-size: clamp(72px, 16vw, 106px);
-      }
-
-      .right {
-        padding: 20px;
-      }
-
-      .upload-box {
-        height: 500px;
-      }
-
-      .results {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .result-card:nth-child(2) {
-        border-right: none;
-      }
-
-      .noise-section {
-        grid-template-columns: 1fr;
-      }
-
-      .noise-info {
-        border-right: none;
-        border-bottom: 1px solid var(--black);
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .left {
-        padding: 40px 22px;
-      }
-
-      .description {
-        width: 100%;
-      }
-
-      .hero-circle {
-        left: 180px;
-        transform: scale(0.8);
       }
 
       .results {
@@ -633,16 +610,24 @@
 
       .result-card {
         border-right: none;
+
+        border-bottom: 1px solid var(--black);
+      }
+
+      .noise-section {
+        grid-template-columns: 1fr;
+      }
+
+      .noise-info {
+        border-right: none;
+
         border-bottom: 1px solid var(--black);
       }
     }
-
   </style>
 </head>
 
 <body>
-
-  <!-- TOP BAR -->
 
   <header class="topbar">
 
@@ -658,11 +643,7 @@
   </header>
 
 
-  <!-- MAIN -->
-
   <main class="main">
-
-    <!-- LEFT -->
 
     <section class="left">
 
@@ -672,6 +653,7 @@
 
       <div class="hero-circle"></div>
 
+
       <h1 class="hero-title">
 
         <span class="sound">
@@ -679,15 +661,32 @@
         </span>
 
         <span class="lab">
-          <span class="lab-letter lab-l">L</span><span class="lab-letter">A</span><span class="lab-letter">B</span>
+
+          <span class="lab-letter lab-l">
+            L
+          </span>
+
+          <span class="lab-letter">
+            A
+          </span>
+
+          <span class="lab-letter">
+            B
+          </span>
+
         </span>
 
       </h1>
 
+
       <p class="description">
-        Drop a track. Find its key. Catch the tempo.
-        Clean the noise. One strange little lab for your sound.
+        Drop a track.
+        Find its key.
+        Catch the tempo.
+        Clean the noise.
+        One strange little lab for your sound.
       </p>
+
 
       <div class="sticker">
 
@@ -705,21 +704,26 @@
     </section>
 
 
-    <!-- RIGHT -->
-
     <section class="right">
 
-      <label class="upload-box" id="dropZone">
+      <label
+        class="upload-box"
+        id="dropZone"
+      >
 
         <input
           id="audioInput"
           type="file"
           accept="audio/*,.wav,.mp3,.m4a"
-        />
+        >
+
 
         <div class="shape-purple"></div>
+
         <div class="shape-orange"></div>
+
         <div class="shape-lime"></div>
+
 
         <div class="upload-content">
 
@@ -740,7 +744,10 @@
             WAV · MP3 · M4A
           </div>
 
-          <div class="filename" id="fileName">
+          <div
+            class="filename"
+            id="fileName"
+          >
             NO FILE SELECTED
           </div>
 
@@ -753,26 +760,29 @@
   </main>
 
 
-  <!-- MARQUEE -->
-
   <div class="marquee">
 
     <div class="marquee-inner">
 
-      FIND THE KEY ✦ FEEL THE TEMPO ✦ CLEAN THE NOISE ✦
-      KNOW YOUR SOUND ✦ FIND THE KEY ✦ FEEL THE TEMPO ✦
-      CLEAN THE NOISE ✦ KNOW YOUR SOUND ✦
+      FIND THE KEY ✦
+      FEEL THE TEMPO ✦
+      CLEAN THE NOISE ✦
+      KNOW YOUR SOUND ✦
 
-      FIND THE KEY ✦ FEEL THE TEMPO ✦ CLEAN THE NOISE ✦
-      KNOW YOUR SOUND ✦ FIND THE KEY ✦ FEEL THE TEMPO ✦
-      CLEAN THE NOISE ✦ KNOW YOUR SOUND ✦
+      FIND THE KEY ✦
+      FEEL THE TEMPO ✦
+      CLEAN THE NOISE ✦
+      KNOW YOUR SOUND ✦
+
+      FIND THE KEY ✦
+      FEEL THE TEMPO ✦
+      CLEAN THE NOISE ✦
+      KNOW YOUR SOUND ✦
 
     </div>
 
   </div>
 
-
-  <!-- ANALYSIS RESULT -->
 
   <section>
 
@@ -782,8 +792,11 @@
         ANALYSIS RESULT
       </h2>
 
-      <div class="status" id="status">
-        WAITING FOR AUDIO
+      <div
+        class="status"
+        id="status"
+      >
+        LOADING ANALYZER...
       </div>
 
     </div>
@@ -791,13 +804,17 @@
 
     <div class="results">
 
+
       <div class="result-card key">
 
         <div class="result-label">
           KEY
         </div>
 
-        <div class="result-value" id="keyResult">
+        <div
+          class="result-value"
+          id="keyResult"
+        >
           —
         </div>
 
@@ -810,33 +827,26 @@
           BPM
         </div>
 
-        <div class="result-value" id="bpmResult">
+        <div
+          class="result-value"
+          id="bpmResult"
+        >
           —
         </div>
 
       </div>
 
 
-      <div class="result-card scale">
-
-        <div class="result-label">
-          SCALE
-        </div>
-
-        <div class="result-value" id="scaleResult">
-          —
-        </div>
-
-      </div>
-
-
-      <div class="result-card">
+      <div class="result-card confidence">
 
         <div class="result-label">
           CONFIDENCE
         </div>
 
-        <div class="result-value" id="confidenceResult">
+        <div
+          class="result-value"
+          id="confidenceResult"
+        >
           —
         </div>
 
@@ -847,7 +857,30 @@
   </section>
 
 
-  <!-- NOISE CLEANER -->
+  <section class="scale-notes">
+
+    <div class="scale-notes-header">
+
+      <h2>
+        SCALE NOTES
+      </h2>
+
+      <div class="tiny">
+        YOUR TRACK / YOUR SOUND
+      </div>
+
+    </div>
+
+
+    <div
+      class="notes"
+      id="scaleNotes"
+    >
+      — · — · — · — · — · — · —
+    </div>
+
+  </section>
+
 
   <section class="noise-section">
 
@@ -863,8 +896,8 @@
       </div>
 
       <p class="noise-description">
-        Reduce unwanted background noise while keeping your
-        music as natural as possible.
+        Reduce unwanted background noise while keeping
+        your music as natural as possible.
       </p>
 
     </div>
@@ -885,96 +918,487 @@
   </section>
 
 
-  <!-- SCALE NOTES -->
-
-  <section class="scale-notes">
-
-    <div class="scale-notes-header">
-
-      <h2>
-        SCALE NOTES
-      </h2>
-
-      <div class="tiny">
-        YOUR TRACK / YOUR SOUND
-      </div>
-
-    </div>
-
-    <div class="notes" id="scaleNotes">
-      — · — · — · — · — · — · —
-    </div>
-
-  </section>
-
-
   <script>
 
-    const input = document.getElementById("audioInput");
-    const fileName = document.getElementById("fileName");
-    const status = document.getElementById("status");
-    const dropZone = document.getElementById("dropZone");
-    const cleanButton = document.getElementById("cleanButton");
+    const input =
+      document.getElementById("audioInput");
+
+    const fileName =
+      document.getElementById("fileName");
+
+    const statusEl =
+      document.getElementById("status");
+
+    const dropZone =
+      document.getElementById("dropZone");
+
+    const keyResult =
+      document.getElementById("keyResult");
+
+    const bpmResult =
+      document.getElementById("bpmResult");
+
+    const confidenceResult =
+      document.getElementById("confidenceResult");
+
+    const scaleNotes =
+      document.getElementById("scaleNotes");
+
+    const cleanButton =
+      document.getElementById("cleanButton");
 
 
-    function handleFile(file) {
+    let essentia = null;
 
-      if (!file) return;
 
-      fileName.textContent = file.name.toUpperCase();
+    /* =========================
+       INITIALIZE ESSENTIA
+    ========================== */
 
-      status.textContent = "AUDIO READY";
+    async function initializeEssentia() {
 
-      cleanButton.disabled = false;
+      try {
+
+        statusEl.textContent =
+          "LOADING ANALYZER...";
+
+
+        const wasmModule =
+          await EssentiaWASM();
+
+
+        essentia =
+          new Essentia(wasmModule);
+
+
+        statusEl.textContent =
+          "WAITING FOR AUDIO";
+
+      }
+
+      catch (error) {
+
+        console.error(error);
+
+        statusEl.textContent =
+          "ANALYZER LOAD ERROR";
+
+      }
 
     }
 
 
-    input.addEventListener("change", function () {
-
-      handleFile(this.files[0]);
-
-    });
+    initializeEssentia();
 
 
-    dropZone.addEventListener("dragover", function (event) {
+    /* =========================
+       SCALE NOTES
+    ========================== */
 
-      event.preventDefault();
+    const SCALE_MAP = {
 
-      dropZone.classList.add("dragging");
+      "C Major":
+        ["C","D","E","F","G","A","B"],
 
-    });
+      "C# Major":
+        ["C#","D#","F","F#","G#","A#","C"],
+
+      "D Major":
+        ["D","E","F#","G","A","B","C#"],
+
+      "D# Major":
+        ["D#","F","G","G#","A#","C","D"],
+
+      "E Major":
+        ["E","F#","G#","A","B","C#","D#"],
+
+      "F Major":
+        ["F","G","A","A#","C","D","E"],
+
+      "F# Major":
+        ["F#","G#","A#","B","C#","D#","F"],
+
+      "G Major":
+        ["G","A","B","C","D","E","F#"],
+
+      "G# Major":
+        ["G#","A#","C","C#","D#","F","G"],
+
+      "A Major":
+        ["A","B","C#","D","E","F#","G#"],
+
+      "A# Major":
+        ["A#","C","D","D#","F","G","A"],
+
+      "B Major":
+        ["B","C#","D#","E","F#","G#","A#"],
 
 
-    dropZone.addEventListener("dragleave", function () {
+      "C Minor":
+        ["C","D","D#","F","G","G#","A#"],
 
-      dropZone.classList.remove("dragging");
+      "C# Minor":
+        ["C#","D#","E","F#","G#","A","B"],
 
-    });
+      "D Minor":
+        ["D","E","F","G","A","A#","C"],
+
+      "D# Minor":
+        ["D#","F","F#","G#","A#","B","C#"],
+
+      "E Minor":
+        ["E","F#","G","A","B","C","D"],
+
+      "F Minor":
+        ["F","G","G#","A#","C","C#","D#"],
+
+      "F# Minor":
+        ["F#","G#","A","B","C#","D","E"],
+
+      "G Minor":
+        ["G","A","A#","C","D","D#","F"],
+
+      "G# Minor":
+        ["G#","A#","B","C#","D#","E","F#"],
+
+      "A Minor":
+        ["A","B","C","D","E","F","G"],
+
+      "A# Minor":
+        ["A#","C","C#","D#","F","F#","G#"],
+
+      "B Minor":
+        ["B","C#","D","E","F#","G","A"]
+
+    };
 
 
-    dropZone.addEventListener("drop", function (event) {
+    function showScaleNotes(keyName) {
 
-      event.preventDefault();
-
-      dropZone.classList.remove("dragging");
-
-      const file = event.dataTransfer.files[0];
-
-      handleFile(file);
-
-    });
+      const notes =
+        SCALE_MAP[keyName];
 
 
-    cleanButton.addEventListener("click", function () {
+      if (!notes) {
 
-      status.textContent = "CLEANER READY";
+        scaleNotes.textContent =
+          "— · — · — · — · — · — · —";
 
-      alert(
-        "The design is ready! Next we'll connect the actual noise-removal engine."
-      );
+        return;
 
-    });
+      }
+
+
+      scaleNotes.textContent =
+        notes.join(" · ");
+
+    }
+
+
+    /* =========================
+       FILE HANDLER
+    ========================== */
+
+    async function analyzeFile(file) {
+
+      if (!file) return;
+
+
+      if (!essentia) {
+
+        statusEl.textContent =
+          "ANALYZER STILL LOADING";
+
+        return;
+
+      }
+
+
+      fileName.textContent =
+        file.name.toUpperCase();
+
+
+      keyResult.textContent = "…";
+
+      bpmResult.textContent = "…";
+
+      confidenceResult.textContent = "…";
+
+      scaleNotes.textContent =
+        "ANALYZING...";
+
+
+      statusEl.textContent =
+        "DECODING AUDIO";
+
+
+      try {
+
+        /* READ FILE */
+
+        const arrayBuffer =
+          await file.arrayBuffer();
+
+
+        /* DECODE AUDIO */
+
+        const AudioContextClass =
+          window.AudioContext ||
+          window.webkitAudioContext;
+
+
+        const audioContext =
+          new AudioContextClass();
+
+
+        const audioBuffer =
+          await audioContext.decodeAudioData(
+            arrayBuffer.slice(0)
+          );
+
+
+        statusEl.textContent =
+          "ANALYZING...";
+
+
+        /*
+          Essentia expects mono PCM.
+          We use the first channel.
+        */
+
+        const channelData =
+          audioBuffer.getChannelData(0);
+
+
+        const signal =
+          essentia.arrayToVector(
+            channelData
+          );
+
+
+        /* =========================
+           KEY
+        ========================== */
+
+        const keyAnalysis =
+          essentia.KeyExtractor(signal);
+
+
+        const detectedKey =
+          keyAnalysis.key;
+
+
+        const detectedScale =
+          keyAnalysis.scale;
+
+
+        const keyStrength =
+          Number(keyAnalysis.strength || 0);
+
+
+        const fullKey =
+          detectedKey + " " + detectedScale;
+
+
+        keyResult.textContent =
+          fullKey;
+
+
+        showScaleNotes(
+          fullKey
+        );
+
+
+        /* =========================
+           BPM
+        ========================== */
+
+        const rhythm =
+          essentia.RhythmExtractor2013(
+            signal
+          );
+
+
+        let bpm =
+          Number(rhythm.bpm);
+
+
+        if (Number.isFinite(bpm)) {
+
+          bpm =
+            Math.round(bpm);
+
+          bpmResult.textContent =
+            bpm;
+
+        }
+
+        else {
+
+          bpmResult.textContent =
+            "?";
+
+        }
+
+
+        /*
+          For now we're using the key strength
+          as a simple confidence display.
+
+          Later we can make separate
+          key confidence / BPM confidence.
+        */
+
+        const confidence =
+          Math.max(
+            0,
+            Math.min(
+              100,
+              Math.round(keyStrength * 100)
+            )
+          );
+
+
+        confidenceResult.textContent =
+          confidence + "%";
+
+
+        statusEl.textContent =
+          "ANALYSIS COMPLETE";
+
+
+        cleanButton.disabled =
+          false;
+
+
+        /*
+          Release WASM vector memory
+        */
+
+        if (signal && signal.delete) {
+
+          signal.delete();
+
+        }
+
+
+        await audioContext.close();
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "Analysis error:",
+          error
+        );
+
+
+        statusEl.textContent =
+          "ANALYSIS ERROR";
+
+
+        keyResult.textContent =
+          "ERROR";
+
+        bpmResult.textContent =
+          "ERROR";
+
+        confidenceResult.textContent =
+          "—";
+
+
+        scaleNotes.textContent =
+          "COULD NOT ANALYZE THIS FILE";
+
+      }
+
+    }
+
+
+    /* =========================
+       FILE SELECT
+    ========================== */
+
+    input.addEventListener(
+      "change",
+      function () {
+
+        analyzeFile(
+          this.files[0]
+        );
+
+      }
+    );
+
+
+    /* =========================
+       DRAG & DROP
+    ========================== */
+
+    dropZone.addEventListener(
+      "dragover",
+      function (event) {
+
+        event.preventDefault();
+
+        dropZone.classList.add(
+          "dragging"
+        );
+
+      }
+    );
+
+
+    dropZone.addEventListener(
+      "dragleave",
+      function () {
+
+        dropZone.classList.remove(
+          "dragging"
+        );
+
+      }
+    );
+
+
+    dropZone.addEventListener(
+      "drop",
+      function (event) {
+
+        event.preventDefault();
+
+
+        dropZone.classList.remove(
+          "dragging"
+        );
+
+
+        const file =
+          event.dataTransfer.files[0];
+
+
+        analyzeFile(file);
+
+      }
+    );
+
+
+    /* =========================
+       CLEAN BUTTON
+       NOT CONNECTED YET
+    ========================== */
+
+    cleanButton.addEventListener(
+      "click",
+      function () {
+
+        alert(
+          "Key and BPM analysis is connected. Noise removal comes next!"
+        );
+
+      }
+    );
 
   </script>
 
