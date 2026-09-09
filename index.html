@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Music Analyzer</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .box {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    input {
+      margin-top: 30px;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>🎵 Music Analyzer</h1>
+
+    <p>음악 파일을 넣어주세요.</p>
+
+    <input
+      type="file"
+      id="audioFile"
+      accept="audio/*"
+    >
+
+    <div id="result">
+      아직 음악이 없습니다.
+    </div>
+
+  </div>
+
+  <script>
+    const audioFile = document.getElementById("audioFile");
+    const result = document.getElementById("result");
+
+    audioFile.addEventListener("change", function() {
+
+      const file = audioFile.files[0];
+
+      if (file) {
+        result.innerHTML =
+          "🎵 음악을 불러왔어요!<br><br>" +
+          file.name;
+      }
+
+    });
+  </script>
+
+</body>
+</html>
