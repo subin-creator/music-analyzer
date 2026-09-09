@@ -1,27 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SOUND LAB</title>
 
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
-
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
   href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap"
@@ -29,9 +16,7 @@
 >
 
 <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.3/dist/essentia-wasm.web.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.3/dist/essentia.js-core.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
 
 
@@ -60,13 +45,12 @@ body {
 }
 
 
-/* =========================
+/* ==================================================
    TOP
-========================= */
+================================================== */
 
 .topbar {
   height: 48px;
-
   border-bottom: 1px solid var(--black);
 
   display: flex;
@@ -90,17 +74,16 @@ body {
   width: 10px;
   height: 10px;
 
-  background: var(--lime);
-
-  border: 1px solid var(--black);
-
   border-radius: 50%;
+
+  background: var(--lime);
+  border: 1px solid var(--black);
 }
 
 
-/* =========================
+/* ==================================================
    HERO
-========================= */
+================================================== */
 
 .main {
   min-height: 770px;
@@ -114,9 +97,9 @@ body {
 .left {
   position: relative;
 
-  padding: 52px 32px 40px;
-
   border-right: 1px solid var(--black);
+
+  padding: 52px 32px 40px;
 
   overflow: hidden;
 }
@@ -126,7 +109,6 @@ body {
   z-index: 5;
 
   font-size: 11px;
-
   font-weight: 800;
 
   letter-spacing: 3px;
@@ -174,18 +156,16 @@ body {
   margin-top: 48px;
 
   font-size: 18px;
-
   line-height: 1.55;
 }
 
 
-/* =========================
+/* ==================================================
    FLOWER
-========================= */
+================================================== */
 
 .hero-flower {
   position: absolute;
-
   z-index: 1;
 
   width: 280px;
@@ -194,11 +174,7 @@ body {
   top: 58px;
   left: 240px;
 
-  animation:
-    flowerSpin
-    14s
-    linear
-    infinite;
+  animation: flowerSpin 14s linear infinite;
 }
 
 .hero-flower span {
@@ -223,7 +199,6 @@ body {
 
 .hero-flower span:nth-child(2) {
   transform: translateX(76px);
-
   background: var(--purple);
 }
 
@@ -233,7 +208,6 @@ body {
 
 .hero-flower span:nth-child(4) {
   transform: translateX(-76px);
-
   background: var(--purple);
 }
 
@@ -256,6 +230,7 @@ body {
 }
 
 @keyframes flowerSpin {
+
   from {
     transform: rotate(0deg);
   }
@@ -263,12 +238,13 @@ body {
   to {
     transform: rotate(360deg);
   }
+
 }
 
 
-/* =========================
+/* ==================================================
    UPLOAD
-========================= */
+================================================== */
 
 .right {
   padding: 34px;
@@ -303,7 +279,6 @@ body {
 
 .upload-content {
   position: relative;
-
   z-index: 4;
 
   text-align: center;
@@ -342,11 +317,10 @@ body {
 }
 
 .filename {
-  font-size: 12px;
-
-  font-weight: 800;
-
   max-width: 600px;
+
+  font-size: 12px;
+  font-weight: 800;
 
   word-break: break-word;
 }
@@ -360,9 +334,9 @@ body {
 .shape-lime {
   position: absolute;
 
-  border: 1px solid var(--black);
-
   border-radius: 50%;
+
+  border: 1px solid var(--black);
 }
 
 .shape-purple {
@@ -396,15 +370,14 @@ body {
 }
 
 
-/* =========================
+/* ==================================================
    MARQUEE
-========================= */
+================================================== */
 
 .marquee {
   height: 56px;
 
   border-top: 1px solid var(--black);
-
   border-bottom: 1px solid var(--black);
 
   display: flex;
@@ -420,14 +393,11 @@ body {
 
   font-size: 18px;
 
-  animation:
-    marquee
-    18s
-    linear
-    infinite;
+  animation: marquee 18s linear infinite;
 }
 
 @keyframes marquee {
+
   from {
     transform: translateX(0);
   }
@@ -435,12 +405,13 @@ body {
   to {
     transform: translateX(-50%);
   }
+
 }
 
 
-/* =========================
-   RESULTS
-========================= */
+/* ==================================================
+   ANALYSIS
+================================================== */
 
 .result-header {
   min-height: 74px;
@@ -464,7 +435,6 @@ body {
 
 .status {
   font-size: 14px;
-
   font-weight: 700;
 
   letter-spacing: 1px;
@@ -523,22 +493,22 @@ body {
 }
 
 
-/* =========================
+/* ==================================================
    SCALE
-========================= */
+================================================== */
 
 .scale-notes {
-  padding: 30px;
-
   min-height: 170px;
+
+  padding: 30px;
 
   border-bottom: 1px solid var(--black);
 }
 
 .scale-notes-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   margin-bottom: 34px;
 }
@@ -551,7 +521,6 @@ body {
 
 .tiny {
   font-size: 9px;
-
   font-weight: 800;
 
   letter-spacing: 3px;
@@ -571,17 +540,17 @@ body {
 }
 
 
-/* =========================
+/* ==================================================
    DENOISE
-========================= */
+================================================== */
 
 .denoise-section {
+  min-height: 500px;
+
   display: grid;
 
   grid-template-columns:
     .75fr 1.25fr;
-
-  min-height: 500px;
 
   border-bottom: 1px solid var(--black);
 }
@@ -632,24 +601,23 @@ body {
 }
 
 .control-title {
+  margin-bottom: 18px;
+
   font-family: "Archivo Black", sans-serif;
 
   font-size: 23px;
-
-  margin-bottom: 18px;
 }
 
 .control-group {
-  border-top: 1px solid var(--black);
-
   padding: 24px 0;
+
+  border-top: 1px solid var(--black);
 }
 
 .control-label {
   margin-bottom: 15px;
 
   font-size: 10px;
-
   font-weight: 800;
 
   letter-spacing: 2px;
@@ -671,7 +639,6 @@ body {
   background: var(--cream);
 
   font-size: 11px;
-
   font-weight: 800;
 
   letter-spacing: 1px;
@@ -688,12 +655,11 @@ body {
 }
 
 .process-status {
-  border-top: 1px solid var(--black);
-
   padding: 20px 0;
 
-  font-size: 12px;
+  border-top: 1px solid var(--black);
 
+  font-size: 12px;
   font-weight: 800;
 
   letter-spacing: 1px;
@@ -770,9 +736,9 @@ audio {
 }
 
 
-/* =========================
+/* ==================================================
    SPECTRUM
-========================= */
+================================================== */
 
 .spectrum-section {
   display: none;
@@ -784,13 +750,13 @@ audio {
 .reduction-head {
   min-height: 76px;
 
+  padding: 0 30px;
+
   border-bottom: 1px solid var(--black);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: 0 30px;
 }
 
 .spectrum-grid {
@@ -824,7 +790,6 @@ audio {
 
 .spectrum-canvas-wrap {
   width: 100%;
-
   height: 240px;
 
   background: var(--cream);
@@ -836,7 +801,6 @@ canvas {
   display: block;
 
   width: 100%;
-
   height: 100%;
 }
 
@@ -847,14 +811,13 @@ canvas {
   margin-top: 8px;
 
   font-size: 9px;
-
   font-weight: 700;
 }
 
 
-/* =========================
+/* ==================================================
    REDUCTION
-========================= */
+================================================== */
 
 .reduction-summary {
   display: none;
@@ -911,9 +874,9 @@ canvas {
 }
 
 
-/* =========================
+/* ==================================================
    MOBILE
-========================= */
+================================================== */
 
 @media (max-width: 1000px) {
 
@@ -956,20 +919,19 @@ canvas {
 
 <header class="topbar">
 
-  <div class="brand">
+<div class="brand">
 
-    <span class="brand-dot"></span>
+<span class="brand-dot"></span>
 
-    SOUND LAB
+SOUND LAB
 
-  </div>
+</div>
 
+<div>
 
-  <div>
+KEY · SCALE · BPM · DENOISE · 001
 
-    KEY · SCALE · BPM · DENOISE · 001
-
-  </div>
+</div>
 
 </header>
 
@@ -980,47 +942,45 @@ canvas {
 
 <section class="left">
 
-
 <div class="eyebrow">
 
-  LISTEN / ANALYZE / CLEAN
+LISTEN / ANALYZE / CLEAN
 
 </div>
 
 
 <div class="hero-flower">
 
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
 
 </div>
 
 
 <h1 class="hero-title">
 
-  <span class="sound">
-    SOUND
-  </span>
+<span class="sound">
+SOUND
+</span>
 
-  <span class="lab">
-    LAB
-  </span>
+<span class="lab">
+LAB
+</span>
 
 </h1>
 
 
 <p class="description">
 
-  Drop a track.
-  Find its key.
-  Catch the tempo.
-  Clean the noise.
-  One strange little lab for your sound.
+Drop a track.
+Find its key.
+Catch the tempo.
+Clean the noise.
+One strange little lab for your sound.
 
 </p>
-
 
 </section>
 
@@ -1028,12 +988,10 @@ canvas {
 
 <section class="right">
 
-
 <label
   class="upload-box"
   id="dropZone"
 >
-
 
 <input
   id="audioInput"
@@ -1041,64 +999,50 @@ canvas {
   accept="audio/*,.wav,.mp3,.m4a"
 >
 
-
 <div class="shape-purple"></div>
-
 <div class="shape-orange"></div>
-
 <div class="shape-lime"></div>
 
 
 <div class="upload-content">
 
-
 <div class="plus">
-
-  +
-
++
 </div>
-
 
 <div class="upload-title">
 
-  DROP YOUR<br>
-  AUDIO HERE
+DROP YOUR<br>
+AUDIO HERE
 
 </div>
-
 
 <div class="browse">
 
-  OR CLICK TO BROWSE
+OR CLICK TO BROWSE
 
 </div>
-
 
 <div class="formats">
 
-  WAV · MP3 · M4A
+WAV · MP3 · M4A
 
 </div>
-
 
 <div
   class="filename"
   id="fileName"
 >
 
-  NO FILE SELECTED
+NO FILE SELECTED
 
 </div>
 
-
 </div>
-
 
 </label>
 
-
 </section>
-
 
 </main>
 
@@ -1108,23 +1052,23 @@ canvas {
 
 <div class="marquee-inner">
 
-  FIND THE KEY ✦
-  READ THE SCALE ✦
-  FEEL THE TEMPO ✦
-  CLEAN THE NOISE ✦
-  KNOW YOUR SOUND ✦
+FIND THE KEY ✦
+READ THE SCALE ✦
+FEEL THE TEMPO ✦
+CLEAN THE NOISE ✦
+KNOW YOUR SOUND ✦
 
-  FIND THE KEY ✦
-  READ THE SCALE ✦
-  FEEL THE TEMPO ✦
-  CLEAN THE NOISE ✦
-  KNOW YOUR SOUND ✦
+FIND THE KEY ✦
+READ THE SCALE ✦
+FEEL THE TEMPO ✦
+CLEAN THE NOISE ✦
+KNOW YOUR SOUND ✦
 
-  FIND THE KEY ✦
-  READ THE SCALE ✦
-  FEEL THE TEMPO ✦
-  CLEAN THE NOISE ✦
-  KNOW YOUR SOUND ✦
+FIND THE KEY ✦
+READ THE SCALE ✦
+FEEL THE TEMPO ✦
+CLEAN THE NOISE ✦
+KNOW YOUR SOUND ✦
 
 </div>
 
@@ -1134,47 +1078,35 @@ canvas {
 
 <section>
 
-
 <div class="result-header">
 
-
 <h2>
-
-  ANALYSIS RESULT
-
+ANALYSIS RESULT
 </h2>
-
 
 <div
   class="status"
   id="status"
 >
-
-  LOADING ANALYZER...
-
+LOADING ANALYZER...
 </div>
 
-
 </div>
-
 
 
 <div class="results">
 
-
 <div class="result-card key">
 
 <div class="result-label">
-
-  KEY
-
+KEY
 </div>
 
 <div
   class="result-value"
   id="keyResult"
 >
-  —
+—
 </div>
 
 </div>
@@ -1183,16 +1115,14 @@ canvas {
 <div class="result-card">
 
 <div class="result-label">
-
-  BPM
-
+BPM
 </div>
 
 <div
   class="result-value"
   id="bpmResult"
 >
-  —
+—
 </div>
 
 </div>
@@ -1201,23 +1131,19 @@ canvas {
 <div class="result-card confidence">
 
 <div class="result-label">
-
-  CONFIDENCE
-
+CONFIDENCE
 </div>
 
 <div
   class="result-value"
   id="confidenceResult"
 >
-  —
+—
 </div>
 
 </div>
 
-
 </div>
-
 
 </section>
 
@@ -1225,36 +1151,28 @@ canvas {
 
 <section class="scale-notes">
 
-
 <div class="scale-notes-header">
 
-
 <h2>
-
-  SCALE NOTES
-
+SCALE NOTES
 </h2>
-
 
 <div class="tiny">
 
-  YOUR TRACK / YOUR SOUND
+YOUR TRACK / YOUR SOUND
 
 </div>
 
-
 </div>
-
 
 <div
   class="notes"
   id="scaleNotes"
 >
 
-  — · — · — · — · — · — · — · —
+— · — · — · — · — · — · — · —
 
 </div>
-
 
 </section>
 
@@ -1262,36 +1180,32 @@ canvas {
 
 <section class="denoise-section">
 
-
 <div class="denoise-left">
-
 
 <div class="denoise-number">
 
-  DENOISE / 002
+DENOISE / 002
 
 </div>
-
 
 <div class="denoise-title">
 
-  CLEAN<br>
-  THE<br>
-  NOISE.
+CLEAN<br>
+THE<br>
+NOISE.
 
 </div>
-
 
 <div class="denoise-copy">
 
-  Reduce unwanted low-frequency rumble
-  and high-frequency hiss.
+Reduce unwanted low-frequency rumble
+and high-frequency hiss.
 
-  Compare the original and cleaned audio
-  while watching the spectrum move in real time.
+While either version plays, Sound Lab
+compares the exact same moment of the
+original and cleaned audio in real time.
 
 </div>
-
 
 </div>
 
@@ -1299,102 +1213,76 @@ canvas {
 
 <div class="denoise-right">
 
-
 <div class="control-title">
 
-  DENOISE CONTROL
+DENOISE CONTROL
 
 </div>
 
 
 <div class="control-group">
 
-
 <div class="control-label">
 
-  DENOISE STRENGTH
+DENOISE STRENGTH
 
 </div>
 
-
 <div class="option-row">
-
 
 <button
   class="option strength"
   data-strength="low"
 >
-
-  LOW
-
+LOW
 </button>
-
 
 <button
   class="option strength active"
   data-strength="medium"
 >
-
-  MEDIUM
-
+MEDIUM
 </button>
-
 
 <button
   class="option strength"
   data-strength="high"
 >
-
-  HIGH
-
+HIGH
 </button>
 
-
 </div>
 
-
 </div>
-
 
 
 <div class="control-group">
 
-
 <div class="control-label">
 
-  OUTPUT FORMAT
+OUTPUT FORMAT
 
 </div>
 
-
 <div class="option-row">
-
 
 <button
   class="option format active"
   data-format="wav"
 >
-
-  WAV
-
+WAV
 </button>
-
 
 <button
   class="option format"
   data-format="mp3"
 >
-
-  MP3
-
+MP3
 </button>
 
-
 </div>
 
-
 </div>
-
 
 
 <div
@@ -1402,10 +1290,9 @@ canvas {
   id="denoiseStatus"
 >
 
-  WAITING FOR AUDIO
+WAITING FOR AUDIO
 
 </div>
-
 
 
 <button
@@ -1414,10 +1301,9 @@ canvas {
   disabled
 >
 
-  DENOISE AUDIO ✦
+DENOISE AUDIO ✦
 
 </button>
-
 
 
 <div
@@ -1425,48 +1311,38 @@ canvas {
   id="audioPreview"
 >
 
-
 <div class="preview-box">
-
 
 <div class="preview-label">
 
-  ORIGINAL
+ORIGINAL
 
 </div>
-
 
 <audio
   id="originalAudio"
   controls
 ></audio>
 
-
 </div>
-
 
 
 <div class="preview-box">
 
-
 <div class="preview-label">
 
-  CLEANED
+CLEANED
 
 </div>
-
 
 <audio
   id="cleanAudio"
   controls
 ></audio>
 
-
 </div>
 
-
 </div>
-
 
 
 <button
@@ -1474,13 +1350,11 @@ canvas {
   id="downloadButton"
 >
 
-  DOWNLOAD CLEAN AUDIO ↓
+DOWNLOAD CLEAN AUDIO ↓
 
 </button>
 
-
 </div>
-
 
 </section>
 
@@ -1491,40 +1365,32 @@ canvas {
   id="spectrumSection"
 >
 
-
 <div class="spectrum-head">
-
 
 <h2>
 
-  SPECTRUM COMPARISON
+SPECTRUM COMPARISON
 
 </h2>
 
-
 <div class="tiny">
 
-  LIVE + REDUCTION
+LIVE · SAME PLAYHEAD
 
 </div>
 
-
 </div>
-
 
 
 <div class="spectrum-grid">
 
-
 <div class="spectrum-card">
-
 
 <div class="spectrum-label">
 
-  ORIGINAL · LIVE
+ORIGINAL · LIVE
 
 </div>
-
 
 <div class="spectrum-canvas-wrap">
 
@@ -1534,31 +1400,24 @@ canvas {
 
 </div>
 
-
 <div class="freq-labels">
 
 <span>20 Hz</span>
-
 <span>1 kHz</span>
-
 <span>20 kHz</span>
 
 </div>
 
-
 </div>
-
 
 
 <div class="spectrum-card">
 
-
 <div class="spectrum-label">
 
-  CLEANED · LIVE
+CLEANED · LIVE
 
 </div>
-
 
 <div class="spectrum-canvas-wrap">
 
@@ -1568,31 +1427,24 @@ canvas {
 
 </div>
 
-
 <div class="freq-labels">
 
 <span>20 Hz</span>
-
 <span>1 kHz</span>
-
 <span>20 kHz</span>
 
 </div>
 
-
 </div>
-
 
 
 <div class="spectrum-card">
 
-
 <div class="spectrum-label">
 
-  FREQUENCY REDUCTION
+FREQUENCY REDUCTION · LIVE
 
 </div>
-
 
 <div class="spectrum-canvas-wrap">
 
@@ -1602,23 +1454,17 @@ canvas {
 
 </div>
 
-
 <div class="freq-labels">
 
 <span>20 Hz</span>
-
 <span>1 kHz</span>
-
 <span>20 kHz</span>
 
 </div>
 
-
 </div>
 
-
 </div>
-
 
 </section>
 
@@ -1629,125 +1475,103 @@ canvas {
   id="reductionSummary"
 >
 
-
 <div class="reduction-head">
-
 
 <h2>
 
-  REDUCTION SUMMARY
+REDUCTION SUMMARY
 
 </h2>
 
-
 <div class="tiny">
 
-  ACTUAL ENERGY CHANGE
+LIVE ENERGY CHANGE
 
 </div>
 
-
 </div>
-
 
 
 <div class="reduction-grid">
 
-
 <div class="reduction-card">
-
 
 <div class="reduction-band">
 
-  RUMBLE
+RUMBLE
 
 </div>
-
 
 <div
   class="reduction-value"
   id="lowReduction"
 >
 
-  —
+—
 
 </div>
-
 
 <div class="reduction-range">
 
-  20 Hz – 80 Hz
+20 Hz – 80 Hz
 
 </div>
 
-
 </div>
-
 
 
 <div class="reduction-card">
 
-
 <div class="reduction-band">
 
-  BODY
+BODY
 
 </div>
-
 
 <div
   class="reduction-value"
   id="midReduction"
 >
 
-  —
+—
 
 </div>
-
 
 <div class="reduction-range">
 
-  80 Hz – 12 kHz
+80 Hz – 12 kHz
 
 </div>
 
-
 </div>
-
 
 
 <div class="reduction-card">
 
-
 <div class="reduction-band">
 
-  HISS
+HISS
 
 </div>
-
 
 <div
   class="reduction-value"
   id="highReduction"
 >
 
-  —
+—
 
 </div>
-
 
 <div class="reduction-range">
 
-  12 kHz – 20 kHz
+12 kHz – 20 kHz
 
 </div>
 
-
 </div>
 
-
 </div>
-
 
 </section>
 
@@ -1755,9 +1579,9 @@ canvas {
 
 <script>
 
-/* =========================
+/* ==================================================
    ELEMENTS
-========================= */
+================================================== */
 
 const input =
   document.getElementById(
@@ -1870,9 +1694,9 @@ const highReduction =
   );
 
 
-/* =========================
+/* ==================================================
    VARIABLES
-========================= */
+================================================== */
 
 let essentia =
   null;
@@ -1898,40 +1722,19 @@ let selectedStrength =
 let selectedFormat =
   "wav";
 
-let lastOriginalSpectrum =
+let liveAnimation =
   null;
 
-let lastCleanSpectrum =
-  null;
+let lastLiveUpdate =
+  0;
+
+let lastActivePlayer =
+  "original";
 
 
-/* LIVE */
-
-let liveAudioContext =
-  null;
-
-let originalAnalyser =
-  null;
-
-let cleanAnalyser =
-  null;
-
-let originalSourceNode =
-  null;
-
-let cleanSourceNode =
-  null;
-
-let originalAnimation =
-  null;
-
-let cleanAnimation =
-  null;
-
-
-/* =========================
+/* ==================================================
    ESSENTIA
-========================= */
+================================================== */
 
 async function initializeEssentia() {
 
@@ -1940,10 +1743,12 @@ async function initializeEssentia() {
     const wasmModule =
       await EssentiaWASM();
 
+
     essentia =
       new Essentia(
         wasmModule
       );
+
 
     statusEl.textContent =
       "WAITING FOR AUDIO";
@@ -1952,7 +1757,10 @@ async function initializeEssentia() {
 
   catch(error) {
 
-    console.error(error);
+    console.error(
+      error
+    );
+
 
     statusEl.textContent =
       "ANALYZER LOAD ERROR";
@@ -1961,88 +1769,87 @@ async function initializeEssentia() {
 
 }
 
-
 initializeEssentia();
 
 
-/* =========================
-   SCALE
-========================= */
+/* ==================================================
+   SCALE MAP
+================================================== */
 
 const SCALE_MAP = {
 
-  "C Major":
-  ["C","D","E","F","G","A","B"],
+"C Major":
+["C","D","E","F","G","A","B"],
 
-  "C# Major":
-  ["C#","D#","E#","F#","G#","A#","B#"],
+"C# Major":
+["C#","D#","E#","F#","G#","A#","B#"],
 
-  "D Major":
-  ["D","E","F#","G","A","B","C#"],
+"D Major":
+["D","E","F#","G","A","B","C#"],
 
-  "D# Major":
-  ["D#","E#","F##","G#","A#","B#","C##"],
+"D# Major":
+["D#","E#","F##","G#","A#","B#","C##"],
 
-  "E Major":
-  ["E","F#","G#","A","B","C#","D#"],
+"E Major":
+["E","F#","G#","A","B","C#","D#"],
 
-  "F Major":
-  ["F","G","A","Bb","C","D","E"],
+"F Major":
+["F","G","A","Bb","C","D","E"],
 
-  "F# Major":
-  ["F#","G#","A#","B","C#","D#","E#"],
+"F# Major":
+["F#","G#","A#","B","C#","D#","E#"],
 
-  "G Major":
-  ["G","A","B","C","D","E","F#"],
+"G Major":
+["G","A","B","C","D","E","F#"],
 
-  "G# Major":
-  ["G#","A#","B#","C#","D#","E#","F##"],
+"G# Major":
+["G#","A#","B#","C#","D#","E#","F##"],
 
-  "A Major":
-  ["A","B","C#","D","E","F#","G#"],
+"A Major":
+["A","B","C#","D","E","F#","G#"],
 
-  "A# Major":
-  ["A#","B#","C##","D#","E#","F##","G##"],
+"A# Major":
+["A#","B#","C##","D#","E#","F##","G##"],
 
-  "B Major":
-  ["B","C#","D#","E","F#","G#","A#"],
+"B Major":
+["B","C#","D#","E","F#","G#","A#"],
 
 
-  "C Minor":
-  ["C","D","Eb","F","G","Ab","Bb"],
+"C Minor":
+["C","D","Eb","F","G","Ab","Bb"],
 
-  "C# Minor":
-  ["C#","D#","E","F#","G#","A","B"],
+"C# Minor":
+["C#","D#","E","F#","G#","A","B"],
 
-  "D Minor":
-  ["D","E","F","G","A","Bb","C"],
+"D Minor":
+["D","E","F","G","A","Bb","C"],
 
-  "D# Minor":
-  ["D#","E#","F#","G#","A#","B","C#"],
+"D# Minor":
+["D#","E#","F#","G#","A#","B","C#"],
 
-  "E Minor":
-  ["E","F#","G","A","B","C","D"],
+"E Minor":
+["E","F#","G","A","B","C","D"],
 
-  "F Minor":
-  ["F","G","Ab","Bb","C","Db","Eb"],
+"F Minor":
+["F","G","Ab","Bb","C","Db","Eb"],
 
-  "F# Minor":
-  ["F#","G#","A","B","C#","D","E"],
+"F# Minor":
+["F#","G#","A","B","C#","D","E"],
 
-  "G Minor":
-  ["G","A","Bb","C","D","Eb","F"],
+"G Minor":
+["G","A","Bb","C","D","Eb","F"],
 
-  "G# Minor":
-  ["G#","A#","B","C#","D#","E","F#"],
+"G# Minor":
+["G#","A#","B","C#","D#","E","F#"],
 
-  "A Minor":
-  ["A","B","C","D","E","F","G"],
+"A Minor":
+["A","B","C","D","E","F","G"],
 
-  "A# Minor":
-  ["A#","B#","C#","D#","E#","F#","G#"],
+"A# Minor":
+["A#","B#","C#","D#","E#","F#","G#"],
 
-  "B Minor":
-  ["B","C#","D","E","F#","G","A"]
+"B Minor":
+["B","C#","D","E","F#","G","A"]
 
 };
 
@@ -2055,14 +1862,19 @@ function normalizeScaleName(
     return "";
   }
 
+
   return (
+
     scale
       .charAt(0)
       .toUpperCase()
+
     +
+
     scale
       .slice(1)
       .toLowerCase()
+
   );
 
 }
@@ -2077,6 +1889,7 @@ function showScaleNotes(
       keyName
     ];
 
+
   if (!notes) {
 
     scaleNotes.textContent =
@@ -2085,6 +1898,7 @@ function showScaleNotes(
     return;
 
   }
+
 
   scaleNotes.textContent =
     [
@@ -2098,9 +1912,9 @@ function showScaleNotes(
 }
 
 
-/* =========================
-   ANALYZE
-========================= */
+/* ==================================================
+   LOAD + ANALYZE
+================================================== */
 
 async function analyzeFile(
   file
@@ -2110,28 +1924,39 @@ async function analyzeFile(
     return;
   }
 
+
+  stopLiveLoop();
+
+
   currentFile =
     file;
+
 
   fileName.textContent =
     file.name.toUpperCase();
 
-  denoiseButton.disabled =
-    false;
 
   denoiseStatus.textContent =
     "READY TO DENOISE";
 
-  spectrumSection.style.display =
-    "none";
 
-  reductionSummary.style.display =
-    "none";
+  denoiseButton.disabled =
+    false;
+
 
   downloadButton.style.display =
     "none";
 
+
   audioPreview.style.display =
+    "none";
+
+
+  spectrumSection.style.display =
+    "none";
+
+
+  reductionSummary.style.display =
     "none";
 
 
@@ -2191,7 +2016,9 @@ async function analyzeFile(
       statusEl.textContent =
         "ANALYZER STILL LOADING";
 
+
       await audioContext.close();
+
 
       return;
 
@@ -2205,11 +2032,14 @@ async function analyzeFile(
     keyResult.textContent =
       "…";
 
+
     bpmResult.textContent =
       "…";
 
+
     confidenceResult.textContent =
       "…";
+
 
     scaleNotes.textContent =
       "ANALYZING...";
@@ -2307,10 +2137,18 @@ async function analyzeFile(
 
 
     bpmResult.textContent =
-      Number.isFinite(bpm)
+      Number.isFinite(
+        bpm
+      )
+
       ?
-      Math.round(bpm)
+
+      Math.round(
+        bpm
+      )
+
       :
+
       "?";
 
 
@@ -2330,7 +2168,9 @@ async function analyzeFile(
           100,
 
           Math.round(
-            strength * 100
+            strength
+            *
+            100
           )
         )
       );
@@ -2363,28 +2203,38 @@ async function analyzeFile(
 
   catch(error) {
 
-    console.error(error);
+    console.error(
+      error
+    );
+
 
     statusEl.textContent =
       "ANALYSIS ERROR";
 
+
     keyResult.textContent =
       "ERROR";
+
 
     bpmResult.textContent =
       "ERROR";
 
+
     confidenceResult.textContent =
       "—";
+
+
+    scaleNotes.textContent =
+      "COULD NOT ANALYZE THIS FILE";
 
   }
 
 }
 
 
-/* =========================
+/* ==================================================
    OPTIONS
-========================= */
+================================================== */
 
 document
 .querySelectorAll(
@@ -2393,7 +2243,8 @@ document
 .forEach(
   button => {
 
-    button.addEventListener(
+    button
+    .addEventListener(
       "click",
       () => {
 
@@ -2403,11 +2254,13 @@ document
         )
         .forEach(
           item =>
+
             item
             .classList
             .remove(
               "active"
             )
+
         );
 
 
@@ -2437,7 +2290,8 @@ document
 .forEach(
   button => {
 
-    button.addEventListener(
+    button
+    .addEventListener(
       "click",
       () => {
 
@@ -2447,11 +2301,13 @@ document
         )
         .forEach(
           item =>
+
             item
             .classList
             .remove(
               "active"
             )
+
         );
 
 
@@ -2494,15 +2350,23 @@ document
 );
 
 
-/* =========================
+/* ==================================================
    DENOISE
-========================= */
+================================================== */
 
 async function processDenoise() {
 
   if (!decodedAudio) {
     return;
   }
+
+
+  stopLiveLoop();
+
+
+  originalAudio.pause();
+
+  cleanAudio.pause();
 
 
   denoiseStatus.textContent =
@@ -2516,6 +2380,7 @@ async function processDenoise() {
   let highPassFrequency =
     25;
 
+
   let lowPassFrequency =
     19000;
 
@@ -2528,6 +2393,7 @@ async function processDenoise() {
 
     highPassFrequency =
       35;
+
 
     lowPassFrequency =
       16500;
@@ -2543,6 +2409,7 @@ async function processDenoise() {
 
     highPassFrequency =
       50;
+
 
     lowPassFrequency =
       14000;
@@ -2631,62 +2498,6 @@ async function processDenoise() {
       .startRendering();
 
 
-  denoiseStatus.textContent =
-    "ANALYZING SPECTRUM...";
-
-
-  lastOriginalSpectrum =
-    computeAverageSpectrum(
-      decodedAudio
-    );
-
-
-  lastCleanSpectrum =
-    computeAverageSpectrum(
-      cleanedAudio
-    );
-
-
-  spectrumSection.style.display =
-    "block";
-
-
-  reductionSummary.style.display =
-    "block";
-
-
-  await new Promise(
-    resolve => {
-
-      requestAnimationFrame(
-        () => {
-
-          requestAnimationFrame(
-            resolve
-          );
-
-        }
-      );
-
-    }
-  );
-
-
-  drawStaticOriginalSpectrum();
-
-  drawStaticCleanSpectrum();
-
-  drawReductionSpectrum();
-
-  showReductionSummary();
-
-
-  const wavBlob =
-    audioBufferToWavBlob(
-      cleanedAudio
-    );
-
-
   if (cleanedURL) {
 
     URL.revokeObjectURL(
@@ -2694,6 +2505,12 @@ async function processDenoise() {
     );
 
   }
+
+
+  const wavBlob =
+    audioBufferToWavBlob(
+      cleanedAudio
+    );
 
 
   cleanedURL =
@@ -2708,6 +2525,14 @@ async function processDenoise() {
 
   audioPreview.style.display =
     "grid";
+
+
+  spectrumSection.style.display =
+    "block";
+
+
+  reductionSummary.style.display =
+    "block";
 
 
   downloadButton.style.display =
@@ -2735,12 +2560,57 @@ async function processDenoise() {
   denoiseButton.disabled =
     false;
 
+
+  await waitForLayout();
+
+
+  /*
+    Draw one initial comparison
+    before playback starts.
+  */
+
+  const initialTime =
+    Math.min(
+      1,
+      decodedAudio.duration / 2
+    );
+
+
+  updateLiveComparison(
+    initialTime
+  );
+
 }
 
 
-/* =========================
+/* ==================================================
+   WAIT FOR CANVAS LAYOUT
+================================================== */
+
+function waitForLayout() {
+
+  return new Promise(
+    resolve => {
+
+      requestAnimationFrame(
+        () => {
+
+          requestAnimationFrame(
+            resolve
+          );
+
+        }
+      );
+
+    }
+  );
+
+}
+
+
+/* ==================================================
    FFT
-========================= */
+================================================== */
 
 function fft(
   real,
@@ -2771,6 +2641,7 @@ function fft(
 
       j ^=
         bit;
+
 
       bit >>=
         1;
@@ -2846,6 +2717,7 @@ function fft(
 
       let wCos =
         1;
+
 
       let wSin =
         0;
@@ -2957,24 +2829,127 @@ function fft(
 }
 
 
-/* =========================
-   AVERAGE SPECTRUM
-========================= */
+/* ==================================================
+   CURRENT MOMENT SPECTRUM
+================================================== */
 
-function computeAverageSpectrum(
-  buffer
+function computeMomentSpectrum(
+  buffer,
+  timeSeconds
 ) {
 
   const fftSize =
-    4096;
+    2048;
 
 
   const bins =
     fftSize / 2;
 
 
-  const frames =
-    32;
+  const sampleRate =
+    buffer.sampleRate;
+
+
+  const center =
+    Math.floor(
+      timeSeconds
+      *
+      sampleRate
+    );
+
+
+  let start =
+    center
+    -
+    Math.floor(
+      fftSize / 2
+    );
+
+
+  start =
+    Math.max(
+      0,
+
+      Math.min(
+        buffer.length
+        -
+        fftSize,
+
+        start
+      )
+    );
+
+
+  const real =
+    new Float64Array(
+      fftSize
+    );
+
+
+  const imag =
+    new Float64Array(
+      fftSize
+    );
+
+
+  for (
+    let i = 0;
+    i < fftSize;
+    i++
+  ) {
+
+    let sample =
+      0;
+
+
+    for (
+      let channel = 0;
+      channel < buffer.numberOfChannels;
+      channel++
+    ) {
+
+      sample +=
+        buffer
+          .getChannelData(
+            channel
+          )[
+            start + i
+          ]
+        /
+        buffer
+          .numberOfChannels;
+
+    }
+
+
+    const window =
+      .5
+      -
+      .5
+      *
+      Math.cos(
+        2
+        *
+        Math.PI
+        *
+        i
+        /
+        (fftSize - 1)
+      );
+
+
+    real[i] =
+      sample
+      *
+      window;
+
+  }
+
+
+  fft(
+    real,
+    imag
+  );
 
 
   const power =
@@ -2983,170 +2958,51 @@ function computeAverageSpectrum(
     );
 
 
-  for (
-    let frame = 0;
-    frame < frames;
-    frame++
-  ) {
-
-    const position =
-      (frame + 1)
-      /
-      (frames + 1);
-
-
-    let start =
-      Math.floor(
-        position
-        *
-        buffer.length
-        -
-        fftSize / 2
-      );
-
-
-    start =
-      Math.max(
-        0,
-
-        Math.min(
-          buffer.length
-          -
-          fftSize,
-
-          start
-        )
-      );
-
-
-    const real =
-      new Float64Array(
-        fftSize
-      );
-
-
-    const imag =
-      new Float64Array(
-        fftSize
-      );
-
-
-    for (
-      let i = 0;
-      i < fftSize;
-      i++
-    ) {
-
-      let sample =
-        0;
-
-
-      for (
-        let ch = 0;
-        ch < buffer.numberOfChannels;
-        ch++
-      ) {
-
-        sample +=
-          buffer
-            .getChannelData(ch)[
-              start + i
-            ]
-          /
-          buffer
-            .numberOfChannels;
-
-      }
-
-
-      const window =
-        .5
-        -
-        .5
-        *
-        Math.cos(
-          2
-          *
-          Math.PI
-          *
-          i
-          /
-          (fftSize - 1)
-        );
-
-
-      real[i] =
-        sample
-        *
-        window;
-
-    }
-
-
-    fft(
-      real,
-      imag
-    );
-
-
-    for (
-      let bin = 0;
-      bin < bins;
-      bin++
-    ) {
-
-      power[bin] +=
-        real[bin]
-        *
-        real[bin]
-        +
-        imag[bin]
-        *
-        imag[bin];
-
-    }
-
-  }
-
-
-  for (
-    let i = 0;
-    i < bins;
-    i++
-  ) {
-
-    power[i] /=
-      frames;
-
-  }
-
-
   const db =
-    Array.from(
-      power,
-
-      value =>
-        10
-        *
-        Math.log10(
-          value
-          +
-          1e-15
-        )
+    new Float64Array(
+      bins
     );
+
+
+  for (
+    let bin = 0;
+    bin < bins;
+    bin++
+  ) {
+
+    const value =
+      real[bin]
+      *
+      real[bin]
+      +
+      imag[bin]
+      *
+      imag[bin];
+
+
+    power[bin] =
+      value;
+
+
+    db[bin] =
+      10
+      *
+      Math.log10(
+        value
+        +
+        1e-15
+      );
+
+  }
 
 
   return {
 
-    power:
-      Array.from(
-        power
-      ),
+    power,
 
     db,
 
-    sampleRate:
-      buffer.sampleRate,
+    sampleRate,
 
     fftSize
 
@@ -3155,9 +3011,9 @@ function computeAverageSpectrum(
 }
 
 
-/* =========================
-   CANVAS HELPERS
-========================= */
+/* ==================================================
+   CANVAS
+================================================== */
 
 function prepareCanvas(
   canvas
@@ -3228,18 +3084,24 @@ function prepareCanvas(
 }
 
 
-function getSpectrumDbAtFrequency(
+/* ==================================================
+   GET DB
+================================================== */
+
+function getDbAtFrequency(
   spectrum,
   frequency
 ) {
 
   const bin =
     Math.round(
+
       frequency
       *
       spectrum.fftSize
       /
       spectrum.sampleRate
+
     );
 
 
@@ -3248,7 +3110,9 @@ function getSpectrumDbAtFrequency(
       0,
 
       Math.min(
-        spectrum.db.length - 1,
+        spectrum.db.length
+        -
+        1,
 
         bin
       )
@@ -3258,11 +3122,11 @@ function getSpectrumDbAtFrequency(
 }
 
 
-/* =========================
-   STATIC SPECTRUM
-========================= */
+/* ==================================================
+   DRAW LIVE SPECTRUM
+================================================== */
 
-function drawStaticSpectrum(
+function drawMomentSpectrum(
   canvas,
   spectrum,
   fillColor
@@ -3294,7 +3158,10 @@ function drawStaticSpectrum(
   const maxFreq =
     Math.min(
       20000,
-      spectrum.sampleRate / 2
+
+      spectrum.sampleRate
+      /
+      2
     );
 
 
@@ -3321,33 +3188,50 @@ function drawStaticSpectrum(
       minFreq
       *
       Math.pow(
+
         maxFreq
         /
         minFreq,
+
         ratio
+
       );
 
 
     values.push(
-      getSpectrumDbAtFrequency(
+
+      getDbAtFrequency(
         spectrum,
         frequency
       )
+
     );
 
   }
 
 
-  const maxDb =
+  let maxDb =
     Math.max(
       ...values
     );
 
 
+  if (
+    !Number.isFinite(
+      maxDb
+    )
+  ) {
+
+    maxDb =
+      0;
+
+  }
+
+
   const floor =
     maxDb
     -
-    70;
+    65;
 
 
   ctx.beginPath();
@@ -3363,9 +3247,13 @@ function drawStaticSpectrum(
           Math.min(
             1,
 
-            (db - floor)
+            (
+              db
+              -
+              floor
+            )
             /
-            70
+            65
           )
         );
 
@@ -3429,7 +3317,7 @@ function drawStaticSpectrum(
 
 
   ctx.globalAlpha =
-    .42;
+    .50;
 
 
   ctx.fillStyle =
@@ -3445,41 +3333,14 @@ function drawStaticSpectrum(
 }
 
 
-function drawStaticOriginalSpectrum() {
+/* ==================================================
+   DRAW LIVE REDUCTION
+================================================== */
 
-  drawStaticSpectrum(
-
-    originalSpectrumCanvas,
-
-    lastOriginalSpectrum,
-
-    "#9165f5"
-
-  );
-
-}
-
-
-function drawStaticCleanSpectrum() {
-
-  drawStaticSpectrum(
-
-    cleanSpectrumCanvas,
-
-    lastCleanSpectrum,
-
-    "#baff00"
-
-  );
-
-}
-
-
-/* =========================
-   REDUCTION GRAPH
-========================= */
-
-function drawReductionSpectrum() {
+function drawLiveReduction(
+  originalSpectrum,
+  cleanSpectrum
+) {
 
   const {
     ctx,
@@ -3507,7 +3368,8 @@ function drawReductionSpectrum() {
   const maxFreq =
     Math.min(
       20000,
-      lastOriginalSpectrum
+
+      originalSpectrum
         .sampleRate
       /
       2
@@ -3536,48 +3398,52 @@ function drawReductionSpectrum() {
       minFreq
       *
       Math.pow(
+
         maxFreq
         /
         minFreq,
+
         ratio
-      );
-
-
-    const original =
-      getSpectrumDbAtFrequency(
-
-        lastOriginalSpectrum,
-
-        frequency
 
       );
 
 
-    const clean =
-      getSpectrumDbAtFrequency(
-
-        lastCleanSpectrum,
-
+    const before =
+      getDbAtFrequency(
+        originalSpectrum,
         frequency
+      );
 
+
+    const after =
+      getDbAtFrequency(
+        cleanSpectrum,
+        frequency
       );
 
 
     const reduction =
       Math.max(
         0,
-        original
+
+        before
         -
-        clean
+        after
       );
 
 
+    /*
+      30 dB reduction reaches
+      full chart height.
+    */
+
     const normalized =
       Math.min(
+        1,
+
         reduction
         /
-        30,
-        1
+        30
       );
 
 
@@ -3655,95 +3521,113 @@ function drawReductionSpectrum() {
 }
 
 
-/* =========================
-   REDUCTION SUMMARY
-========================= */
+/* ==================================================
+   LIVE BAND REDUCTION
+================================================== */
 
-function calculateBandReduction(
-  minFreq,
-  maxFreq
+function calculateLiveBandReduction(
+  originalSpectrum,
+  cleanSpectrum,
+  minFrequency,
+  maxFrequency
 ) {
 
-  let before =
+  let originalPower =
     0;
 
 
-  let after =
+  let cleanPower =
     0;
 
 
   for (
     let bin = 1;
-    bin <
-    lastOriginalSpectrum
-      .power
-      .length;
+    bin < originalSpectrum.power.length;
     bin++
   ) {
 
     const frequency =
       bin
       *
-      lastOriginalSpectrum
-        .sampleRate
+      originalSpectrum.sampleRate
       /
-      lastOriginalSpectrum
-        .fftSize;
+      originalSpectrum.fftSize;
 
 
     if (
-      frequency >= minFreq
+      frequency >= minFrequency
       &&
-      frequency < maxFreq
+      frequency < maxFrequency
     ) {
 
-      before +=
-        lastOriginalSpectrum
-          .power[
-            bin
-          ];
+      originalPower +=
+        originalSpectrum.power[
+          bin
+        ];
 
 
-      after +=
-        lastCleanSpectrum
-          .power[
-            bin
-          ];
+      cleanPower +=
+        cleanSpectrum.power[
+          bin
+        ];
 
     }
 
   }
 
 
-  if (
-    before <= 0
-    ||
-    after <= 0
-  ) {
+  const epsilon =
+    1e-15;
 
-    return 0;
 
-  }
+  const reduction =
+    10
+    *
+    Math.log10(
+
+      (
+        originalPower
+        +
+        epsilon
+      )
+
+      /
+
+      (
+        cleanPower
+        +
+        epsilon
+      )
+
+    );
 
 
   return Math.max(
     0,
-
-    10
-    *
-    Math.log10(
-      before
-      /
-      after
-    )
+    reduction
   );
 
 }
 
 
+/* ==================================================
+   FORMAT DB
+================================================== */
+
 function formatReduction(
   value
 ) {
+
+  if (
+    !Number.isFinite(
+      value
+    )
+  ) {
+
+    return "0.00 dB";
+
+  }
+
 
   if (
     value < .005
@@ -3780,26 +3664,54 @@ function formatReduction(
 }
 
 
-function showReductionSummary() {
+/* ==================================================
+   LIVE SUMMARY
+================================================== */
+
+function updateReductionSummary(
+  originalSpectrum,
+  cleanSpectrum
+) {
 
   const rumble =
-    calculateBandReduction(
+    calculateLiveBandReduction(
+
+      originalSpectrum,
+
+      cleanSpectrum,
+
       20,
+
       80
+
     );
 
 
   const body =
-    calculateBandReduction(
+    calculateLiveBandReduction(
+
+      originalSpectrum,
+
+      cleanSpectrum,
+
       80,
+
       12000
+
     );
 
 
   const hiss =
-    calculateBandReduction(
+    calculateLiveBandReduction(
+
+      originalSpectrum,
+
+      cleanSpectrum,
+
       12000,
+
       20000
+
     );
 
 
@@ -3823,118 +3735,18 @@ function showReductionSummary() {
 }
 
 
-/* =========================
-   LIVE SPECTRUM SETUP
-========================= */
+/* ==================================================
+   UPDATE EVERYTHING
+================================================== */
 
-function setupLiveSpectrum() {
-
-  if (
-    !liveAudioContext
-  ) {
-
-    const AudioContextClass =
-      window.AudioContext
-      ||
-      window.webkitAudioContext;
-
-
-    liveAudioContext =
-      new AudioContextClass();
-
-  }
-
-
-  if (
-    !originalSourceNode
-  ) {
-
-    originalSourceNode =
-      liveAudioContext
-        .createMediaElementSource(
-          originalAudio
-        );
-
-
-    originalAnalyser =
-      liveAudioContext
-        .createAnalyser();
-
-
-    originalAnalyser.fftSize =
-      2048;
-
-
-    originalAnalyser
-      .smoothingTimeConstant =
-      .72;
-
-
-    originalSourceNode.connect(
-      originalAnalyser
-    );
-
-
-    originalAnalyser.connect(
-      liveAudioContext.destination
-    );
-
-  }
-
-
-  if (
-    !cleanSourceNode
-  ) {
-
-    cleanSourceNode =
-      liveAudioContext
-        .createMediaElementSource(
-          cleanAudio
-        );
-
-
-    cleanAnalyser =
-      liveAudioContext
-        .createAnalyser();
-
-
-    cleanAnalyser.fftSize =
-      2048;
-
-
-    cleanAnalyser
-      .smoothingTimeConstant =
-      .72;
-
-
-    cleanSourceNode.connect(
-      cleanAnalyser
-    );
-
-
-    cleanAnalyser.connect(
-      liveAudioContext.destination
-    );
-
-  }
-
-}
-
-
-/* =========================
-   LIVE SPECTRUM DRAW
-========================= */
-
-function drawLiveSpectrum(
-  analyser,
-  canvas,
-  fillColor
+function updateLiveComparison(
+  timeSeconds
 ) {
 
   if (
-    !analyser
+    !decodedAudio
     ||
-    !liveAudioContext
+    !cleanedAudio
   ) {
 
     return;
@@ -3942,216 +3754,132 @@ function drawLiveSpectrum(
   }
 
 
-  const {
-    ctx,
-    width,
-    height
-  }
-  =
-  prepareCanvas(
-    canvas
+  const safeTime =
+    Math.max(
+      0,
+
+      Math.min(
+        decodedAudio.duration,
+
+        timeSeconds
+      )
+    );
+
+
+  const originalSpectrum =
+    computeMomentSpectrum(
+
+      decodedAudio,
+
+      safeTime
+
+    );
+
+
+  const cleanSpectrum =
+    computeMomentSpectrum(
+
+      cleanedAudio,
+
+      safeTime
+
+    );
+
+
+  drawMomentSpectrum(
+
+    originalSpectrumCanvas,
+
+    originalSpectrum,
+
+    "#9165f5"
+
   );
 
 
-  const data =
-    new Uint8Array(
-      analyser.frequencyBinCount
-    );
+  drawMomentSpectrum(
 
+    cleanSpectrumCanvas,
 
-  analyser
-    .getByteFrequencyData(
-      data
-    );
+    cleanSpectrum,
 
+    "#baff00"
 
-  ctx.clearRect(
-    0,
-    0,
-    width,
-    height
   );
 
 
-  const nyquist =
-    liveAudioContext
-      .sampleRate
-    /
-    2;
+  drawLiveReduction(
+
+    originalSpectrum,
+
+    cleanSpectrum
+
+  );
 
 
-  const minFreq =
-    20;
+  updateReductionSummary(
+
+    originalSpectrum,
+
+    cleanSpectrum
+
+  );
+
+}
 
 
-  const maxFreq =
-    Math.min(
-      20000,
-      nyquist
-    );
+/* ==================================================
+   LIVE LOOP
+================================================== */
+
+function startLiveLoop(
+  player
+) {
+
+  stopLiveLoop();
 
 
-  ctx.beginPath();
+  /*
+    The FFT is intentionally updated
+    around 12 times per second.
 
+    This is smooth enough visually
+    without hammering the CPU.
+  */
 
-  for (
-    let x = 0;
-    x < width;
-    x++
+  function frame(
+    timestamp
   ) {
 
-    const ratio =
-      x
-      /
-      Math.max(
-        1,
-        width - 1
-      );
+    if (
+      player.paused
+    ) {
+
+      return;
+
+    }
 
 
-    const frequency =
-      minFreq
-      *
-      Math.pow(
-        maxFreq
-        /
-        minFreq,
-        ratio
-      );
-
-
-    const bin =
-      Math.max(
-        0,
-
-        Math.min(
-          data.length - 1,
-
-          Math.round(
-            frequency
-            /
-            nyquist
-            *
-            data.length
-          )
-        )
-      );
-
-
-    const magnitude =
-      data[bin]
-      /
-      255;
-
-
-    const y =
-      height
+    if (
+      timestamp
       -
-      magnitude
-      *
-      height;
-
-
-    if (
-      x === 0
+      lastLiveUpdate
+      >
+      80
     ) {
 
-      ctx.moveTo(
-        x,
-        y
+      updateLiveComparison(
+        player.currentTime
       );
 
-    }
 
-    else {
-
-      ctx.lineTo(
-        x,
-        y
-      );
-
-    }
-
-  }
-
-
-  ctx.lineWidth =
-    2.5;
-
-
-  ctx.strokeStyle =
-    "#0b0b0b";
-
-
-  ctx.stroke();
-
-
-  ctx.lineTo(
-    width,
-    height
-  );
-
-
-  ctx.lineTo(
-    0,
-    height
-  );
-
-
-  ctx.closePath();
-
-
-  ctx.globalAlpha =
-    .55;
-
-
-  ctx.fillStyle =
-    fillColor;
-
-
-  ctx.fill();
-
-
-  ctx.globalAlpha =
-    1;
-
-}
-
-
-/* =========================
-   LIVE LOOP
-========================= */
-
-function animateOriginalSpectrum() {
-
-  cancelAnimationFrame(
-    originalAnimation
-  );
-
-
-  function frame() {
-
-    if (
-      originalAudio.paused
-    ) {
-
-      return;
+      lastLiveUpdate =
+        timestamp;
 
     }
 
 
-    drawLiveSpectrum(
-
-      originalAnalyser,
-
-      originalSpectrumCanvas,
-
-      "#9165f5"
-
-    );
-
-
-    originalAnimation =
+    liveAnimation =
       requestAnimationFrame(
         frame
       );
@@ -4159,77 +3887,49 @@ function animateOriginalSpectrum() {
   }
 
 
-  frame();
+  liveAnimation =
+    requestAnimationFrame(
+      frame
+    );
 
 }
 
 
-function animateCleanSpectrum() {
+function stopLiveLoop() {
 
-  cancelAnimationFrame(
-    cleanAnimation
-  );
+  if (
+    liveAnimation
+  ) {
 
-
-  function frame() {
-
-    if (
-      cleanAudio.paused
-    ) {
-
-      return;
-
-    }
-
-
-    drawLiveSpectrum(
-
-      cleanAnalyser,
-
-      cleanSpectrumCanvas,
-
-      "#baff00"
-
+    cancelAnimationFrame(
+      liveAnimation
     );
 
 
-    cleanAnimation =
-      requestAnimationFrame(
-        frame
-      );
+    liveAnimation =
+      null;
 
   }
-
-
-  frame();
 
 }
 
 
-/* =========================
-   AUDIO PLAY EVENTS
-========================= */
+/* ==================================================
+   ORIGINAL / CLEANED PLAYBACK
+================================================== */
 
 originalAudio
 .addEventListener(
   "play",
-  async () => {
+  () => {
 
-    setupLiveSpectrum();
+    lastActivePlayer =
+      "original";
 
 
-    if (
-      liveAudioContext
-        .state
-      ===
-      "suspended"
-    ) {
-
-      await liveAudioContext
-        .resume();
-
-    }
-
+    /*
+      Stop CLEANED
+    */
 
     if (
       !cleanAudio.paused
@@ -4240,12 +3940,24 @@ originalAudio
     }
 
 
-    cancelAnimationFrame(
-      cleanAnimation
+    /*
+      Keep the other player at
+      approximately the same playhead.
+    */
+
+    try {
+
+      cleanAudio.currentTime =
+        originalAudio.currentTime;
+
+    }
+
+    catch(error) {}
+
+
+    startLiveLoop(
+      originalAudio
     );
-
-
-    animateOriginalSpectrum();
 
   }
 );
@@ -4254,23 +3966,15 @@ originalAudio
 cleanAudio
 .addEventListener(
   "play",
-  async () => {
+  () => {
 
-    setupLiveSpectrum();
+    lastActivePlayer =
+      "clean";
 
 
-    if (
-      liveAudioContext
-        .state
-      ===
-      "suspended"
-    ) {
-
-      await liveAudioContext
-        .resume();
-
-    }
-
+    /*
+      Stop ORIGINAL
+    */
 
     if (
       !originalAudio.paused
@@ -4281,25 +3985,55 @@ cleanAudio
     }
 
 
-    cancelAnimationFrame(
-      originalAnimation
+    try {
+
+      originalAudio.currentTime =
+        cleanAudio.currentTime;
+
+    }
+
+    catch(error) {}
+
+
+    startLiveLoop(
+      cleanAudio
     );
-
-
-    animateCleanSpectrum();
 
   }
 );
 
+
+/*
+  When paused, keep the last
+  spectrum visible instead of
+  blanking the graph.
+*/
 
 originalAudio
 .addEventListener(
   "pause",
   () => {
 
-    cancelAnimationFrame(
-      originalAnimation
-    );
+    if (
+      lastActivePlayer
+      ===
+      "original"
+    ) {
+
+      stopLiveLoop();
+
+
+      if (
+        cleanedAudio
+      ) {
+
+        updateLiveComparison(
+          originalAudio.currentTime
+        );
+
+      }
+
+    }
 
   }
 );
@@ -4310,17 +4044,97 @@ cleanAudio
   "pause",
   () => {
 
-    cancelAnimationFrame(
-      cleanAnimation
-    );
+    if (
+      lastActivePlayer
+      ===
+      "clean"
+    ) {
+
+      stopLiveLoop();
+
+
+      if (
+        cleanedAudio
+      ) {
+
+        updateLiveComparison(
+          cleanAudio.currentTime
+        );
+
+      }
+
+    }
 
   }
 );
 
 
-/* =========================
+/*
+  Scrubbing / clicking the playback bar
+  also refreshes all graphs.
+*/
+
+originalAudio
+.addEventListener(
+  "seeked",
+  () => {
+
+    if (
+      cleanedAudio
+    ) {
+
+      try {
+
+        cleanAudio.currentTime =
+          originalAudio.currentTime;
+
+      }
+
+      catch(error) {}
+
+
+      updateLiveComparison(
+        originalAudio.currentTime
+      );
+
+    }
+
+  }
+);
+
+
+cleanAudio
+.addEventListener(
+  "seeked",
+  () => {
+
+    if (
+      cleanedAudio
+    ) {
+
+      try {
+
+        originalAudio.currentTime =
+          cleanAudio.currentTime;
+
+      }
+
+      catch(error) {}
+
+
+      updateLiveComparison(
+        cleanAudio.currentTime
+      );
+
+    }
+
+  }
+);
+
+
+/* ==================================================
    WAV
-========================= */
+================================================== */
 
 function audioBufferToWavBlob(
   buffer
@@ -4548,9 +4362,9 @@ function audioBufferToWavBlob(
 }
 
 
-/* =========================
+/* ==================================================
    MP3
-========================= */
+================================================== */
 
 function audioBufferToMp3Blob(
   buffer
@@ -4626,12 +4440,16 @@ function audioBufferToMp3Blob(
 
   const right =
     channels === 2
+
     ?
+
     convert(
       buffer
         .getChannelData(1)
     )
+
     :
+
     null;
 
 
@@ -4660,7 +4478,9 @@ function audioBufferToMp3Blob(
 
 
     if (
-      channels === 2
+      channels
+      ===
+      2
     ) {
 
       const rightChunk =
@@ -4694,7 +4514,9 @@ function audioBufferToMp3Blob(
 
 
     if (
-      encoded.length > 0
+      encoded.length
+      >
+      0
     ) {
 
       result.push(
@@ -4706,16 +4528,18 @@ function audioBufferToMp3Blob(
   }
 
 
-  const flushed =
+  const finalData =
     encoder.flush();
 
 
   if (
-    flushed.length > 0
+    finalData.length
+    >
+    0
   ) {
 
     result.push(
-      flushed
+      finalData
     );
 
   }
@@ -4735,9 +4559,9 @@ function audioBufferToMp3Blob(
 }
 
 
-/* =========================
+/* ==================================================
    DOWNLOAD
-========================= */
+================================================== */
 
 function downloadBlob(
   blob,
@@ -4750,29 +4574,30 @@ function downloadBlob(
     );
 
 
-  const a =
+  const anchor =
     document.createElement(
       "a"
     );
 
 
-  a.href =
+  anchor.href =
     url;
 
 
-  a.download =
+  anchor.download =
     filename;
 
 
-  document.body.appendChild(
-    a
-  );
+  document.body
+    .appendChild(
+      anchor
+    );
 
 
-  a.click();
+  anchor.click();
 
 
-  a.remove();
+  anchor.remove();
 
 
   setTimeout(
@@ -4783,6 +4608,7 @@ function downloadBlob(
       );
 
     },
+
     1000
   );
 
@@ -4818,21 +4644,25 @@ downloadButton
       "wav"
     ) {
 
-      const blob =
-        audioBufferToWavBlob(
-          cleanedAudio
-        );
+      denoiseStatus.textContent =
+        "PREPARING WAV...";
 
 
       downloadBlob(
 
-        blob,
+        audioBufferToWavBlob(
+          cleanedAudio
+        ),
 
         baseName
         +
         "_clean.wav"
 
       );
+
+
+      denoiseStatus.textContent =
+        "DOWNLOAD READY";
 
     }
 
@@ -4847,15 +4677,11 @@ downloadButton
 
           try {
 
-            const blob =
-              audioBufferToMp3Blob(
-                cleanedAudio
-              );
-
-
             downloadBlob(
 
-              blob,
+              audioBufferToMp3Blob(
+                cleanedAudio
+              ),
 
               baseName
               +
@@ -4882,6 +4708,7 @@ downloadButton
           }
 
         },
+
         50
       );
 
@@ -4891,9 +4718,9 @@ downloadButton
 );
 
 
-/* =========================
-   EVENTS
-========================= */
+/* ==================================================
+   UPLOAD EVENTS
+================================================== */
 
 denoiseButton
 .addEventListener(
@@ -4977,36 +4804,57 @@ dropZone
 );
 
 
+/* ==================================================
+   RESIZE
+================================================== */
+
 window
 .addEventListener(
   "resize",
   () => {
 
     if (
-      lastOriginalSpectrum
+      !decodedAudio
+      ||
+      !cleanedAudio
     ) {
 
-      drawStaticOriginalSpectrum();
+      return;
 
     }
+
+
+    let time =
+      0;
 
 
     if (
-      lastCleanSpectrum
+      lastActivePlayer
+      ===
+      "clean"
     ) {
 
-      drawStaticCleanSpectrum();
-
-      drawReductionSpectrum();
+      time =
+        cleanAudio.currentTime;
 
     }
+
+    else {
+
+      time =
+        originalAudio.currentTime;
+
+    }
+
+
+    updateLiveComparison(
+      time
+    );
 
   }
 );
 
 </script>
 
-
 </body>
-
 </html>
