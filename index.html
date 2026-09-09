@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Music Analyzer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,258 +10,430 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 * {
   box-sizing: border-box;
 }
 
+:root {
+  --cream: #f3efe5;
+  --black: #101010;
+  --lime: #c8ff00;
+  --purple: #9b6cff;
+  --orange: #ff754a;
+  --pink: #ff9db0;
+}
+
 body {
   margin: 0;
-  background: #f4f0e8;
-  color: #111;
+  background: var(--cream);
+  color: var(--black);
   font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 /* TOP BAR */
 
 .topbar {
-  height: 48px;
-  border-bottom: 1px solid #111;
+  height: 46px;
+  border-bottom: 1px solid var(--black);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 22px;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.6px;
 }
 
-.dot {
+.status-dot {
   width: 9px;
   height: 9px;
-  background: #ff5f78;
-  border-radius: 50%;
   display: inline-block;
+  background: var(--lime);
+  border: 1px solid var(--black);
+  border-radius: 50%;
   margin-right: 8px;
 }
 
 /* HERO */
 
 .hero {
+  min-height: 730px;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  min-height: 650px;
-  border-bottom: 1px solid #111;
+  grid-template-columns: 1.05fr .95fr;
+  border-bottom: 1px solid var(--black);
 }
 
-.left {
-  padding: 55px 45px;
-  border-right: 1px solid #111;
+.hero-left {
+  border-right: 1px solid var(--black);
+  padding: 48px;
   position: relative;
   overflow: hidden;
 }
 
-.label {
+.eyebrow {
   font-size: 11px;
   letter-spacing: 2px;
   font-weight: 700;
-  margin-bottom: 28px;
 }
 
-h1 {
+.hero-title {
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(75px, 9vw, 145px);
-  line-height: .78;
-  letter-spacing: -7px;
-  margin: 0;
+  font-size: clamp(80px, 10vw, 155px);
+  line-height: .77;
+  letter-spacing: -8px;
+  margin: 36px 0 0;
+  position: relative;
+  z-index: 3;
 }
 
-.subtitle {
-  margin-top: 45px;
-  max-width: 430px;
+.hero-copy {
+  max-width: 390px;
   font-size: 18px;
   line-height: 1.45;
+  margin-top: 42px;
+  position: relative;
+  z-index: 3;
 }
 
-.pink-card {
+/* PSYCHEDELIC SHAPES */
+
+.warp-circle {
   position: absolute;
-  width: 220px;
-  height: 135px;
-  background: #ff8da1;
-  right: 55px;
-  bottom: 45px;
-  transform: rotate(-4deg);
-  border: 1px solid #111;
-  padding: 18px;
-  font-size: 12px;
-  font-weight: 700;
+  width: 310px;
+  height: 310px;
+  right: -70px;
+  top: 60px;
+  border-radius: 46% 54% 62% 38% / 52% 40% 60% 48%;
+  background: var(--lime);
+  border: 1px solid var(--black);
+  transform: rotate(18deg);
+  animation: wobble 8s ease-in-out infinite alternate;
 }
 
-.pink-card strong {
-  display: block;
+.warp-circle::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  left: 42px;
+  top: 45px;
+  border-radius: 42% 58% 48% 52% / 56% 44% 56% 44%;
+  background: var(--purple);
+  border: 1px solid var(--black);
+}
+
+.warp-circle::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  left: 94px;
+  top: 94px;
+  border-radius: 50%;
+  background: var(--orange);
+  border: 1px solid var(--black);
+}
+
+@keyframes wobble {
+  from {
+    transform: rotate(8deg) scale(1);
+  }
+  to {
+    transform: rotate(28deg) scale(1.06);
+  }
+}
+
+.sticker {
+  position: absolute;
+  bottom: 55px;
+  right: 54px;
+  width: 220px;
+  background: var(--pink);
+  border: 1px solid var(--black);
+  transform: rotate(-5deg);
+  padding: 18px;
+  font-weight: 700;
+  font-size: 12px;
+  z-index: 4;
+}
+
+.sticker strong {
   font-family: "Archivo Black", sans-serif;
+  display: block;
   font-size: 27px;
   line-height: 1;
-  margin-top: 22px;
+  margin-top: 14px;
 }
 
-/* RIGHT */
+/* RIGHT SIDE */
 
-.right {
+.hero-right {
   display: flex;
   flex-direction: column;
 }
 
-.upload-area {
+.upload-wrap {
   flex: 1;
-  margin: 35px;
-  border: 1.5px dashed #111;
-  min-height: 370px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
+  padding: 34px;
+}
+
+.upload-area {
+  height: 100%;
+  min-height: 500px;
+  border: 1.5px dashed var(--black);
   position: relative;
-  transition: .2s;
+  cursor: pointer;
+  overflow: hidden;
+  transition: .2s ease;
 }
 
 .upload-area:hover {
-  background: #ffccd5;
+  background: rgba(200,255,0,.22);
 }
 
 .upload-area.dragging {
-  background: #ffb5c2;
-  transform: scale(.99);
+  background: var(--lime);
+}
+
+.upload-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  z-index: 3;
 }
 
 .plus {
-  font-size: 65px;
-  font-weight: 200;
+  font-size: 78px;
+  font-weight: 300;
   line-height: 1;
 }
 
 .upload-title {
   font-family: "Archivo Black", sans-serif;
-  font-size: 27px;
-  margin-top: 15px;
+  font-size: 31px;
+  line-height: 1;
+  margin-top: 8px;
 }
 
 .upload-sub {
-  margin-top: 10px;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-#fileInput {
-  display: none;
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
 }
 
 .filename {
-  margin-top: 20px;
-  font-size: 13px;
+  margin-top: 24px;
   font-weight: 700;
+  font-size: 13px;
 }
 
-/* BOTTOM MESSAGE */
+/* Decorative rings */
 
-.small-message {
-  border-top: 1px solid #111;
-  padding: 18px 35px;
+.ring {
+  position: absolute;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+}
+
+.ring.one {
+  width: 170px;
+  height: 170px;
+  right: -35px;
+  top: -35px;
+  background: var(--purple);
+}
+
+.ring.two {
+  width: 110px;
+  height: 110px;
+  left: -25px;
+  bottom: 35px;
+  background: var(--orange);
+}
+
+.ring.three {
+  width: 54px;
+  height: 54px;
+  right: 34px;
+  bottom: 35px;
+  background: var(--lime);
+}
+
+/* TICKER */
+
+.ticker {
+  height: 52px;
+  border-top: 1px solid var(--black);
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  font-weight: 700;
+  align-items: center;
+}
+
+.ticker-track {
+  white-space: nowrap;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 18px;
+  animation: ticker 18s linear infinite;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* RESULTS */
 
+.results-head {
+  padding: 22px 30px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--black);
+}
+
+.results-head strong {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 24px;
+}
+
 .results {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  border-bottom: 1px solid #111;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--black);
 }
 
 .result {
-  min-height: 190px;
-  padding: 28px;
-  border-right: 1px solid #111;
+  min-height: 210px;
+  padding: 26px;
+  border-right: 1px solid var(--black);
+  position: relative;
+  overflow: hidden;
 }
 
 .result:last-child {
   border-right: 0;
 }
 
+.result:nth-child(1) {
+  background: var(--lime);
+}
+
+.result:nth-child(3) {
+  background: var(--purple);
+}
+
 .result-label {
   font-size: 10px;
-  letter-spacing: 2px;
   font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .result-value {
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(32px, 4vw, 60px);
-  margin-top: 35px;
-}
-
-.result:nth-child(2) {
-  background: #ff8da1;
+  font-size: clamp(36px, 4vw, 65px);
+  position: absolute;
+  left: 25px;
+  bottom: 22px;
 }
 
 /* SCALE */
 
-.scale {
-  padding: 45px;
+.scale-section {
+  padding: 42px 30px 55px;
 }
 
-.scale-top {
+.scale-header {
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid var(--black);
   padding-bottom: 15px;
 }
 
-.scale-title {
+.scale-header h2 {
+  margin: 0;
   font-family: "Archivo Black", sans-serif;
-  font-size: 25px;
+  font-size: 28px;
 }
 
 .notes {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  margin-top: 35px;
+  margin-top: 28px;
+  border: 1px solid var(--black);
 }
 
 .note {
-  font-family: "Archivo Black", sans-serif;
-  font-size: clamp(25px, 4vw, 55px);
+  padding: 34px 10px;
   text-align: center;
-  border-right: 1px solid #aaa;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(30px, 4vw, 58px);
+  border-right: 1px solid var(--black);
 }
 
 .note:last-child {
-  border-right: none;
+  border-right: 0;
+}
+
+.note:nth-child(2),
+.note:nth-child(5) {
+  background: var(--orange);
+}
+
+/* FOOTER */
+
+.footer {
+  min-height: 200px;
+  border-top: 1px solid var(--black);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer-left,
+.footer-right {
+  padding: 35px;
+}
+
+.footer-left {
+  border-right: 1px solid var(--black);
+  background: var(--pink);
+}
+
+.footer-big {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(40px, 6vw, 80px);
+  line-height: .9;
+}
+
+.footer-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 /* MOBILE */
 
-@media (max-width: 800px) {
-
+@media (max-width: 850px) {
   .hero {
     grid-template-columns: 1fr;
   }
 
-  .left {
-    border-right: none;
-    border-bottom: 1px solid #111;
-    min-height: 550px;
+  .hero-left {
+    border-right: 0;
+    border-bottom: 1px solid var(--black);
+    min-height: 650px;
   }
 
-  h1 {
-    font-size: 75px;
-    letter-spacing: -4px;
+  .hero-title {
+    font-size: 78px;
+    letter-spacing: -5px;
   }
 
   .results {
@@ -275,107 +446,117 @@ h1 {
 
   .notes {
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
   }
 
   .note {
-    border: none;
+    border-bottom: 1px solid var(--black);
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-left {
+    border-right: 0;
+    border-bottom: 1px solid var(--black);
   }
 }
-
 </style>
 </head>
 
-
 <body>
 
-<div class="topbar">
-
-  <div>
-    <span class="dot"></span>
-    MUSIC ANALYZER
-  </div>
-
-  <div>
-    KEY · SCALE · BPM
-  </div>
-
-</div>
-
+<header class="topbar">
+  <div><span class="status-dot"></span> MUSIC ANALYZER</div>
+  <div>KEY · SCALE · BPM · 001</div>
+</header>
 
 <section class="hero">
 
-  <div class="left">
+  <div class="hero-left">
 
-    <div class="label">
-      LISTEN · ANALYZE · CREATE
+    <div class="eyebrow">
+      LISTEN / ANALYZE / CREATE
     </div>
 
-    <h1>
+    <h1 class="hero-title">
       MUSIC<br>
       ANALYZER
     </h1>
 
-    <div class="subtitle">
-      Drop your track and discover its key,
-      scale and tempo in seconds.
+    <div class="hero-copy">
+      Drop a track. Find its key.
+      Catch the tempo. See the scale.
+      Simple music analysis with a strange little twist.
     </div>
 
-    <div class="pink-card">
-      KNOW YOUR SOUND.
-      <strong>FIND<br>YOUR KEY.</strong>
+    <div class="warp-circle"></div>
+
+    <div class="sticker">
+      YOUR TRACK HAS
+      <strong>A SECRET<br>LANGUAGE.</strong>
     </div>
 
   </div>
 
+  <div class="hero-right">
 
-  <div class="right">
+    <div class="upload-wrap">
 
-    <div
-      class="upload-area"
-      id="dropZone"
-      onclick="document.getElementById('fileInput').click()"
-    >
+      <div class="upload-area" id="dropZone">
 
-      <div>
+        <div class="ring one"></div>
+        <div class="ring two"></div>
+        <div class="ring three"></div>
 
-        <div class="plus">+</div>
+        <div class="upload-content">
 
-        <div class="upload-title">
-          DROP YOUR AUDIO HERE
-        </div>
+          <div class="plus">+</div>
 
-        <div class="upload-sub">
-          OR CLICK TO BROWSE
-        </div>
+          <div class="upload-title">
+            DROP YOUR<br>AUDIO HERE
+          </div>
 
-        <div class="upload-sub">
-          WAV · MP3 · M4A
-        </div>
+          <div class="upload-sub">
+            OR CLICK TO BROWSE
+          </div>
 
-        <div class="filename" id="filename">
-          NO FILE SELECTED
+          <div class="upload-sub">
+            WAV · MP3 · M4A
+          </div>
+
+          <div class="filename" id="filename">
+            NO FILE SELECTED
+          </div>
+
         </div>
 
       </div>
 
+      <input
+        type="file"
+        id="fileInput"
+        accept="audio/*"
+        hidden
+      >
+
     </div>
 
-    <input
-      id="fileInput"
-      type="file"
-      accept="audio/*"
-    >
-
-    <div class="small-message">
-      <span>GOOD MUSIC STARTS HERE.</span>
-      <span>01 / ANALYZE</span>
+    <div class="ticker">
+      <div class="ticker-track">
+        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦ FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
+        FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦ FIND THE KEY ✦ FEEL THE TEMPO ✦ KNOW YOUR SOUND ✦
+      </div>
     </div>
 
   </div>
 
 </section>
 
+<section class="results-head">
+  <strong>ANALYSIS RESULT</strong>
+  <span>WAITING FOR AUDIO</span>
+</section>
 
 <section class="results">
 
@@ -401,23 +582,14 @@ h1 {
 
 </section>
 
+<section class="scale-section">
 
-<section class="scale">
-
-  <div class="scale-top">
-
-    <div class="scale-title">
-      SCALE NOTES
-    </div>
-
-    <div class="label">
-      YOUR TRACK · YOUR SOUND
-    </div>
-
+  <div class="scale-header">
+    <h2>SCALE NOTES</h2>
+    <div class="eyebrow">YOUR TRACK / YOUR SOUND</div>
   </div>
 
   <div class="notes">
-
     <div class="note">—</div>
     <div class="note">—</div>
     <div class="note">—</div>
@@ -425,47 +597,63 @@ h1 {
     <div class="note">—</div>
     <div class="note">—</div>
     <div class="note">—</div>
-
   </div>
 
 </section>
 
+<footer class="footer">
+
+  <div class="footer-left">
+    <div class="eyebrow">MUSIC IS MATH WITH FEELINGS.</div>
+    <div class="footer-big">
+      DROP IT.<br>
+      READ IT.<br>
+      PLAY IT.
+    </div>
+  </div>
+
+  <div class="footer-right">
+    <div>
+      MUSIC ANALYZER<br>
+      EXPERIMENT 001
+    </div>
+
+    <div>
+      MADE FOR<br>
+      CURIOUS EARS.
+    </div>
+  </div>
+
+</footer>
 
 <script>
-
 const input = document.getElementById("fileInput");
 const filename = document.getElementById("filename");
 const dropZone = document.getElementById("dropZone");
 
-
-input.addEventListener("change", function() {
-
-  if (input.files.length > 0) {
-    filename.textContent = input.files[0].name;
-  }
-
+dropZone.addEventListener("click", () => {
+  input.click();
 });
 
+input.addEventListener("change", () => {
+  const file = input.files[0];
 
-dropZone.addEventListener("dragover", function(event) {
+  if (file) {
+    filename.textContent = file.name;
+  }
+});
 
+dropZone.addEventListener("dragover", (event) => {
   event.preventDefault();
   dropZone.classList.add("dragging");
-
 });
 
-
-dropZone.addEventListener("dragleave", function() {
-
+dropZone.addEventListener("dragleave", () => {
   dropZone.classList.remove("dragging");
-
 });
 
-
-dropZone.addEventListener("drop", function(event) {
-
+dropZone.addEventListener("drop", (event) => {
   event.preventDefault();
-
   dropZone.classList.remove("dragging");
 
   const file = event.dataTransfer.files[0];
@@ -473,9 +661,7 @@ dropZone.addEventListener("drop", function(event) {
   if (file) {
     filename.textContent = file.name;
   }
-
 });
-
 </script>
 
 </body>
