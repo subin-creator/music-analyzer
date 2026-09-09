@@ -39,6 +39,11 @@ body {
   overflow-x: hidden;
 }
 
+
+/* ==================================================
+   TOPBAR
+================================================== */
+
 .topbar {
   height: 48px;
   border-bottom: 1px solid var(--black);
@@ -63,17 +68,25 @@ body {
 .brand-dot {
   width: 10px;
   height: 10px;
+
   border-radius: 50%;
 
   background: var(--lime);
   border: 1px solid var(--black);
 }
 
+
+/* ==================================================
+   HERO
+================================================== */
+
 .main {
   min-height: 770px;
 
   display: grid;
-  grid-template-columns: 480px minmax(0, 1fr);
+
+  grid-template-columns:
+    480px minmax(0, 1fr);
 }
 
 .left {
@@ -107,6 +120,7 @@ body {
 
 .hero-title .sound {
   display: block;
+
   font-size: 86px;
   letter-spacing: -2px;
   white-space: nowrap;
@@ -114,9 +128,11 @@ body {
 
 .hero-title .lab {
   display: block;
+
   font-size: 106px;
   letter-spacing: -1px;
   white-space: nowrap;
+
   margin-top: 10px;
 }
 
@@ -131,6 +147,11 @@ body {
   font-size: 18px;
   line-height: 1.55;
 }
+
+
+/* ==================================================
+   FLOWER
+================================================== */
 
 .hero-flower {
   position: absolute;
@@ -157,6 +178,7 @@ body {
   border-radius: 50%;
 
   background: var(--lime);
+
   border: 1px solid var(--black);
 }
 
@@ -166,6 +188,7 @@ body {
 
 .hero-flower span:nth-child(2) {
   transform: translateX(76px);
+
   background: var(--purple);
 }
 
@@ -175,6 +198,7 @@ body {
 
 .hero-flower span:nth-child(4) {
   transform: translateX(-76px);
+
   background: var(--purple);
 }
 
@@ -192,6 +216,7 @@ body {
   border-radius: 50%;
 
   background: var(--orange);
+
   border: 1px solid var(--black);
 }
 
@@ -204,6 +229,11 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+/* ==================================================
+   UPLOAD
+================================================== */
 
 .right {
   padding: 34px;
@@ -224,6 +254,7 @@ body {
   justify-content: center;
 
   overflow: hidden;
+
   cursor: pointer;
 }
 
@@ -244,25 +275,33 @@ body {
 
 .plus {
   font-size: 60px;
+
   margin-bottom: 22px;
 }
 
 .upload-title {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 32px;
+
   line-height: .95;
+
   margin-bottom: 18px;
 }
 
 .browse {
   font-size: 11px;
+
   letter-spacing: 2px;
+
   margin-bottom: 16px;
 }
 
 .formats {
   font-size: 11px;
+
   letter-spacing: 1px;
+
   margin-bottom: 28px;
 }
 
@@ -270,6 +309,7 @@ body {
   max-width: 600px;
 
   font-size: 12px;
+
   font-weight: 800;
 
   word-break: break-word;
@@ -285,6 +325,7 @@ body {
   position: absolute;
 
   border-radius: 50%;
+
   border: 1px solid var(--black);
 }
 
@@ -318,6 +359,11 @@ body {
   background: var(--lime);
 }
 
+
+/* ==================================================
+   MARQUEE
+================================================== */
+
 .marquee {
   height: 56px;
 
@@ -328,11 +374,13 @@ body {
   align-items: center;
 
   overflow: hidden;
+
   white-space: nowrap;
 }
 
 .marquee-inner {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 18px;
 
   animation: marquee 18s linear infinite;
@@ -347,6 +395,11 @@ body {
     transform: translateX(-50%);
   }
 }
+
+
+/* ==================================================
+   ANALYSIS
+================================================== */
 
 .result-header {
   min-height: 74px;
@@ -364,18 +417,23 @@ body {
 .spectrum-head h2,
 .cleanup-head h2 {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 25px;
 }
 
 .status {
   font-size: 14px;
+
   font-weight: 700;
+
   letter-spacing: 1px;
 }
 
 .results {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
 
   min-height: 190px;
 
@@ -384,6 +442,7 @@ body {
 
 .result-card {
   padding: 22px 26px;
+
   border-right: 1px solid var(--black);
 }
 
@@ -403,7 +462,9 @@ body {
 .spectrum-label,
 .cleanup-label {
   font-size: 10px;
+
   font-weight: 800;
+
   letter-spacing: 3px;
 }
 
@@ -411,8 +472,19 @@ body {
   margin-top: 58px;
 
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(30px, 4vw, 55px);
+
+  font-size:
+    clamp(
+      30px,
+      4vw,
+      55px
+    );
 }
+
+
+/* ==================================================
+   SCALE
+================================================== */
 
 .scale-notes {
   min-height: 170px;
@@ -432,24 +504,41 @@ body {
 
 .scale-notes h2 {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 25px;
 }
 
 .tiny {
   font-size: 9px;
+
   font-weight: 800;
+
   letter-spacing: 3px;
 }
 
 .notes {
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(24px, 3vw, 42px);
+
+  font-size:
+    clamp(
+      24px,
+      3vw,
+      42px
+    );
+
   word-spacing: 12px;
 }
 
+
+/* ==================================================
+   CLEANUP
+================================================== */
+
 .cleanup-section {
   display: grid;
-  grid-template-columns: .72fr 1.28fr;
+
+  grid-template-columns:
+    .72fr 1.28fr;
 
   border-bottom: 1px solid var(--black);
 }
@@ -464,7 +553,9 @@ body {
 
 .cleanup-number {
   font-size: 10px;
+
   font-weight: 800;
+
   letter-spacing: 3px;
 }
 
@@ -472,7 +563,14 @@ body {
   margin-top: 30px;
 
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(48px, 5vw, 80px);
+
+  font-size:
+    clamp(
+      48px,
+      5vw,
+      80px
+    );
+
   line-height: .87;
 }
 
@@ -482,6 +580,7 @@ body {
   max-width: 390px;
 
   font-size: 16px;
+
   line-height: 1.5;
 }
 
@@ -493,6 +592,7 @@ body {
   margin-bottom: 18px;
 
   font-family: "Archivo Black", sans-serif;
+
   font-size: 23px;
 }
 
@@ -506,7 +606,10 @@ body {
   border-bottom: 1px solid var(--black);
 
   display: grid;
-  grid-template-columns: 1fr auto;
+
+  grid-template-columns:
+    1fr auto;
+
   align-items: center;
 
   gap: 20px;
@@ -514,6 +617,7 @@ body {
 
 .tool-name {
   font-family: "Archivo Black", sans-serif;
+
   font-size: 18px;
 }
 
@@ -521,6 +625,7 @@ body {
   margin-top: 5px;
 
   font-size: 11px;
+
   line-height: 1.4;
 }
 
@@ -530,10 +635,13 @@ body {
   padding: 12px 14px;
 
   border: 1px solid var(--black);
+
   background: var(--cream);
 
   font-size: 11px;
+
   font-weight: 900;
+
   letter-spacing: 1px;
 
   cursor: pointer;
@@ -553,13 +661,17 @@ body {
   margin-bottom: 15px;
 
   font-size: 10px;
+
   font-weight: 800;
+
   letter-spacing: 2px;
 }
 
 .option-row {
   display: flex;
+
   gap: 10px;
+
   flex-wrap: wrap;
 }
 
@@ -567,10 +679,13 @@ body {
   padding: 11px 18px;
 
   border: 1px solid var(--black);
+
   background: var(--cream);
 
   font-size: 11px;
+
   font-weight: 800;
+
   letter-spacing: 1px;
 
   cursor: pointer;
@@ -588,7 +703,9 @@ body {
   padding: 20px 0;
 
   font-size: 12px;
+
   font-weight: 800;
+
   letter-spacing: 1px;
 }
 
@@ -601,6 +718,7 @@ body {
   border: 1px solid var(--black);
 
   font-family: "Archivo Black", sans-serif;
+
   font-size: 20px;
 
   cursor: pointer;
@@ -612,11 +730,13 @@ body {
 
 .process-button:hover {
   background: var(--black);
+
   color: var(--lime);
 }
 
 .process-button:disabled {
   opacity: .35;
+
   cursor: not-allowed;
 }
 
@@ -631,7 +751,9 @@ body {
 .audio-preview {
   display: none;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    1fr 1fr;
+
   gap: 12px;
 
   margin-top: 22px;
@@ -647,7 +769,9 @@ body {
   margin-bottom: 10px;
 
   font-size: 9px;
+
   font-weight: 800;
+
   letter-spacing: 2px;
 }
 
@@ -655,23 +779,30 @@ audio {
   width: 100%;
 }
 
+
+/* ==================================================
+   CLICK INDICATOR
+================================================== */
+
 .click-indicator {
   display: none;
 
-  margin-top: 14px;
-
   min-height: 58px;
+
+  margin-top: 14px;
 
   border: 1px solid var(--black);
 
   align-items: center;
   justify-content: center;
 
-  font-family: "Archivo Black", sans-serif;
-  font-size: 16px;
-  letter-spacing: 1px;
-
   background: var(--cream);
+
+  font-family: "Archivo Black", sans-serif;
+
+  font-size: 16px;
+
+  letter-spacing: 1px;
 
   transition:
     transform .08s ease,
@@ -680,12 +811,18 @@ audio {
 
 .click-indicator.active {
   background: var(--pink);
+
   transform: scale(1.015);
 }
 
 .click-indicator.no-click {
   opacity: .55;
 }
+
+
+/* ==================================================
+   SPECTRUM
+================================================== */
 
 .spectrum-section {
   display: none;
@@ -708,7 +845,9 @@ audio {
 
 .spectrum-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
 }
 
 .spectrum-card {
@@ -744,6 +883,7 @@ audio {
 
 canvas {
   display: block;
+
   width: 100%;
   height: 100%;
 }
@@ -755,8 +895,14 @@ canvas {
   margin-top: 8px;
 
   font-size: 9px;
+
   font-weight: 700;
 }
+
+
+/* ==================================================
+   ACTIVITY
+================================================== */
 
 .cleanup-activity {
   display: none;
@@ -766,7 +912,9 @@ canvas {
 
 .cleanup-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, 1fr);
 }
 
 .cleanup-card {
@@ -801,15 +949,27 @@ canvas {
   margin-top: 48px;
 
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(30px, 3.5vw, 54px);
+
+  font-size:
+    clamp(
+      30px,
+      3.5vw,
+      54px
+    );
 }
 
 .cleanup-range {
   margin-top: 8px;
 
   font-size: 10px;
+
   font-weight: 700;
 }
+
+
+/* ==================================================
+   TABLET
+================================================== */
 
 @media (max-width: 1000px) {
 
@@ -821,21 +981,574 @@ canvas {
   .left,
   .cleanup-left {
     border-right: none;
+
     border-bottom: 1px solid var(--black);
   }
 
-  .results,
-  .spectrum-grid,
-  .cleanup-grid,
-  .audio-preview {
+  .results {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .spectrum-grid {
     grid-template-columns: 1fr;
   }
 
-  .result-card,
-  .spectrum-card,
-  .cleanup-card {
+  .spectrum-card {
     border-right: none;
+
     border-bottom: 1px solid var(--black);
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+  body {
+    width: 100%;
+  }
+
+
+  /* TOP */
+
+  .topbar {
+    height: 42px;
+
+    padding: 0 14px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .topbar > div:last-child {
+    display: none;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+
+  /* HERO */
+
+  .main {
+    display: block;
+
+    min-height: auto;
+  }
+
+  .left {
+    min-height: 420px;
+
+    padding: 28px 18px 30px;
+
+    border-right: none;
+
+    border-bottom: 1px solid var(--black);
+  }
+
+  .eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .hero-title {
+    margin-top: 26px;
+
+    line-height: .9;
+  }
+
+  .hero-title .sound {
+    font-size:
+      clamp(
+        48px,
+        15vw,
+        66px
+      );
+
+    letter-spacing: -1px;
+  }
+
+  .hero-title .lab {
+    font-size:
+      clamp(
+        62px,
+        19vw,
+        84px
+      );
+
+    letter-spacing: -1px;
+
+    margin-top: 4px;
+  }
+
+  .description {
+    width: 75%;
+
+    margin-top: 32px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+
+  /* MOBILE FLOWER */
+
+  .hero-flower {
+    width: 170px;
+    height: 170px;
+
+    top: 92px;
+
+    left: auto;
+    right: -48px;
+  }
+
+  .hero-flower span {
+    width: 72px;
+    height: 72px;
+
+    left: 49px;
+    top: 49px;
+  }
+
+  .hero-flower span:nth-child(1) {
+    transform: translateY(-46px);
+  }
+
+  .hero-flower span:nth-child(2) {
+    transform: translateX(46px);
+  }
+
+  .hero-flower span:nth-child(3) {
+    transform: translateY(46px);
+  }
+
+  .hero-flower span:nth-child(4) {
+    transform: translateX(-46px);
+  }
+
+  .hero-flower::after {
+    width: 58px;
+    height: 58px;
+
+    left: 56px;
+    top: 56px;
+  }
+
+
+  /* UPLOAD */
+
+  .right {
+    padding: 16px;
+  }
+
+  .upload-box {
+    height: 330px;
+  }
+
+  .plus {
+    font-size: 42px;
+
+    margin-bottom: 12px;
+  }
+
+  .upload-title {
+    font-size: 25px;
+
+    margin-bottom: 14px;
+  }
+
+  .browse {
+    font-size: 9px;
+
+    margin-bottom: 12px;
+  }
+
+  .formats {
+    font-size: 9px;
+
+    margin-bottom: 18px;
+  }
+
+  .filename {
+    max-width: 260px;
+
+    font-size: 10px;
+  }
+
+  .shape-purple {
+    width: 90px;
+    height: 90px;
+
+    right: -25px;
+    top: -22px;
+  }
+
+  .shape-orange {
+    width: 72px;
+    height: 72px;
+
+    left: -30px;
+    bottom: 24px;
+  }
+
+  .shape-lime {
+    width: 42px;
+    height: 42px;
+
+    right: 22px;
+    bottom: 22px;
+  }
+
+
+  /* MARQUEE */
+
+  .marquee {
+    height: 46px;
+  }
+
+  .marquee-inner {
+    font-size: 14px;
+  }
+
+
+  /* HEADERS */
+
+  .result-header,
+  .spectrum-head,
+  .cleanup-head {
+    min-height: 58px;
+
+    padding: 0 16px;
+  }
+
+  .result-header h2,
+  .spectrum-head h2,
+  .cleanup-head h2,
+  .scale-notes h2 {
+    font-size: 18px;
+  }
+
+  .status {
+    max-width: 130px;
+
+    text-align: right;
+
+    font-size: 9px;
+
+    line-height: 1.3;
+  }
+
+  .tiny {
+    display: none;
+  }
+
+
+  /* ANALYSIS CARDS */
+
+  .results {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .result-card {
+    min-height: 125px;
+
+    padding: 18px;
+
+    border-right: none;
+
+    border-bottom: 1px solid var(--black);
+  }
+
+  .result-card:last-child {
+    border-bottom: none;
+  }
+
+  .result-value {
+    margin-top: 28px;
+
+    font-size: 38px;
+  }
+
+
+  /* SCALE */
+
+  .scale-notes {
+    min-height: auto;
+
+    padding: 22px 18px;
+  }
+
+  .scale-notes-header {
+    margin-bottom: 22px;
+  }
+
+  .notes {
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    word-spacing: 3px;
+  }
+
+
+  /* CLEANUP */
+
+  .cleanup-section {
+    display: block;
+  }
+
+  .cleanup-left {
+    min-height: 310px;
+
+    padding: 28px 18px;
+
+    border-right: none;
+
+    border-bottom: 1px solid var(--black);
+  }
+
+  .cleanup-number {
+    font-size: 9px;
+  }
+
+  .cleanup-title {
+    margin-top: 24px;
+
+    font-size: 52px;
+  }
+
+  .cleanup-copy {
+    margin-top: 24px;
+
+    max-width: 310px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+  .cleanup-right {
+    padding: 20px 16px;
+  }
+
+  .control-title {
+    font-size: 20px;
+  }
+
+  .tool-row {
+    min-height: 76px;
+
+    gap: 12px;
+  }
+
+  .tool-name {
+    font-size: 15px;
+  }
+
+  .tool-desc {
+    max-width: 220px;
+
+    font-size: 10px;
+  }
+
+  .toggle {
+    min-width: 58px;
+
+    padding: 10px 10px;
+
+    font-size: 10px;
+  }
+
+  .control-group {
+    padding: 20px 0;
+  }
+
+  .option-row {
+    gap: 8px;
+  }
+
+  .option {
+    flex: 1;
+
+    min-width: 75px;
+
+    padding: 12px 8px;
+  }
+
+  .process-button,
+  .download-button {
+    padding: 17px;
+
+    font-size: 17px;
+  }
+
+
+  /* AUDIO */
+
+  .audio-preview {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 18px;
+  }
+
+  .preview-box {
+    padding: 12px;
+  }
+
+  audio {
+    min-height: 42px;
+  }
+
+  .click-indicator {
+    min-height: 50px;
+
+    font-size: 13px;
+  }
+
+
+  /* SPECTRUM */
+
+  .spectrum-grid {
+    display: block;
+  }
+
+  .spectrum-card {
+    padding: 16px;
+
+    border-right: none;
+
+    border-bottom: 1px solid var(--black);
+  }
+
+  .spectrum-card:last-child {
+    border-bottom: none;
+  }
+
+  .spectrum-label {
+    margin-bottom: 12px;
+
+    font-size: 9px;
+  }
+
+  .spectrum-canvas-wrap {
+    height: 180px;
+  }
+
+  .freq-labels {
+    font-size: 8px;
+  }
+
+
+  /* CLEANUP ACTIVITY */
+
+  .cleanup-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .cleanup-card {
+    min-height: 145px;
+
+    padding: 16px;
+
+    border-right: 1px solid var(--black);
+
+    border-bottom: 1px solid var(--black);
+  }
+
+  .cleanup-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .cleanup-card:nth-child(3),
+  .cleanup-card:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .cleanup-value {
+    margin-top: 32px;
+
+    font-size:
+      clamp(
+        25px,
+        8vw,
+        36px
+      );
+  }
+
+  .cleanup-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .cleanup-range {
+    font-size: 8px;
+  }
+
+}
+
+
+/* ==================================================
+   VERY SMALL MOBILE
+================================================== */
+
+@media (max-width: 380px) {
+
+  .hero-title .sound {
+    font-size: 46px;
+  }
+
+  .hero-title .lab {
+    font-size: 61px;
+  }
+
+  .description {
+    width: 80%;
+  }
+
+  .upload-box {
+    height: 300px;
+  }
+
+  .cleanup-title {
+    font-size: 46px;
+  }
+
+  .cleanup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cleanup-card,
+  .cleanup-card:nth-child(2n),
+  .cleanup-card:nth-child(3),
+  .cleanup-card:nth-child(4) {
+    border-right: none;
+
+    border-bottom: 1px solid var(--black);
+  }
+
+  .cleanup-card:last-child {
+    border-bottom: none;
   }
 
 }
@@ -843,55 +1556,58 @@ canvas {
 </style>
 </head>
 
+
 <body>
+
 
 <header class="topbar">
 
-<div class="brand">
-<span class="brand-dot"></span>
-SOUND LAB
-</div>
+  <div class="brand">
+    <span class="brand-dot"></span>
+    SOUND LAB
+  </div>
 
-<div>
-KEY · SCALE · BPM · CLEANUP · 001
-</div>
+  <div>
+    KEY · SCALE · BPM · CLEANUP · 001
+  </div>
 
 </header>
+
 
 <main class="main">
 
 <section class="left">
 
-<div class="eyebrow">
-LISTEN / ANALYZE / CLEAN
-</div>
+  <div class="eyebrow">
+    LISTEN / ANALYZE / CLEAN
+  </div>
 
-<div class="hero-flower">
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-</div>
+  <div class="hero-flower">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-<h1 class="hero-title">
+  <h1 class="hero-title">
 
-<span class="sound">
-SOUND
-</span>
+    <span class="sound">
+      SOUND
+    </span>
 
-<span class="lab">
-LAB
-</span>
+    <span class="lab">
+      LAB
+    </span>
 
-</h1>
+  </h1>
 
-<p class="description">
-Drop a track.
-Find its key.
-Catch the tempo.
-Clean the noise.
-One strange little lab for your sound.
-</p>
+  <p class="description">
+    Drop a track.
+    Find its key.
+    Catch the tempo.
+    Clean the noise.
+    One strange little lab for your sound.
+  </p>
 
 </section>
 
@@ -915,29 +1631,29 @@ One strange little lab for your sound.
 
 <div class="upload-content">
 
-<div class="plus">
-+
-</div>
+  <div class="plus">
+    +
+  </div>
 
-<div class="upload-title">
-DROP YOUR<br>
-AUDIO HERE
-</div>
+  <div class="upload-title">
+    DROP YOUR<br>
+    AUDIO HERE
+  </div>
 
-<div class="browse">
-OR CLICK TO BROWSE
-</div>
+  <div class="browse">
+    OR CLICK TO BROWSE
+  </div>
 
-<div class="formats">
-WAV · MP3 · M4A
-</div>
+  <div class="formats">
+    WAV · MP3 · M4A
+  </div>
 
-<div
-  class="filename"
-  id="fileName"
->
-NO FILE SELECTED
-</div>
+  <div
+    class="filename"
+    id="fileName"
+  >
+    NO FILE SELECTED
+  </div>
 
 </div>
 
@@ -975,16 +1691,16 @@ SOFTEN THE S ✦
 
 <div class="result-header">
 
-<h2>
-ANALYSIS RESULT
-</h2>
+  <h2>
+    ANALYSIS RESULT
+  </h2>
 
-<div
-  class="status"
-  id="status"
->
-LOADING ANALYZER...
-</div>
+  <div
+    class="status"
+    id="status"
+  >
+    LOADING ANALYZER...
+  </div>
 
 </div>
 
@@ -993,48 +1709,48 @@ LOADING ANALYZER...
 
 <div class="result-card key">
 
-<div class="result-label">
-KEY
-</div>
+  <div class="result-label">
+    KEY
+  </div>
 
-<div
-  class="result-value"
-  id="keyResult"
->
-—
-</div>
+  <div
+    class="result-value"
+    id="keyResult"
+  >
+    —
+  </div>
 
 </div>
 
 
 <div class="result-card">
 
-<div class="result-label">
-BPM
-</div>
+  <div class="result-label">
+    BPM
+  </div>
 
-<div
-  class="result-value"
-  id="bpmResult"
->
-—
-</div>
+  <div
+    class="result-value"
+    id="bpmResult"
+  >
+    —
+  </div>
 
 </div>
 
 
 <div class="result-card confidence">
 
-<div class="result-label">
-CONFIDENCE
-</div>
+  <div class="result-label">
+    CONFIDENCE
+  </div>
 
-<div
-  class="result-value"
-  id="confidenceResult"
->
-—
-</div>
+  <div
+    class="result-value"
+    id="confidenceResult"
+  >
+    —
+  </div>
 
 </div>
 
@@ -1047,13 +1763,13 @@ CONFIDENCE
 
 <div class="scale-notes-header">
 
-<h2>
-SCALE NOTES
-</h2>
+  <h2>
+    SCALE NOTES
+  </h2>
 
-<div class="tiny">
-YOUR TRACK / YOUR SOUND
-</div>
+  <div class="tiny">
+    YOUR TRACK / YOUR SOUND
+  </div>
 
 </div>
 
@@ -1061,7 +1777,7 @@ YOUR TRACK / YOUR SOUND
   class="notes"
   id="scaleNotes"
 >
-— · — · — · — · — · — · — · —
+  — · — · — · — · — · — · — · —
 </div>
 
 </section>
@@ -1071,24 +1787,23 @@ YOUR TRACK / YOUR SOUND
 
 <div class="cleanup-left">
 
-<div class="cleanup-number">
-CLEANUP / 002
-</div>
+  <div class="cleanup-number">
+    CLEANUP / 002
+  </div>
 
-<div class="cleanup-title">
-CLEAN<br>
-YOUR<br>
-SOUND.
-</div>
+  <div class="cleanup-title">
+    CLEAN<br>
+    YOUR<br>
+    SOUND.
+  </div>
 
-<div class="cleanup-copy">
-Choose what Sound Lab should clean.
-
-Denoise reduces broad background noise,
-De-Click repairs short ticks,
-De-Pop controls low thumps,
-and De-Ess softens harsh high-frequency S sounds.
-</div>
+  <div class="cleanup-copy">
+    Choose what Sound Lab should clean.
+    Denoise reduces broad background noise,
+    De-Click repairs short ticks,
+    De-Pop controls low thumps,
+    and De-Ess softens harsh high-frequency S sounds.
+  </div>
 
 </div>
 
@@ -1096,7 +1811,7 @@ and De-Ess softens harsh high-frequency S sounds.
 <div class="cleanup-right">
 
 <div class="control-title">
-CLEANUP TOOLS
+  CLEANUP TOOLS
 </div>
 
 
@@ -1104,88 +1819,88 @@ CLEANUP TOOLS
 
 <div class="tool-row">
 
-<div>
-<div class="tool-name">
-DENOISE
-</div>
+  <div>
+    <div class="tool-name">
+      DENOISE
+    </div>
 
-<div class="tool-desc">
-Reduce low rumble and high-frequency hiss.
-</div>
-</div>
+    <div class="tool-desc">
+      Reduce low rumble and high-frequency hiss.
+    </div>
+  </div>
 
-<button
-  class="toggle active"
-  data-tool="denoise"
->
-ON
-</button>
-
-</div>
-
-
-<div class="tool-row">
-
-<div>
-<div class="tool-name">
-DE-CLICK
-</div>
-
-<div class="tool-desc">
-Detect short click and tick spikes.
-</div>
-</div>
-
-<button
-  class="toggle active"
-  data-tool="declick"
->
-ON
-</button>
+  <button
+    class="toggle active"
+    data-tool="denoise"
+  >
+    ON
+  </button>
 
 </div>
 
 
 <div class="tool-row">
 
-<div>
-<div class="tool-name">
-DE-POP
-</div>
+  <div>
+    <div class="tool-name">
+      DE-CLICK
+    </div>
 
-<div class="tool-desc">
-Reduce low-frequency thumps and microphone plosives.
-</div>
-</div>
+    <div class="tool-desc">
+      Detect short click and tick spikes.
+    </div>
+  </div>
 
-<button
-  class="toggle active"
-  data-tool="depop"
->
-ON
-</button>
+  <button
+    class="toggle active"
+    data-tool="declick"
+  >
+    ON
+  </button>
 
 </div>
 
 
 <div class="tool-row">
 
-<div>
-<div class="tool-name">
-DE-ESS
+  <div>
+    <div class="tool-name">
+      DE-POP
+    </div>
+
+    <div class="tool-desc">
+      Reduce low-frequency thumps and microphone plosives.
+    </div>
+  </div>
+
+  <button
+    class="toggle active"
+    data-tool="depop"
+  >
+    ON
+  </button>
+
 </div>
 
-<div class="tool-desc">
-Reduce harsh vocal sibilance around 5–10 kHz.
-</div>
-</div>
 
-<button
-  class="toggle"
-  data-tool="deess"
->
-OFF
-</button>
+<div class="tool-row">
+
+  <div>
+    <div class="tool-name">
+      DE-ESS
+    </div>
+
+    <div class="tool-desc">
+      Reduce harsh vocal sibilance around 5–10 kHz.
+    </div>
+  </div>
+
+  <button
+    class="toggle"
+    data-tool="deess"
+  >
+    OFF
+  </button>
 
 </div>
 
@@ -1194,61 +1909,61 @@ OFF
 
 <div class="control-group">
 
-<div class="control-label">
-CLEANUP STRENGTH
-</div>
+  <div class="control-label">
+    CLEANUP STRENGTH
+  </div>
 
-<div class="option-row">
+  <div class="option-row">
 
-<button
-  class="option strength"
-  data-strength="low"
->
-LOW
-</button>
+    <button
+      class="option strength"
+      data-strength="low"
+    >
+      LOW
+    </button>
 
-<button
-  class="option strength active"
-  data-strength="medium"
->
-MEDIUM
-</button>
+    <button
+      class="option strength active"
+      data-strength="medium"
+    >
+      MEDIUM
+    </button>
 
-<button
-  class="option strength"
-  data-strength="high"
->
-HIGH
-</button>
+    <button
+      class="option strength"
+      data-strength="high"
+    >
+      HIGH
+    </button>
 
-</div>
+  </div>
 
 </div>
 
 
 <div class="control-group">
 
-<div class="control-label">
-OUTPUT FORMAT
-</div>
+  <div class="control-label">
+    OUTPUT FORMAT
+  </div>
 
-<div class="option-row">
+  <div class="option-row">
 
-<button
-  class="option format active"
-  data-format="wav"
->
-WAV
-</button>
+    <button
+      class="option format active"
+      data-format="wav"
+    >
+      WAV
+    </button>
 
-<button
-  class="option format"
-  data-format="mp3"
->
-MP3
-</button>
+    <button
+      class="option format"
+      data-format="mp3"
+    >
+      MP3
+    </button>
 
-</div>
+  </div>
 
 </div>
 
@@ -1257,7 +1972,7 @@ MP3
   class="process-status"
   id="cleanupStatus"
 >
-WAITING FOR AUDIO
+  WAITING FOR AUDIO
 </div>
 
 
@@ -1266,7 +1981,7 @@ WAITING FOR AUDIO
   id="cleanupButton"
   disabled
 >
-CLEAN AUDIO ✦
+  CLEAN AUDIO ✦
 </button>
 
 
@@ -1277,30 +1992,30 @@ CLEAN AUDIO ✦
 
 <div class="preview-box">
 
-<div class="preview-label">
-ORIGINAL
-</div>
+  <div class="preview-label">
+    ORIGINAL
+  </div>
 
-<audio
-  id="originalAudio"
-  controls
-  preload="auto"
-></audio>
+  <audio
+    id="originalAudio"
+    controls
+    preload="auto"
+  ></audio>
 
 </div>
 
 
 <div class="preview-box">
 
-<div class="preview-label">
-CLEANED
-</div>
+  <div class="preview-label">
+    CLEANED
+  </div>
 
-<audio
-  id="cleanAudio"
-  controls
-  preload="auto"
-></audio>
+  <audio
+    id="cleanAudio"
+    controls
+    preload="auto"
+  ></audio>
 
 </div>
 
@@ -1311,7 +2026,7 @@ CLEANED
   class="click-indicator no-click"
   id="clickIndicator"
 >
-NO CLICK
+  NO CLICK
 </div>
 
 
@@ -1319,7 +2034,7 @@ NO CLICK
   class="download-button"
   id="downloadButton"
 >
-DOWNLOAD CLEAN AUDIO ↓
+  DOWNLOAD CLEAN AUDIO ↓
 </button>
 
 </div>
@@ -1334,13 +2049,13 @@ DOWNLOAD CLEAN AUDIO ↓
 
 <div class="spectrum-head">
 
-<h2>
-SPECTRUM COMPARISON
-</h2>
+  <h2>
+    SPECTRUM COMPARISON
+  </h2>
 
-<div class="tiny">
-ORIGINAL = OBSERVE / CLEANED = COMPARE
-</div>
+  <div class="tiny">
+    ORIGINAL = OBSERVE / CLEANED = COMPARE
+  </div>
 
 </div>
 
@@ -1349,57 +2064,57 @@ ORIGINAL = OBSERVE / CLEANED = COMPARE
 
 <div class="spectrum-card">
 
-<div class="spectrum-label">
-ORIGINAL · LIVE
-</div>
+  <div class="spectrum-label">
+    ORIGINAL · LIVE
+  </div>
 
-<div class="spectrum-canvas-wrap">
-<canvas id="originalSpectrum"></canvas>
-</div>
+  <div class="spectrum-canvas-wrap">
+    <canvas id="originalSpectrum"></canvas>
+  </div>
 
-<div class="freq-labels">
-<span>20 Hz</span>
-<span>1 kHz</span>
-<span>20 kHz</span>
-</div>
-
-</div>
-
-
-<div class="spectrum-card">
-
-<div class="spectrum-label">
-CLEANED · LIVE
-</div>
-
-<div class="spectrum-canvas-wrap">
-<canvas id="cleanSpectrum"></canvas>
-</div>
-
-<div class="freq-labels">
-<span>20 Hz</span>
-<span>1 kHz</span>
-<span>20 kHz</span>
-</div>
+  <div class="freq-labels">
+    <span>20 Hz</span>
+    <span>1 kHz</span>
+    <span>20 kHz</span>
+  </div>
 
 </div>
 
 
 <div class="spectrum-card">
 
-<div class="spectrum-label">
-FREQUENCY REDUCTION
+  <div class="spectrum-label">
+    CLEANED · LIVE
+  </div>
+
+  <div class="spectrum-canvas-wrap">
+    <canvas id="cleanSpectrum"></canvas>
+  </div>
+
+  <div class="freq-labels">
+    <span>20 Hz</span>
+    <span>1 kHz</span>
+    <span>20 kHz</span>
+  </div>
+
 </div>
 
-<div class="spectrum-canvas-wrap">
-<canvas id="reductionSpectrum"></canvas>
-</div>
 
-<div class="freq-labels">
-<span>20 Hz</span>
-<span>1 kHz</span>
-<span>20 kHz</span>
-</div>
+<div class="spectrum-card">
+
+  <div class="spectrum-label">
+    FREQUENCY REDUCTION
+  </div>
+
+  <div class="spectrum-canvas-wrap">
+    <canvas id="reductionSpectrum"></canvas>
+  </div>
+
+  <div class="freq-labels">
+    <span>20 Hz</span>
+    <span>1 kHz</span>
+    <span>20 kHz</span>
+  </div>
 
 </div>
 
@@ -1415,13 +2130,13 @@ FREQUENCY REDUCTION
 
 <div class="cleanup-head">
 
-<h2>
-CLEANUP ACTIVITY
-</h2>
+  <h2>
+    CLEANUP ACTIVITY
+  </h2>
 
-<div class="tiny">
-CLEANED PLAYBACK ONLY
-</div>
+  <div class="tiny">
+    CLEANED PLAYBACK ONLY
+  </div>
 
 </div>
 
@@ -1430,80 +2145,80 @@ CLEANED PLAYBACK ONLY
 
 <div class="cleanup-card">
 
-<div class="cleanup-label">
-RUMBLE
-</div>
+  <div class="cleanup-label">
+    RUMBLE
+  </div>
 
-<div
-  class="cleanup-value"
-  id="rumbleValue"
->
-—
-</div>
+  <div
+    class="cleanup-value"
+    id="rumbleValue"
+  >
+    —
+  </div>
 
-<div class="cleanup-range">
-20 Hz – 100 Hz
-</div>
-
-</div>
-
-
-<div class="cleanup-card">
-
-<div class="cleanup-label">
-HISS
-</div>
-
-<div
-  class="cleanup-value"
-  id="hissValue"
->
-—
-</div>
-
-<div class="cleanup-range">
-14 kHz – 20 kHz
-</div>
+  <div class="cleanup-range">
+    20 Hz – 100 Hz
+  </div>
 
 </div>
 
 
 <div class="cleanup-card">
 
-<div class="cleanup-label">
-SIBILANCE
-</div>
+  <div class="cleanup-label">
+    HISS
+  </div>
 
-<div
-  class="cleanup-value"
-  id="sibilanceValue"
->
-—
-</div>
+  <div
+    class="cleanup-value"
+    id="hissValue"
+  >
+    —
+  </div>
 
-<div class="cleanup-range">
-5 kHz – 10 kHz
-</div>
+  <div class="cleanup-range">
+    14 kHz – 20 kHz
+  </div>
 
 </div>
 
 
 <div class="cleanup-card">
 
-<div class="cleanup-label">
-CLICKS
+  <div class="cleanup-label">
+    SIBILANCE
+  </div>
+
+  <div
+    class="cleanup-value"
+    id="sibilanceValue"
+  >
+    —
+  </div>
+
+  <div class="cleanup-range">
+    5 kHz – 10 kHz
+  </div>
+
 </div>
 
-<div
-  class="cleanup-value"
-  id="clickValue"
->
-—
-</div>
 
-<div class="cleanup-range">
-DETECTED / REPAIRED
-</div>
+<div class="cleanup-card">
+
+  <div class="cleanup-label">
+    CLICKS
+  </div>
+
+  <div
+    class="cleanup-value"
+    id="clickValue"
+  >
+    —
+  </div>
+
+  <div class="cleanup-range">
+    DETECTED / REPAIRED
+  </div>
 
 </div>
 
@@ -1629,12 +2344,6 @@ let activePlayer =
 let clickFlashTimeout =
   null;
 
-let userSeekingOriginal =
-  false;
-
-let userSeekingClean =
-  false;
-
 let tools = {
   denoise: true,
   declick: true,
@@ -1643,7 +2352,9 @@ let tools = {
 };
 
 
-/* ESSENTIA */
+/* ==================================================
+   ESSENTIA
+================================================== */
 
 async function initializeEssentia() {
 
@@ -1676,7 +2387,9 @@ async function initializeEssentia() {
 initializeEssentia();
 
 
-/* SCALE */
+/* ==================================================
+   SCALE
+================================================== */
 
 const SCALE_MAP = {
 
@@ -1745,7 +2458,9 @@ function showScaleNotes(keyName) {
 }
 
 
-/* ANALYZE */
+/* ==================================================
+   ANALYZE
+================================================== */
 
 async function analyzeFile(file) {
 
@@ -1769,12 +2484,6 @@ async function analyzeFile(file) {
 
   clickPositions =
     [];
-
-  userSeekingOriginal =
-    false;
-
-  userSeekingClean =
-    false;
 
   fileName.textContent =
     file.name.toUpperCase();
@@ -1977,7 +2686,9 @@ async function analyzeFile(file) {
 
 
     confidenceResult.textContent =
-      confidence + "%";
+      confidence
+      +
+      "%";
 
 
     statusEl.textContent =
@@ -2011,7 +2722,9 @@ async function analyzeFile(file) {
 }
 
 
-/* TOGGLES */
+/* ==================================================
+   TOGGLES
+================================================== */
 
 document
 .querySelectorAll(".toggle")
@@ -2050,7 +2763,9 @@ document
 );
 
 
-/* STRENGTH */
+/* ==================================================
+   STRENGTH
+================================================== */
 
 document
 .querySelectorAll(".strength")
@@ -2086,7 +2801,9 @@ document
 );
 
 
-/* FORMAT */
+/* ==================================================
+   FORMAT
+================================================== */
 
 document
 .querySelectorAll(".format")
@@ -2134,7 +2851,9 @@ document
 );
 
 
-/* COPY BUFFER */
+/* ==================================================
+   COPY BUFFER
+================================================== */
 
 function copyAudioBuffer(buffer) {
 
@@ -2173,7 +2892,9 @@ function copyAudioBuffer(buffer) {
 }
 
 
-/* DE-CLICK */
+/* ==================================================
+   DE-CLICK
+================================================== */
 
 function applyDeClick(buffer) {
 
@@ -2303,7 +3024,9 @@ function applyDeClick(buffer) {
   ) {
 
     if (
-      sampleIndex - lastSample
+      sampleIndex
+      -
+      lastSample
       >
       mergeDistance
     ) {
@@ -2327,7 +3050,9 @@ function applyDeClick(buffer) {
 }
 
 
-/* CLEAN PROCESS */
+/* ==================================================
+   CLEAN PROCESS
+================================================== */
 
 async function processCleanup() {
 
@@ -2400,6 +3125,8 @@ async function processCleanup() {
       source;
 
 
+    /* DE-POP */
+
     if (
       tools.depop
     ) {
@@ -2452,6 +3179,8 @@ async function processCleanup() {
 
     }
 
+
+    /* DENOISE */
 
     if (
       tools.denoise
@@ -2534,6 +3263,8 @@ async function processCleanup() {
 
     }
 
+
+    /* DE-ESS */
 
     if (
       tools.deess
@@ -2704,7 +3435,9 @@ async function processCleanup() {
 }
 
 
-/* CLICK INDICATOR */
+/* ==================================================
+   CLICK INDICATOR
+================================================== */
 
 function resetClickIndicator() {
 
@@ -2748,7 +3481,9 @@ function resetClickIndicator() {
 }
 
 
-function updateClickIndicator(currentTime) {
+function updateClickIndicator(
+  currentTime
+) {
 
   if (
     !tools.declick
@@ -2774,7 +3509,9 @@ function updateClickIndicator(currentTime) {
 
     if (
       Math.abs(
-        clickTime - currentTime
+        clickTime
+        -
+        currentTime
       )
       <=
       .12
@@ -2859,7 +3596,9 @@ function updateClickIndicator(currentTime) {
 }
 
 
-/* WAIT */
+/* ==================================================
+   WAIT
+================================================== */
 
 function waitForLayout() {
 
@@ -2882,7 +3621,9 @@ function waitForLayout() {
 }
 
 
-/* FFT */
+/* ==================================================
+   FFT
+================================================== */
 
 function fft(
   real,
@@ -2931,7 +3672,8 @@ function fft(
       [
         real[i],
         real[j]
-      ] =
+      ]
+      =
       [
         real[j],
         real[i]
@@ -2941,7 +3683,8 @@ function fft(
       [
         imag[i],
         imag[j]
-      ] =
+      ]
+      =
       [
         imag[j],
         imag[i]
@@ -2987,7 +3730,6 @@ function fft(
       let wCos =
         1;
 
-
       let wSin =
         0;
 
@@ -3011,15 +3753,23 @@ function fft(
 
 
         const oddReal =
-          real[odd] * wCos
+          real[odd]
+          *
+          wCos
           -
-          imag[odd] * wSin;
+          imag[odd]
+          *
+          wSin;
 
 
         const oddImag =
-          real[odd] * wSin
+          real[odd]
+          *
+          wSin
           +
-          imag[odd] * wCos;
+          imag[odd]
+          *
+          wCos;
 
 
         const evenReal =
@@ -3031,31 +3781,47 @@ function fft(
 
 
         real[even] =
-          evenReal + oddReal;
+          evenReal
+          +
+          oddReal;
 
 
         imag[even] =
-          evenImag + oddImag;
+          evenImag
+          +
+          oddImag;
 
 
         real[odd] =
-          evenReal - oddReal;
+          evenReal
+          -
+          oddReal;
 
 
         imag[odd] =
-          evenImag - oddImag;
+          evenImag
+          -
+          oddImag;
 
 
         const nextCos =
-          wCos * wLenCos
+          wCos
+          *
+          wLenCos
           -
-          wSin * wLenSin;
+          wSin
+          *
+          wLenSin;
 
 
         const nextSin =
-          wCos * wLenSin
+          wCos
+          *
+          wLenSin
           +
-          wSin * wLenCos;
+          wSin
+          *
+          wLenCos;
 
 
         wCos =
@@ -3074,7 +3840,9 @@ function fft(
 }
 
 
-/* SPECTRUM */
+/* ==================================================
+   SPECTRUM CALC
+================================================== */
 
 function computeMomentSpectrum(
   buffer,
@@ -3112,7 +3880,9 @@ function computeMomentSpectrum(
   const maxStart =
     Math.max(
       0,
-      buffer.length - fftSize
+      buffer.length
+      -
+      fftSize
     );
 
 
@@ -3221,9 +3991,13 @@ function computeMomentSpectrum(
   ) {
 
     const value =
-      real[bin] * real[bin]
+      real[bin]
+      *
+      real[bin]
       +
-      imag[bin] * imag[bin];
+      imag[bin]
+      *
+      imag[bin];
 
 
     power[bin] =
@@ -3234,7 +4008,9 @@ function computeMomentSpectrum(
       10
       *
       Math.log10(
-        value + 1e-15
+        value
+        +
+        1e-15
       );
 
   }
@@ -3250,9 +4026,13 @@ function computeMomentSpectrum(
 }
 
 
-/* CANVAS */
+/* ==================================================
+   CANVAS
+================================================== */
 
-function prepareCanvas(canvas) {
+function prepareCanvas(
+  canvas
+) {
 
   const rect =
     canvas.getBoundingClientRect();
@@ -3273,23 +4053,31 @@ function prepareCanvas(canvas) {
 
 
   const dpr =
-    window.devicePixelRatio || 1;
+    window.devicePixelRatio
+    ||
+    1;
 
 
   canvas.width =
     Math.round(
-      width * dpr
+      width
+      *
+      dpr
     );
 
 
   canvas.height =
     Math.round(
-      height * dpr
+      height
+      *
+      dpr
     );
 
 
   const ctx =
-    canvas.getContext("2d");
+    canvas.getContext(
+      "2d"
+    );
 
 
   ctx.setTransform(
@@ -3330,7 +4118,9 @@ function getDbAtFrequency(
     Math.max(
       0,
       Math.min(
-        spectrum.db.length - 1,
+        spectrum.db.length
+        -
+        1,
         bin
       )
     )
@@ -3339,7 +4129,9 @@ function getDbAtFrequency(
 }
 
 
-/* DRAW SPECTRUM */
+/* ==================================================
+   DRAW SPECTRUM
+================================================== */
 
 function drawSpectrum(
   canvas,
@@ -3351,7 +4143,8 @@ function drawSpectrum(
     ctx,
     width,
     height
-  } =
+  }
+  =
   prepareCanvas(
     canvas
   );
@@ -3372,7 +4165,9 @@ function drawSpectrum(
   const maxFreq =
     Math.min(
       20000,
-      spectrum.sampleRate / 2
+      spectrum.sampleRate
+      /
+      2
     );
 
 
@@ -3399,7 +4194,9 @@ function drawSpectrum(
       minFreq
       *
       Math.pow(
-        maxFreq / minFreq,
+        maxFreq
+        /
+        minFreq,
         ratio
       );
 
@@ -3421,7 +4218,9 @@ function drawSpectrum(
 
 
   if (
-    !Number.isFinite(maxDb)
+    !Number.isFinite(
+      maxDb
+    )
   ) {
 
     maxDb =
@@ -3445,7 +4244,9 @@ function drawSpectrum(
           0,
           Math.min(
             1,
-            (db - floor) / 65
+            (db - floor)
+            /
+            65
           )
         );
 
@@ -3525,7 +4326,9 @@ function drawSpectrum(
 }
 
 
-/* REDUCTION */
+/* ==================================================
+   REDUCTION
+================================================== */
 
 function drawReduction(
   originalSpectrum,
@@ -3536,7 +4339,8 @@ function drawReduction(
     ctx,
     width,
     height
-  } =
+  }
+  =
   prepareCanvas(
     reductionSpectrumCanvas
   );
@@ -3557,7 +4361,9 @@ function drawReduction(
   const maxFreq =
     Math.min(
       20000,
-      originalSpectrum.sampleRate / 2
+      originalSpectrum.sampleRate
+      /
+      2
     );
 
 
@@ -3583,7 +4389,9 @@ function drawReduction(
       minFreq
       *
       Math.pow(
-        maxFreq / minFreq,
+        maxFreq
+        /
+        minFreq,
         ratio
       );
 
@@ -3605,7 +4413,9 @@ function drawReduction(
     const reduction =
       Math.max(
         0,
-        before - after
+        before
+        -
+        after
       );
 
 
@@ -3690,7 +4500,9 @@ function drawReduction(
 }
 
 
-/* BAND REDUCTION */
+/* ==================================================
+   BAND REDUCTION
+================================================== */
 
 function calculateBandReduction(
   originalSpectrum,
@@ -3709,7 +4521,8 @@ function calculateBandReduction(
 
   for (
     let bin = 1;
-    bin < originalSpectrum.power.length;
+    bin <
+    originalSpectrum.power.length;
     bin++
   ) {
 
@@ -3728,11 +4541,15 @@ function calculateBandReduction(
     ) {
 
       before +=
-        originalSpectrum.power[bin];
+        originalSpectrum.power[
+          bin
+        ];
 
 
       after +=
-        cleanSpectrum.power[bin];
+        cleanSpectrum.power[
+          bin
+        ];
 
     }
 
@@ -3761,10 +4578,14 @@ function calculateBandReduction(
 }
 
 
-function formatReduction(value) {
+function formatReduction(
+  value
+) {
 
   if (
-    !Number.isFinite(value)
+    !Number.isFinite(
+      value
+    )
     ||
     value < .005
   ) {
@@ -3800,9 +4621,13 @@ function formatReduction(value) {
 }
 
 
-/* ORIGINAL */
+/* ==================================================
+   ORIGINAL UPDATE
+================================================== */
 
-function updateOriginalOnly(time) {
+function updateOriginalOnly(
+  time
+) {
 
   if (
     !decodedAudio
@@ -3829,9 +4654,13 @@ function updateOriginalOnly(time) {
 }
 
 
-/* CLEANED */
+/* ==================================================
+   CLEANED UPDATE
+================================================== */
 
-function updateCleanedComparison(time) {
+function updateCleanedComparison(
+  time
+) {
 
   if (
     !decodedAudio
@@ -3858,7 +4687,9 @@ function updateCleanedComparison(time) {
         time,
         Math.max(
           0,
-          maxDuration - .03
+          maxDuration
+          -
+          .03
         )
       )
     );
@@ -3919,7 +4750,9 @@ function updateCleanedComparison(time) {
 
 
   rumbleValue.textContent =
-    tools.depop || tools.denoise
+    tools.depop
+    ||
+    tools.denoise
     ?
     formatReduction(
       rumble
@@ -3951,7 +4784,9 @@ function updateCleanedComparison(time) {
   clickValue.textContent =
     tools.declick
     ?
-    repairedClickCount + " FIXED"
+    repairedClickCount
+    +
+    " FIXED"
     :
     "OFF";
 
@@ -3963,9 +4798,13 @@ function updateCleanedComparison(time) {
 }
 
 
-/* INITIAL */
+/* ==================================================
+   INITIAL STATIC
+================================================== */
 
-function drawStaticComparison(time) {
+function drawStaticComparison(
+  time
+) {
 
   if (
     !decodedAudio
@@ -4027,14 +4866,18 @@ function drawStaticComparison(time) {
   clickValue.textContent =
     tools.declick
     ?
-    repairedClickCount + " FIXED"
+    repairedClickCount
+    +
+    " FIXED"
     :
     "OFF";
 
 }
 
 
-/* LIVE LOOPS */
+/* ==================================================
+   LOOPS
+================================================== */
 
 function startOriginalLoop() {
 
@@ -4049,7 +4892,9 @@ function startOriginalLoop() {
     0;
 
 
-  function frame(timestamp) {
+  function frame(
+    timestamp
+  ) {
 
     if (
       originalAudio.paused
@@ -4110,7 +4955,9 @@ function startCleanLoop() {
     0;
 
 
-  function frame(timestamp) {
+  function frame(
+    timestamp
+  ) {
 
     if (
       cleanAudio.paused
@@ -4178,31 +5025,8 @@ function stopLiveLoop() {
 
 
 /* ==================================================
-   PLAYBACK FIX
-   USER CAN SEEK ANYWHERE FREELY
+   PLAYBACK
 ================================================== */
-
-originalAudio.addEventListener(
-  "seeking",
-  () => {
-
-    userSeekingOriginal =
-      true;
-
-  }
-);
-
-
-cleanAudio.addEventListener(
-  "seeking",
-  () => {
-
-    userSeekingClean =
-      true;
-
-  }
-);
-
 
 originalAudio.addEventListener(
   "play",
@@ -4219,10 +5043,6 @@ originalAudio.addEventListener(
 
     activePlayer =
       "original";
-
-
-    userSeekingOriginal =
-      false;
 
 
     resetClickIndicator();
@@ -4249,10 +5069,6 @@ cleanAudio.addEventListener(
 
     activePlayer =
       "clean";
-
-
-    userSeekingClean =
-      false;
 
 
     startCleanLoop();
@@ -4297,10 +5113,6 @@ originalAudio.addEventListener(
   "seeked",
   () => {
 
-    userSeekingOriginal =
-      false;
-
-
     if (
       decodedAudio
     ) {
@@ -4311,13 +5123,6 @@ originalAudio.addEventListener(
 
     }
 
-
-    /*
-      IMPORTANT:
-      Do NOT change cleanAudio.currentTime.
-      User's selected position stays untouched.
-    */
-
   }
 );
 
@@ -4325,10 +5130,6 @@ originalAudio.addEventListener(
 cleanAudio.addEventListener(
   "seeked",
   () => {
-
-    userSeekingClean =
-      false;
-
 
     if (
       cleanedAudio
@@ -4340,20 +5141,17 @@ cleanAudio.addEventListener(
 
     }
 
-
-    /*
-      IMPORTANT:
-      Do NOT change originalAudio.currentTime.
-      User's selected position stays untouched.
-    */
-
   }
 );
 
 
-/* WAV */
+/* ==================================================
+   WAV
+================================================== */
 
-function audioBufferToWavBlob(buffer) {
+function audioBufferToWavBlob(
+  buffer
+) {
 
   const channels =
     buffer.numberOfChannels;
@@ -4377,7 +5175,9 @@ function audioBufferToWavBlob(buffer) {
 
   const arrayBuffer =
     new ArrayBuffer(
-      44 + dataLength
+      44
+      +
+      dataLength
     );
 
 
@@ -4416,7 +5216,9 @@ function audioBufferToWavBlob(buffer) {
 
   view.setUint32(
     4,
-    36 + dataLength,
+    36
+    +
+    dataLength,
     true
   );
 
@@ -4474,7 +5276,9 @@ function audioBufferToWavBlob(buffer) {
 
   view.setUint16(
     32,
-    channels * 2,
+    channels
+    *
+    2,
     true
   );
 
@@ -4551,16 +5355,21 @@ function audioBufferToWavBlob(buffer) {
   return new Blob(
     [arrayBuffer],
     {
-      type: "audio/wav"
+      type:
+        "audio/wav"
     }
   );
 
 }
 
 
-/* MP3 */
+/* ==================================================
+   MP3
+================================================== */
 
-function audioBufferToMp3Blob(buffer) {
+function audioBufferToMp3Blob(
+  buffer
+) {
 
   const channels =
     Math.min(
@@ -4577,7 +5386,9 @@ function audioBufferToMp3Blob(buffer) {
     );
 
 
-  function convert(data) {
+  function convert(
+    data
+  ) {
 
     const output =
       new Int16Array(
@@ -4649,7 +5460,9 @@ function audioBufferToMp3Blob(buffer) {
     const leftChunk =
       left.subarray(
         i,
-        i + blockSize
+        i
+        +
+        blockSize
       );
 
 
@@ -4665,7 +5478,9 @@ function audioBufferToMp3Blob(buffer) {
           leftChunk,
           right.subarray(
             i,
-            i + blockSize
+            i
+            +
+            blockSize
           )
         );
 
@@ -4712,14 +5527,17 @@ function audioBufferToMp3Blob(buffer) {
   return new Blob(
     result,
     {
-      type: "audio/mpeg"
+      type:
+        "audio/mpeg"
     }
   );
 
 }
 
 
-/* DOWNLOAD */
+/* ==================================================
+   DOWNLOAD
+================================================== */
 
 function downloadBlob(
   blob,
@@ -4733,7 +5551,9 @@ function downloadBlob(
 
 
   const a =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
 
 
   a.href =
@@ -4803,7 +5623,9 @@ downloadButton.addEventListener(
         audioBufferToWavBlob(
           cleanedAudio
         ),
-        baseName + "_clean.wav"
+        baseName
+        +
+        "_clean.wav"
       );
 
 
@@ -4827,7 +5649,9 @@ downloadButton.addEventListener(
               audioBufferToMp3Blob(
                 cleanedAudio
               ),
-              baseName + "_clean.mp3"
+              baseName
+              +
+              "_clean.mp3"
             );
 
 
@@ -4838,7 +5662,9 @@ downloadButton.addEventListener(
 
           catch(error) {
 
-            console.error(error);
+            console.error(
+              error
+            );
 
 
             cleanupStatus.textContent =
@@ -4856,7 +5682,9 @@ downloadButton.addEventListener(
 );
 
 
-/* EVENTS */
+/* ==================================================
+   EVENTS
+================================================== */
 
 cleanupButton.addEventListener(
   "click",
