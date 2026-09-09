@@ -8,9 +8,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- ESSENTIA.JS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ESSENTIA -->
   <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.3/dist/essentia-wasm.web.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/essentia.js@0.1.3/dist/essentia.js-core.js"></script>
 
@@ -27,7 +31,6 @@
       --soft-lime: #eaff9d;
       --purple: #9165f5;
       --orange: #ff7548;
-      --pink: #ff94ad;
       --black: #0b0b0b;
     }
 
@@ -38,6 +41,10 @@
       font-family: "Inter", sans-serif;
       overflow-x: hidden;
     }
+
+    /* =========================
+       TOP BAR
+    ========================== */
 
     .topbar {
       height: 48px;
@@ -63,20 +70,29 @@
     .brand-dot {
       width: 10px;
       height: 10px;
+
       border-radius: 50%;
+
       background: var(--lime);
       border: 1px solid var(--black);
     }
+
+    /* =========================
+       MAIN
+    ========================== */
 
     .main {
       min-height: 770px;
 
       display: grid;
-
       grid-template-columns:
-        455px
+        480px
         minmax(0, 1fr);
     }
+
+    /* =========================
+       LEFT
+    ========================== */
 
     .left {
       position: relative;
@@ -126,19 +142,12 @@
 
       font-size: 106px;
 
-      letter-spacing: 1px;
+      /* SOUND와 비슷한 밀도로 수정 */
+      letter-spacing: -2px;
 
       white-space: nowrap;
 
       margin-top: 10px;
-    }
-
-    .lab-letter {
-      display: inline-block;
-    }
-
-    .lab-l {
-      margin-right: 5px;
     }
 
     .hero-circle {
@@ -149,7 +158,7 @@
       height: 300px;
 
       top: 50px;
-      left: 238px;
+      left: 240px;
 
       background: var(--lime);
 
@@ -198,49 +207,17 @@
       position: relative;
       z-index: 5;
 
-      width: 360px;
+      width: 390px;
 
       margin-top: 48px;
 
       font-size: 18px;
-
       line-height: 1.55;
     }
 
-    .sticker {
-      position: absolute;
-      z-index: 5;
-
-      left: 58px;
-      bottom: 50px;
-
-      width: 235px;
-
-      min-height: 130px;
-
-      background: var(--pink);
-
-      border: 1px solid var(--black);
-
-      padding: 22px;
-
-      transform: rotate(-5deg);
-    }
-
-    .sticker-small {
-      font-size: 10px;
-      font-weight: 800;
-
-      margin-bottom: 14px;
-    }
-
-    .sticker-big {
-      font-family: "Archivo Black", sans-serif;
-
-      font-size: 26px;
-
-      line-height: 0.95;
-    }
+    /* =========================
+       RIGHT / UPLOAD
+    ========================== */
 
     .right {
       padding: 34px;
@@ -319,9 +296,9 @@
 
       font-weight: 800;
 
-      max-width: 550px;
+      max-width: 600px;
 
-      word-break: break-all;
+      word-break: break-word;
     }
 
     #audioInput {
@@ -376,6 +353,10 @@
       border: 1px solid var(--black);
     }
 
+    /* =========================
+       MARQUEE
+    ========================== */
+
     .marquee {
       height: 56px;
 
@@ -410,6 +391,10 @@
       }
     }
 
+    /* =========================
+       RESULTS
+    ========================== */
+
     .result-header {
       min-height: 74px;
 
@@ -439,7 +424,8 @@
     .results {
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:
+        repeat(3, 1fr);
 
       min-height: 190px;
 
@@ -466,6 +452,7 @@
 
     .result-label {
       font-size: 10px;
+
       font-weight: 800;
 
       letter-spacing: 3px;
@@ -478,6 +465,10 @@
 
       font-size: clamp(30px, 4vw, 55px);
     }
+
+    /* =========================
+       SCALE NOTES
+    ========================== */
 
     .scale-notes {
       padding: 30px;
@@ -516,6 +507,10 @@
 
       word-spacing: 12px;
     }
+
+    /* =========================
+       DENOISE
+    ========================== */
 
     .noise-section {
       display: grid;
@@ -562,7 +557,7 @@
     }
 
     .noise-action {
-      background: var(--pink);
+      background: var(--orange);
 
       display: flex;
       align-items: center;
@@ -591,13 +586,17 @@
       cursor: not-allowed;
     }
 
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
     @media (max-width: 1000px) {
       .main {
         grid-template-columns: 1fr;
       }
 
       .left {
-        min-height: 650px;
+        min-height: 560px;
 
         border-right: none;
 
@@ -629,27 +628,43 @@
 
 <body>
 
+  <!-- TOP -->
+
   <header class="topbar">
 
     <div class="brand">
+
       <span class="brand-dot"></span>
+
       SOUND LAB
+
     </div>
 
+
     <div>
-      KEY · BPM · CLEAN · 001
+
+      KEY · SCALE · BPM · DENOISE · 001
+
     </div>
 
   </header>
 
 
+  <!-- MAIN -->
+
   <main class="main">
+
+
+    <!-- LEFT -->
 
     <section class="left">
 
       <div class="eyebrow">
+
         LISTEN / ANALYZE / CLEAN
+
       </div>
+
 
       <div class="hero-circle"></div>
 
@@ -657,22 +672,15 @@
       <h1 class="hero-title">
 
         <span class="sound">
+
           SOUND
+
         </span>
+
 
         <span class="lab">
 
-          <span class="lab-letter lab-l">
-            L
-          </span>
-
-          <span class="lab-letter">
-            A
-          </span>
-
-          <span class="lab-letter">
-            B
-          </span>
+          LAB
 
         </span>
 
@@ -680,36 +688,28 @@
 
 
       <p class="description">
+
         Drop a track.
         Find its key.
         Catch the tempo.
         Clean the noise.
         One strange little lab for your sound.
+
       </p>
-
-
-      <div class="sticker">
-
-        <div class="sticker-small">
-          YOUR TRACK HAS
-        </div>
-
-        <div class="sticker-big">
-          A SECRET<br>
-          LANGUAGE.
-        </div>
-
-      </div>
 
     </section>
 
 
+    <!-- RIGHT -->
+
     <section class="right">
+
 
       <label
         class="upload-box"
         id="dropZone"
       >
+
 
         <input
           id="audioInput"
@@ -727,29 +727,45 @@
 
         <div class="upload-content">
 
+
           <div class="plus">
+
             +
+
           </div>
+
 
           <div class="upload-title">
+
             DROP YOUR<br>
             AUDIO HERE
+
           </div>
+
 
           <div class="browse">
+
             OR CLICK TO BROWSE
+
           </div>
 
+
           <div class="formats">
+
             WAV · MP3 · M4A
+
           </div>
+
 
           <div
             class="filename"
             id="fileName"
           >
+
             NO FILE SELECTED
+
           </div>
+
 
         </div>
 
@@ -760,21 +776,26 @@
   </main>
 
 
+  <!-- MOVING TEXT -->
+
   <div class="marquee">
 
     <div class="marquee-inner">
 
       FIND THE KEY ✦
+      READ THE SCALE ✦
       FEEL THE TEMPO ✦
       CLEAN THE NOISE ✦
       KNOW YOUR SOUND ✦
 
       FIND THE KEY ✦
+      READ THE SCALE ✦
       FEEL THE TEMPO ✦
       CLEAN THE NOISE ✦
       KNOW YOUR SOUND ✦
 
       FIND THE KEY ✦
+      READ THE SCALE ✦
       FEEL THE TEMPO ✦
       CLEAN THE NOISE ✦
       KNOW YOUR SOUND ✦
@@ -784,20 +805,30 @@
   </div>
 
 
+  <!-- ANALYSIS -->
+
   <section>
+
 
     <div class="result-header">
 
+
       <h2>
+
         ANALYSIS RESULT
+
       </h2>
+
 
       <div
         class="status"
         id="status"
       >
+
         LOADING ANALYZER...
+
       </div>
+
 
     </div>
 
@@ -807,67 +838,99 @@
 
       <div class="result-card key">
 
+
         <div class="result-label">
+
           KEY
+
         </div>
+
 
         <div
           class="result-value"
           id="keyResult"
         >
+
           —
+
         </div>
+
 
       </div>
 
 
       <div class="result-card">
 
+
         <div class="result-label">
+
           BPM
+
         </div>
+
 
         <div
           class="result-value"
           id="bpmResult"
         >
+
           —
+
         </div>
+
 
       </div>
 
 
       <div class="result-card confidence">
 
+
         <div class="result-label">
+
           CONFIDENCE
+
         </div>
+
 
         <div
           class="result-value"
           id="confidenceResult"
         >
+
           —
+
         </div>
 
+
       </div>
+
 
     </div>
 
   </section>
 
 
+  <!-- SCALE NOTES -->
+
   <section class="scale-notes">
+
 
     <div class="scale-notes-header">
 
+
       <h2>
+
         SCALE NOTES
+
       </h2>
 
+
       <div class="tiny">
+
         YOUR TRACK / YOUR SOUND
+
       </div>
+
 
     </div>
 
@@ -876,42 +939,62 @@
       class="notes"
       id="scaleNotes"
     >
+
       — · — · — · — · — · — · —
+
     </div>
+
 
   </section>
 
 
+  <!-- DENOISE -->
+
   <section class="noise-section">
+
 
     <div class="noise-info">
 
+
       <div class="noise-eyebrow">
-        AUDIO CLEANER / 002
+
+        DENOISE / 002
+
       </div>
+
 
       <div class="noise-title">
+
         CLEAN<br>
         THE NOISE.
+
       </div>
 
+
       <p class="noise-description">
+
         Reduce unwanted background noise while keeping
         your music as natural as possible.
+
       </p>
+
 
     </div>
 
 
     <div class="noise-action">
 
+
       <button
         class="clean-button"
         id="cleanButton"
         disabled
       >
-        CLEAN AUDIO ✦
+
+        DENOISE AUDIO ✦
+
       </button>
+
 
     </div>
 
@@ -952,7 +1035,7 @@
 
 
     /* =========================
-       INITIALIZE ESSENTIA
+       INIT
     ========================== */
 
     async function initializeEssentia() {
@@ -992,7 +1075,7 @@
 
 
     /* =========================
-       SCALE NOTES
+       SCALE MAP
     ========================== */
 
     const SCALE_MAP = {
@@ -1001,62 +1084,62 @@
         ["C","D","E","F","G","A","B"],
 
       "C# Major":
-        ["C#","D#","F","F#","G#","A#","C"],
+        ["C#","D#","E#","F#","G#","A#","B#"],
 
       "D Major":
         ["D","E","F#","G","A","B","C#"],
 
       "D# Major":
-        ["D#","F","G","G#","A#","C","D"],
+        ["D#","E#","F##","G#","A#","B#","C##"],
 
       "E Major":
         ["E","F#","G#","A","B","C#","D#"],
 
       "F Major":
-        ["F","G","A","A#","C","D","E"],
+        ["F","G","A","Bb","C","D","E"],
 
       "F# Major":
-        ["F#","G#","A#","B","C#","D#","F"],
+        ["F#","G#","A#","B","C#","D#","E#"],
 
       "G Major":
         ["G","A","B","C","D","E","F#"],
 
       "G# Major":
-        ["G#","A#","C","C#","D#","F","G"],
+        ["G#","A#","B#","C#","D#","E#","F##"],
 
       "A Major":
         ["A","B","C#","D","E","F#","G#"],
 
       "A# Major":
-        ["A#","C","D","D#","F","G","A"],
+        ["A#","B#","C##","D#","E#","F##","G##"],
 
       "B Major":
         ["B","C#","D#","E","F#","G#","A#"],
 
 
       "C Minor":
-        ["C","D","D#","F","G","G#","A#"],
+        ["C","D","Eb","F","G","Ab","Bb"],
 
       "C# Minor":
         ["C#","D#","E","F#","G#","A","B"],
 
       "D Minor":
-        ["D","E","F","G","A","A#","C"],
+        ["D","E","F","G","A","Bb","C"],
 
       "D# Minor":
-        ["D#","F","F#","G#","A#","B","C#"],
+        ["D#","E#","F#","G#","A#","B","C#"],
 
       "E Minor":
         ["E","F#","G","A","B","C","D"],
 
       "F Minor":
-        ["F","G","G#","A#","C","C#","D#"],
+        ["F","G","Ab","Bb","C","Db","Eb"],
 
       "F# Minor":
         ["F#","G#","A","B","C#","D","E"],
 
       "G Minor":
-        ["G","A","A#","C","D","D#","F"],
+        ["G","A","Bb","C","D","Eb","F"],
 
       "G# Minor":
         ["G#","A#","B","C#","D#","E","F#"],
@@ -1065,12 +1148,27 @@
         ["A","B","C","D","E","F","G"],
 
       "A# Minor":
-        ["A#","C","C#","D#","F","F#","G#"],
+        ["A#","B#","C#","D#","E#","F#","G#"],
 
       "B Minor":
         ["B","C#","D","E","F#","G","A"]
 
     };
+
+
+    function normalizeScaleName(scale) {
+
+      if (!scale) {
+        return "";
+      }
+
+
+      return (
+        scale.charAt(0).toUpperCase() +
+        scale.slice(1).toLowerCase()
+      );
+
+    }
 
 
     function showScaleNotes(keyName) {
@@ -1096,12 +1194,14 @@
 
 
     /* =========================
-       FILE HANDLER
+       ANALYZE
     ========================== */
 
     async function analyzeFile(file) {
 
-      if (!file) return;
+      if (!file) {
+        return;
+      }
 
 
       if (!essentia) {
@@ -1110,7 +1210,6 @@
           "ANALYZER STILL LOADING";
 
         return;
-
       }
 
 
@@ -1118,11 +1217,14 @@
         file.name.toUpperCase();
 
 
-      keyResult.textContent = "…";
+      keyResult.textContent =
+        "…";
 
-      bpmResult.textContent = "…";
+      bpmResult.textContent =
+        "…";
 
-      confidenceResult.textContent = "…";
+      confidenceResult.textContent =
+        "…";
 
       scaleNotes.textContent =
         "ANALYZING...";
@@ -1134,13 +1236,9 @@
 
       try {
 
-        /* READ FILE */
-
         const arrayBuffer =
           await file.arrayBuffer();
 
-
-        /* DECODE AUDIO */
 
         const AudioContextClass =
           window.AudioContext ||
@@ -1162,23 +1260,47 @@
 
 
         /*
-          Essentia expects mono PCM.
-          We use the first channel.
+          Stereo → mono average
         */
 
-        const channelData =
-          audioBuffer.getChannelData(0);
+        const length =
+          audioBuffer.length;
+
+
+        const mono =
+          new Float32Array(length);
+
+
+        for (
+          let channel = 0;
+          channel < audioBuffer.numberOfChannels;
+          channel++
+        ) {
+
+          const data =
+            audioBuffer.getChannelData(channel);
+
+
+          for (
+            let i = 0;
+            i < length;
+            i++
+          ) {
+
+            mono[i] +=
+              data[i] /
+              audioBuffer.numberOfChannels;
+
+          }
+
+        }
 
 
         const signal =
-          essentia.arrayToVector(
-            channelData
-          );
+          essentia.arrayToVector(mono);
 
 
-        /* =========================
-           KEY
-        ========================== */
+        /* KEY */
 
         const keyAnalysis =
           essentia.KeyExtractor(signal);
@@ -1189,15 +1311,21 @@
 
 
         const detectedScale =
-          keyAnalysis.scale;
+          normalizeScaleName(
+            keyAnalysis.scale
+          );
 
 
         const keyStrength =
-          Number(keyAnalysis.strength || 0);
+          Number(
+            keyAnalysis.strength || 0
+          );
 
 
         const fullKey =
-          detectedKey + " " + detectedScale;
+          detectedKey +
+          " " +
+          detectedScale;
 
 
         keyResult.textContent =
@@ -1209,9 +1337,7 @@
         );
 
 
-        /* =========================
-           BPM
-        ========================== */
+        /* BPM */
 
         const rhythm =
           essentia.RhythmExtractor2013(
@@ -1219,17 +1345,14 @@
           );
 
 
-        let bpm =
+        const bpm =
           Number(rhythm.bpm);
 
 
         if (Number.isFinite(bpm)) {
 
-          bpm =
-            Math.round(bpm);
-
           bpmResult.textContent =
-            bpm;
+            Math.round(bpm);
 
         }
 
@@ -1241,20 +1364,16 @@
         }
 
 
-        /*
-          For now we're using the key strength
-          as a simple confidence display.
-
-          Later we can make separate
-          key confidence / BPM confidence.
-        */
+        /* CONFIDENCE */
 
         const confidence =
           Math.max(
             0,
             Math.min(
               100,
-              Math.round(keyStrength * 100)
+              Math.round(
+                keyStrength * 100
+              )
             )
           );
 
@@ -1271,11 +1390,10 @@
           false;
 
 
-        /*
-          Release WASM vector memory
-        */
-
-        if (signal && signal.delete) {
+        if (
+          signal &&
+          signal.delete
+        ) {
 
           signal.delete();
 
@@ -1307,7 +1425,6 @@
         confidenceResult.textContent =
           "—";
 
-
         scaleNotes.textContent =
           "COULD NOT ANALYZE THIS FILE";
 
@@ -1333,7 +1450,7 @@
 
 
     /* =========================
-       DRAG & DROP
+       DRAG
     ========================== */
 
     dropZone.addEventListener(
@@ -1385,8 +1502,8 @@
 
 
     /* =========================
-       CLEAN BUTTON
-       NOT CONNECTED YET
+       DENOISE BUTTON
+       NEXT STEP
     ========================== */
 
     cleanButton.addEventListener(
@@ -1394,7 +1511,7 @@
       function () {
 
         alert(
-          "Key and BPM analysis is connected. Noise removal comes next!"
+          "Denoise engine will be connected next!"
         );
 
       }
